@@ -1,0 +1,1 @@
+I had taken oneline classes and based on my knowledge I have done few POC on Agentic AI.
