@@ -19,3 +19,4 @@ langchain_huggingface
 langchain-pinecone
 langgraph
 youtube_search
+chromadb
