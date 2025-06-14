@@ -20,3 +20,5 @@ langchain-pinecone
 langgraph
 youtube_search
 chromadb
+langchain-tavily
+duckduckgo-search
