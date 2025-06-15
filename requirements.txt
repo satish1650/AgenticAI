@@ -23,4 +23,3 @@ chromadb
 langchain-tavily
 duckduckgo-search
 yfinance
-yfinance
