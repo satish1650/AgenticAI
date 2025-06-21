@@ -25,5 +25,6 @@ All Class's Notes are available within "Material" folder
 1 June Day - 8 Traditional RAG part 2
 7 June Day - 9 langgraph introduction Part - 1
 8 June Day - 10 React agent with langgraph
-14 June Day - 11 LangGraph
+14 June Day - 11 React agent with multiple tool
+15 June Day - 12 Agentic Rag Part - 1
 ==============================================================================================================================================
