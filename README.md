@@ -25,4 +25,6 @@ This course is designed for AI developers, machine learning engineers, data scie
 8 June Day - 10 React agent with langgraph <br>
 14 June Day - 11 React agent with multiple tool <br>
 15 June Day - 12 Agentic Rag Part - 1 <br>
+21 June Day - 13 Agentic Rag <br>
+22 June Day - 14 Multigent with langgraph <br>
 =========================================================================== <br>
