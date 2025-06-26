@@ -11,7 +11,7 @@ This course is designed for AI developers, machine learning engineers, data scie
 ✅ Monitor & Optimize AI Agents: Track performance with LangSmith, Opik, and ClearML. <br>
 ✅ Build Real-World AI Applications: Create chatbots, financial agents, content automation, and multi-agent systems. <br>
 ************************************************************************************************************************** <br>
-### All Class's Notes are available within "Material" folder
+### All Class's Notes are available within `Material` folder
 =========================================================================== <br>
 10 May Day - 1 Induction Session <br>
 11 May Day - 2 Anaconda and VS Code Installation <br>
@@ -25,4 +25,4 @@ This course is designed for AI developers, machine learning engineers, data scie
 8 June Day - 10 React agent with langgraph <br>
 14 June Day - 11 React agent with multiple tool <br>
 15 June Day - 12 Agentic Rag Part - 1 <br>
-============================================================================================================ <br>
+=========================================================================== <br>
