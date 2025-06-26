@@ -12,7 +12,7 @@ This course is designed for AI developers, machine learning engineers, data scie
 ✅ Build Real-World AI Applications: Create chatbots, financial agents, content automation, and multi-agent systems. <br>
 ************************************************************************************************************************** <br>
 ### All Class's Notes are available within "Material" folder
-============================================================================================================ <br>
+=========================================================================== <br>
 10 May Day - 1 Induction Session <br>
 11 May Day - 2 Anaconda and VS Code Installation <br>
 17 May Day - 3 AGENTIC AI introduction <br>
