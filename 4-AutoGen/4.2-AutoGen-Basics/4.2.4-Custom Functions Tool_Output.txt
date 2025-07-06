@@ -1,0 +1,22 @@
+(C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\autogen-venv) C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\4-AutoGen\4.2-AutoGen-Basics>python "4.2.4-Custom Functions Tool.py"
+The reversed string of "Hello, World!" is "!dlroW ,olleH".
+
+(C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\autogen-venv) C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\4-AutoGen\4.2-AutoGen-Basics>python "4.2.4-Custom Functions Tool.py"
+The reversed string for "Hello, World!" is "!dlroW ,olleH".
+
+Here's a summary:
+- Original: "Hello, World!"
+- Reversed: "!dlroW ,olleH"
+
+(C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\autogen-venv) C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\4-AutoGen\4.2-AutoGen-Basics>python "4.2.4-Custom Functions Tool.py"
+The reversed string is: "!dlroW ,olleH"
+
+Summary: The original string "Hello, World!" has been reversed to "!dlroW ,olleH".
+
+(C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\autogen-venv) C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\4-AutoGen\4.2-AutoGen-Basics>python "4.2.4-Custom Functions Tool.py"
+Hello how are you?
+
+(C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\autogen-venv) C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\4-AutoGen\4.2-AutoGen-Basics>python "4.2.4-Custom Functions Tool.py"
+The reversed string is: "!dlroW ,olleH"
+
+(C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\autogen-venv) C:\Users\Satish\OneDrive\AgenticAI\AgenticAI2.0\4-AutoGen\4.2-AutoGen-Basics>            
