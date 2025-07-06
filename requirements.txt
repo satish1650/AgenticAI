@@ -26,12 +26,13 @@ yfinance
 langchain_experimental
 matplotlib
 ##### AutoGen #####
-# autogen-agentchat
-autogen_agentchat
-# autogen-core
-autogen_core
-# autogen-ext
-autogen_ext
+autogen-agentchat
+# autogen_agentchat
+autogen-core
+# autogen_core
+autogen-ext
+# autogen_ext
 dotenv
 openai
 tiktoken
+test
