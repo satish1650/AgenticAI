@@ -28,5 +28,9 @@ This course is designed for AI developers, machine learning engineers, data scie
 21 June Day - 13 Agentic Rag <br>
 22 June Day - 14 Multigent with langgraph <br>
 28 June Day - 15 Supervisor multigent <br>
-29 June Day - 16 Miscellaneous topics in langgraph
+29 June Day - 16 Miscellaneous topics in langgraph<br>
+05 July Day - 17 AutoGen Class-I <br>
+06 July Day - 18 AutoGen Class-II <br>
+12 July Day - 19 AutoGen Class-III <br>
+13 July Day - 20 AutoGen Class-IV <br>
 =========================================================================== <br>
