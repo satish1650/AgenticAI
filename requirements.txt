@@ -25,3 +25,4 @@ duckduckgo-search
 yfinance
 langchain_experimental
 matplotlib
+grandalf
