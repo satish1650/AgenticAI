@@ -32,5 +32,5 @@ This course is designed for AI developers, machine learning engineers, data scie
 05 July Day - 17 AutoGen Class-I <br>
 06 July Day - 18 AutoGen Class-II <br>
 12 July Day - 19 AutoGen Class-III <br>
-13 July Day - 20 AutoGen Class-IV <br><br>
+13 July Day - 20 AutoGen Class-IV <br>
 =========================================================================== <br>
