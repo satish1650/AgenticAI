@@ -8,8 +8,7 @@ from langchain_community.utilities import GoogleSerperAPIWrapper
 # Load environment variables
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-# serper_api_key= os.getenv("SERPER_API_KEY")
-os.environ['SERPER_API_KEY']='03efe53bf8044f01c84e9c0d43a252fc74dc64a7'
+os.environ['SERPER_API_KEY']=os.getenv("SERPER_API_KEY")
 
 if not api_key:
     raise ValueError("Please set the OPENAI_API_KEY environment variable.")
@@ -17,7 +16,6 @@ if not api_key:
 model_client= OpenAIChatCompletionClient(model='gpt-4o', api_key=api_key)
 
 search_tool_wrapper= GoogleSerperAPIWrapper(type="search")
-print(search_tool_wrapper)
 
 def search_web(query: str) -> str:
     """Search the web for the given query and return the results."""
@@ -31,17 +29,16 @@ def search_web(query: str) -> str:
 search_agent= AssistantAgent(
     name="SearchAgent",
     model_client=model_client,
-    # description="An agent that can search the web for information.",
-    # system_message="You are a helpful assistant that can search the web for information using the search_web tool."\
+    description="An agent that can search the web for information.",
+    system_message="You are a helpful assistant that can search the web for information using the search_web tool.",
     # "Please make sure that you use the search_web tool to find information before you return the answer.",
-    system_message="Don't call search_web tool, give answer based on you experties",
     tools=[search_web],
     reflect_on_tool_use=True
 )
 
 async def run_serper_search():
     """Run the search agent with a sample query."""
-    task= "who won the IPL in 2025?"
+    task= "who won the IPL in 2025"
     print(f"Querying: {task}")
 
     response= await search_agent.run(task=task)
