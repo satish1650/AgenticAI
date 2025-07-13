@@ -34,3 +34,7 @@ This course is designed for AI developers, machine learning engineers, data scie
 12 July Day - 19 AutoGen Tools & Teams <br>
 13 July Day - 20 AutoGen Teams & Mini Project <br>
 =========================================================================== <br>
+`AutoGen Class`
+
+https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
+=========================================================================== <br>
