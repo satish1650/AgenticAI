@@ -33,6 +33,8 @@ This course is designed for AI developers, machine learning engineers, data scie
 06 July Day - 18 AutoGen Part-II <br>
 12 July Day - 19 AutoGen Tools & Teams <br>
 13 July Day - 20 AutoGen Teams & Mini Project <br>
+19 July Day - 21 AutoGen Studio <br>
+20 July Day - 22 Autogen - Project advanced <br>
 =========================================================================== <br>
 `AutoGen Class`
 
