@@ -6,7 +6,7 @@ from autogen_core import CancellationToken
 
 async def main():
     docker= DockerCommandLineCodeExecutor(
-        work_dir='/tmp', 
+        work_dir='tmp', 
         timeout=120
     )
     code_executor_agent= CodeExecutorAgent(
