@@ -1,0 +1,6 @@
+{
+    "workbench.editor.autoLockGroups": {
+        "default": true,
+        "editor.excalidraw": true
+    }
+}
