@@ -1,5 +1,5 @@
 from autogen_ext.code_executors.docker import DockerCommandLineCodeExecutor
-from constants import WORK_DIR_DOCKER, TIMEOUT_DOCKER
+from config.constants import WORK_DIR_DOCKER, TIMEOUT_DOCKER
 
 
 def getDockerCommandLineCodeExecutor():
