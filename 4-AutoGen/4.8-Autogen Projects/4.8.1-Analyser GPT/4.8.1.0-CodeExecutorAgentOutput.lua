@@ -115,3 +115,42 @@ The result is Response(chat_message=
 TextMessage(id='61f76f52-d765-4579-a90c-4d4416bbc992', 
 source='CodeExecutorAgent', models_usage=None, metadata={}, created_at=datetime.datetime(2025, 7, 24, 18, 42, 22, 799130, tzinfo=datetime.timezone.utc), 
 content='Hello World\n', type='TextMessage'), inner_messages=None)
+
+--------------- Output-9 ---------------
+        content='''Here is the code
+```python
+print("Hello, World, how are you?!")
+```
+
+```python
+print("Hello, World!")
+```
+'''
+
+The result is Response(chat_message=
+TextMessage(id='9e2f0cea-7400-47b7-b3e3-5bc0594b1abd', 
+source='CodeExecutorAgent', models_usage=None, metadata={}, created_at=datetime.datetime(2025, 7, 24, 19, 24, 46, 41588, tzinfo=datetime.timezone.utc), 
+content='Hello, World, how are you?!\n\
+Hello, World!\n', type='TextMessage'), inner_messages=None)
+
+--------------- Output-10 ---------------
+        content='''Here is the code
+```python
+print("Hello, World, how are you?!")
+```
+
+```python
+print("Hello, World!")
+```
+
+```python
+print("Hello, World!, I am fine")
+```
+'''
+
+The result is Response(chat_message=
+TextMessage(id='3f1ff5ed-58db-443d-9b1d-723b5802a7c8', 
+source='CodeExecutorAgent', models_usage=None, metadata={}, created_at=datetime.datetime(2025, 7, 24, 19, 27, 3, 300238, tzinfo=datetime.timezone.utc), 
+content='Hello, World, how are you?!\n\
+         Hello, World!\n\
+         Hello, World!, I am fine\n', type='TextMessage'), inner_messages=None)
