@@ -36,7 +36,7 @@ async def run_analyser_gpt(docker, openai_model_client, task):
 
                 # st.markdown(f"**{message.content}")
             elif isinstance(message, TaskResult):
-                st.markdown(message.stop_reason)
+                st.markdown(f'Stop Reason: {message.stop_reason}')
 
         return None
     except Exception as ex:
