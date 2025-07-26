@@ -1,0 +1,17 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data
+data = pd.read_csv('data.csv')
+
+# Preview the data to understand its structure
+print(data.head())
+
+# Create a bar plot for survival status
+survival_count = data['Survived'].value_counts()
+survival_count.plot(kind='bar', color=['red', 'green'], title='Survival Count', xlabel='Survival Status', ylabel='Count', xticks=[0, 1], xticklabels=['Died', 'Survived'])
+
+# Save plot to a file
+plt.savefig('output.png')
+
+print("Plot created and saved as output.png")

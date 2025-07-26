@@ -1,0 +1,46 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import accuracy_score
+
+# Load the data
+data = pd.read_csv('data.csv')
+
+# Inspect the first few rows to understand structure
+print(data.head())
+
+# Check for correlation matrix for numerical features
+print(data.corr())
+
+# Visualize gender vs survival as it is a relevant factor
+plt.figure(figsize=(6, 4))
+sns.countplot(x='Survived', hue='Sex', data=data)
+plt.title('Survival Counts by Gender')
+plt.savefig('survival_by_gender.png')
+plt.close()
+
+# Prepare data for logistic regression (dummy encoding categorical variables)
+data_encoded = data.copy()
+data_encoded['Sex'] = LabelEncoder().fit_transform(data_encoded['Sex'])
+features = ['Pclass', 'Sex', 'Age']  # assuming these columns exist
+data_encoded = data_encoded.dropna(subset=features)  # Remove rows missing these columns
+
+# Train logistic regression to determine feature importance
+X = data_encoded[features]
+y = data_encoded['Survived']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LogisticRegression(max_iter=200)
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+
+print("Accuracy of the model:", accuracy_score(y_test, y_pred))
+coef = model.coef_[0]
+print("Feature importance:")
+for feature, c in zip(features, coef):
+    print(f"{feature}: {c}")
+
+print("Analysis complete. Factors influencing survival have been identified. Graph for gender influence has been created as 'survival_by_gender.png'.")

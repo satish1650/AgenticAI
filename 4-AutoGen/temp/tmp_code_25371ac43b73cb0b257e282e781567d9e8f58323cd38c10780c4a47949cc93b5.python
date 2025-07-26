@@ -1,0 +1,8 @@
+import pandas as pd
+
+# Load the CSV file
+df = pd.read_csv('data.csv')
+
+# Print out the column names
+columns = df.columns.tolist()
+print("The columns in the data are:", columns)

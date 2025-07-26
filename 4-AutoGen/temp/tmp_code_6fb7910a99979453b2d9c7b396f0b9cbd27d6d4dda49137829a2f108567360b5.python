@@ -1,0 +1,15 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data
+data = pd.read_csv('data.csv')
+
+# Visualize gender vs survival as it is a relevant factor
+plt.figure(figsize=(6, 4))
+sns.countplot(x='Survived', hue='Sex', data=data)
+plt.title('Survival Counts by Gender')
+plt.savefig('survival_by_gender.png')  # Save the image
+plt.close()
+
+print("Graph for gender influence on survival has been created and saved as 'survival_by_gender.png'.")

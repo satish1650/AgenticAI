@@ -1,0 +1,10 @@
+import pandas as pd
+
+# Load the data from the CSV file into a DataFrame
+data = pd.read_csv('data.csv')
+
+# Get the number of rows and columns
+num_rows, num_columns = data.shape
+
+print(f"Total number of rows: {num_rows}")
+print(f"Total number of columns: {num_columns}")

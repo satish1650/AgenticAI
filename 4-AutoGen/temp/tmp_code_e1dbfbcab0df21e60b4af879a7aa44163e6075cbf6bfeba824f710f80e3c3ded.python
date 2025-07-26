@@ -1,0 +1,22 @@
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data from the CSV file into a DataFrame
+data = pd.read_csv('data.csv')
+
+# Display the first few rows of the DataFrame to understand the structure
+print(data.head())
+
+# Count survivors and non-survivors based on appropriate column
+# Assuming there is a column "Survived" indicating 1 for survived and 0 for not survived
+survival_counts = data['Survived'].value_counts()
+
+# Plotting the results
+plt.bar(['Died', 'Survived'], survival_counts)
+plt.title('Count of People who Survived and Died')
+plt.xlabel('Status')
+plt.ylabel('Count')
+plt.show()
+
+print('Graph has been plotted showing counts of people who survived and died')
