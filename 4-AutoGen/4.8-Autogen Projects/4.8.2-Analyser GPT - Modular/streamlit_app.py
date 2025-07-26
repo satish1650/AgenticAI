@@ -64,7 +64,16 @@ if task:
         if error:
             st.error('An error occured', {error})
 
+        # # see all the *.png in temp and show them on streamlit app
+        # png_files = [f for f in os.listdir('temp') if f.endswith('.png')]
+        # if png_files:
+        #     for png_file in png_files:
+        #         st.image(os.path.join('temp', png_file), caption=png_file)
+
         if os.path.exists('temp/output.png'):
+            # if('output.png' not in st.session_state.images_shown):
+            #     st.session_state.images_shown.append('output.png')
+            # if 'output.png' not in st.session_state.images_shown:
             st.image('temp/output.png', caption='Output Image')
 
     else:
