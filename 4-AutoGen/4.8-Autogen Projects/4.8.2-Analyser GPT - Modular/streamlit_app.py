@@ -22,6 +22,15 @@ async def run_analyser_gpt(docker, openai_model_client, task):
 
         async for message in team.run_stream(task=task):
             if isinstance(message, TextMessage):
+                print(message)
+
+                if message.source.startswith('user'):
+                    with st.chat_message('user', avatar='🧑‍💻'):
+                        st.markdown(message)
+                elif message.source.startswith('Data_Analyzer_agent'):
+                    with st.chat_message('Data Analyzer', avatar='🤖'):
+                        st.markdown(message)
+
                 st.markdown(f"**{message.content}")
             elif isinstance(message, TaskResult):
                 st.markdown(message.stop_reason)
