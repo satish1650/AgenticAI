@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the CSV file
+data = pd.read_csv('data.csv')
+
+# Check if 'Survived' column exists
+if 'Survived' not in data.columns:
+    raise ValueError("The data does not contain a 'Survived' column.")
+
+# Count the number of passengers who survived and who didn't
+survival_counts = data['Survived'].value_counts()
+
+# Create a bar graph
+plt.figure(figsize=(6, 4))
+survival_counts.plot(kind='bar', color=['red', 'green'])
+plt.title('Survival Counts')
+plt.xlabel('Survived')
+plt.ylabel('Number of People')
+plt.xticks(ticks=[0, 1], labels=['Did Not Survive', 'Survived'], rotation=0)
+
+# Save the graph as output.png
+plt.savefig('output.png')
+plt.close()
+
+print("Graph of people who died and survived has been created and saved as 'output.png'.")

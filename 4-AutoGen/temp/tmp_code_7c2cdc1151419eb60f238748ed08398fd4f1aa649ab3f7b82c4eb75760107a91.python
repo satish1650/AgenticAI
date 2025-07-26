@@ -1,0 +1,10 @@
+import pandas as pd
+
+# Load the CSV file
+data = pd.read_csv('data.csv')
+
+# Get the number of rows and columns
+rows, columns = data.shape
+
+# Print the number of rows and columns
+print(f"The file contains {rows} rows and {columns} columns.")

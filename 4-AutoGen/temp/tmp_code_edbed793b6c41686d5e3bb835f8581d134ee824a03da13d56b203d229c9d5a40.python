@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data
+data = pd.read_csv('data.csv')
+
+# Check the first few rows of the dataframe to understand its structure
+print(data.head())
+
+# Assuming the 'Survived' column indicates survival, with 1 being survived and 0 being died
+# Create the plot
+plt.figure(figsize=(8, 5))
+sns.countplot(x='Survived', data=data)
+plt.title('Survival Count')
+plt.xlabel('Survived (1 = Yes, 0 = No)')
+plt.ylabel('Count')
+
+# Save the plot
+plt.savefig('output.png')
+print("Plot saved as output.png")
