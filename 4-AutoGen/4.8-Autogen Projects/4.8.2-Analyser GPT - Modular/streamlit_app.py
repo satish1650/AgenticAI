@@ -64,6 +64,9 @@ if task:
         if error:
             st.error('An error occured', {error})
 
+        if os.path.exists('temp/output.png'):
+            st.image('temp/output.png', caption='Output Image')
+
     else:
         st.warning("Please upload the file and provide the task")
 
