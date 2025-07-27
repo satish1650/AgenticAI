@@ -1,0 +1,12 @@
+GitHub URL
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0
+
+AG Multiagent Examples Projects
+https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/examples/index.html
+
+
+DSA Solving Multi Agent System using Microsoft Autogen #ai #coding #agenticai #leetcode
+https://youtu.be/Z0_f7KSuscI
+
+Complete n8n Masterclass: Build Al Agents & Automate Workflows (Zero to Hero)
+https://youtu.be/DkV7ztrhLh8
