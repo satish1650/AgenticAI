@@ -1,0 +1,48 @@
+-----------Anaconda Installation------------
+Anaconda(bigger-->file size higher so it will provide more libray/tool and some other things) or 
+Miniconda(smaller--less libray, No additional things or tools) --> It will help us manage Python's version
+VS Code
+
+$conda activate base
+or
+$source activate base
+or
+$sorce init
+$source activate base
+or
+$sorce init
+$conda activate base
+
+conda create -n(name of environment) agentic_2_base python=3.11(if not mentioned by default python's version will be installed)
+Conda will create folder(agentic_2_base) and will install python version=3.11
+
+-n optioin conda will create env. in default path
+
+activate the newly created version
+$conda activate agentic_2_base
+
+deactivate the newly created version
+$conda deactivate
+
+$conda env list
+# conda environments:
+#
+base                   C:\Users\satis\miniconda3
+agentic_2_base       * C:\Users\satis\miniconda3\envs\agentic_2_base
+
+* means---env is active
+
+Now Need to install ipykernal in the new env.
+
+conda create -p(prefix for the path) abcd001(folder name...if not mentioned current directory) python=3.6
+
+conda create -p E:\AgenticAI\Online Classess\10-05-2025-Induction Class/env pthon=3.11
+
+pip freeze
+pip freeze > req.txt
+pip list
+pip list --fromate=freeze > req.lst
+
+------------------------------
+https://lightning.ai/
+https://replit.com/
