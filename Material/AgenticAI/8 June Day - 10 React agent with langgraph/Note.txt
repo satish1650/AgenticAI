@@ -1,0 +1,9 @@
+https://github.com/sunnysavita10/Agentic-2.0
+
+https://github.com/sunnysavita10/Agentic-2.0/blob/main/langgraph/tools.ipynb
+
+https://github.com/sunnysavita10/Agentic-2.0/blob/main/langgraph/tools.ipynb
+
+https://python.langchain.com/docs/integrations/tools/
+
+https://app.tavily.com/home
