@@ -16,7 +16,7 @@ This course is designed for AI developers, machine learning engineers, data scie
 10 May Day - 1 Induction Session <br>
 11 May Day - 2 Anaconda and VS Code Installation <br>
 17 May Day - 3 AGENTIC AI introduction <br>
-18 May Day - 4 Getting Started With Pydantic
+18 May Day - 4 Getting Started With Pydantic <br>
 24 May Day - 5 Langchain 1 <br>
 25 May Day - 6 Langchain 2 <br>
 31 May Day - 7 Traditional RAG part 1 <br>
