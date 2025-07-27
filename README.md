@@ -35,8 +35,9 @@ This course is designed for AI developers, machine learning engineers, data scie
 13 July Day - 20 AutoGen Teams & Mini Project <br>
 19 July Day - 21 AutoGen Studio <br>
 20 July Day - 22 Autogen - Project advanced <br>
+26 July Day - 23 Autogen Project Continued + Swarm <br>
+27 July Day - 24 RAG & MCP in Autogen <br>
 =========================================================================== <br>
-`AutoGen Class`
-
+`AutoGen Class`<br>
 https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
 =========================================================================== <br><br>
