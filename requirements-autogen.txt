@@ -11,3 +11,6 @@ langchain
 docker
 autogen-ext[docker]
 streamlit
+autogen-ext[magentic-one]
+autogen-ext[web-surfer]
+playwright
