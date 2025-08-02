@@ -14,5 +14,7 @@ streamlit
 autogen-ext[magentic-one]
 autogen-ext[web-surfer]
 playwright
+autogen-ext[redisvl]
 autogen-ext[mem0]
 autogen-ext[mem0-local]
+google-api-python-client
