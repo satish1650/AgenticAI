@@ -14,3 +14,5 @@ streamlit
 autogen-ext[magentic-one]
 autogen-ext[web-surfer]
 playwright
+autogen-ext[mem0]
+autogen-ext[mem0-local]
