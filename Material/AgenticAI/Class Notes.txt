@@ -115,4 +115,29 @@ https://docs.humanizeai.pro/openapi/humanization/gethumanizationresult
 filess.io
 
 https://microsoft.github.io/autogen/stable//reference/python/autogen_agentchat.agents.html#autogen_agentchat.agents.SocietyOfMindAgent
+
 -----------------------------------------------------------------------------------------------------------------------------------------
+02 Aug Day - 25 Autogen RAG & MCP
+*********************************
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0/Autogen/Notes
+
+https://bugs-sleep-6uj.craft.me/GV9FvmzXdjUB7b
+
+https://www.analyticsvidhya.com/datahacksummit/
+        
+--UV package Video
+https://www.youtube.com/watch?v=FL10d0k3GAo
+
+https://github.com/modelcontextprotocol/servers/tree/main/src/time
+
+https://youtu.be/DkV7ztrhLh8
+
+Udemy Free Courses
+---------------------
+https://www.udemy.com/course/ai-powered-data-analytics-mastery-ai-tools-vibe-coding/?couponCode=FREELEARN
+
+https://www.youtube.com/watch?v=WZAL4SiW9e0
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+03 Aug Day - 26 Autogen MCP Project + n8n Foundamentals
+*******************************************************
