@@ -139,5 +139,41 @@ https://www.udemy.com/course/ai-powered-data-analytics-mastery-ai-tools-vibe-cod
 https://www.youtube.com/watch?v=WZAL4SiW9e0
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-03 Aug Day - 26 Autogen MCP Project + n8n Foundamentals
-*******************************************************
+03 Aug Day - 26 Autogen MCP Project + Ngrok + Notion + Lovable
+**************************************************************
+MCP Server
+https://mcpservers.org/
+
+Ngrok
+https://ngrok.com/
+
+UV Package
+https://www.youtube.com/watch?v=FL10d0k3GAo
+
+
+MCP Server Tools
+https://microsoft.github.io/autogen/stable//reference/python/autogen_ext.tools.mcp.html#autogen_ext.tools.mcp.mcp_server_tools
+
+The AI workspace that works for you.
+https://www.notion.com/
+
+Notion
+https://developers.notion.com/docs/get-started-with-mcp
+
+https://github.com/makenotion/notion-mcp-server?tab=readme-ov-file
+
+https://storypick.com/jackie-shroff-health-advice/
+
+https://notion-chat-tester.lovable.app
+
+Lovable
+https://lovable.dev/
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+09 Aug Day - 27 n8n Foundamentals
+**********************************
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+10 Aug Day - 28 n8n Foundamentals
+**********************************
+-----------------------------------------------------------------------------------------------------------------------------------------
