@@ -37,6 +37,8 @@ This course is designed for AI developers, machine learning engineers, data scie
 20 July Day - 22 Autogen - Project advanced <br>
 26 July Day - 23 Autogen Project Continued + Swarm <br>
 27 July Day - 24 RAG & MCP in Autogen <br>
+02 Aug Day - 25 Autogen RAG & MCP + n8n Foundamentals <br>
+03 Aug Day - 26 Autogen MCP Project + Ngrok + Notion + Lovable <br>
 =========================================================================== <br>
 `AutoGen Class`<br>
 https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
