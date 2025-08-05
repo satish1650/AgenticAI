@@ -18,3 +18,7 @@ autogen-ext[redisvl]
 autogen-ext[mem0]
 autogen-ext[mem0-local]
 google-api-python-client
+autogen-ext[mcp]
+flask
+pyngrok
+flask_cors
