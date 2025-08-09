@@ -170,8 +170,18 @@ Lovable
 https://lovable.dev/
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-09 Aug Day - 27 n8n Foundamentals
-**********************************
+09 Aug Day - 27 n8n Fundamentals
+********************************
+https://app.n8n.cloud/register
+
+https://raw.githubusercontent.com/mayank953/Youtube/refs/heads/main/n8n/Crash%20Course/Nodes%20in%20n8n.json
+
+https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
+
+n8n Youtube Video
+https://www.youtube.com/watch?v=DkV7ztrhLh8
+
+https://docs.google.com/forms/d/e/1FAIpQLScrTWJnpHDDEgYll4d5nVZpdt-O--Kl8u3WIPTmlBsl4GO3CQ/viewform
 -----------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
 10 Aug Day - 28 n8n Foundamentals
