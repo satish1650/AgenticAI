@@ -1,0 +1,138 @@
+{
+  "name": "Second workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "My Second Workflow",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "First Name",
+              "placeholder": "Enter your name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email Address",
+              "fieldType": "email",
+              "placeholder": "test@gmail.com",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Mobile Number",
+              "fieldType": "number",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -640,
+        -48
+      ],
+      "id": "70192aa7-f5e5-4a2a-af86-a9375f063b2f",
+      "name": "On form submission",
+      "webhookId": "ae99cb5d-e587-40ba-99e1-6065707cb176"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=I want you to draft a good email to be sent to the below details and make sure that it is professional.\n\nName - {{ $json['First Name'] }}\n\nEmail - {{ $json['Email Address'] }}\n\nMob. No. - {{ $json['Mobile Number'] }}\n\nSubmittdAt - {{ $json.submittedAt }}\n\nUsing above Send a very good greeting email to the user.\n\nSign it as below\n- Satish Tiwari\nDirector\nABC Consulting pvt. limited"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -368,
+        -48
+      ],
+      "id": "fd78c848-9bee-447a-92e3-a5639f6c1d93",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "i7mV5QuVJRHdGxGe",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json[\"Email Address\"] }}",
+        "subject": "Welcome Mail",
+        "message": "={{ $json.message.content }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        32,
+        -48
+      ],
+      "id": "bee66577-12ce-4c1b-ad7d-b67f4fc49b41",
+      "name": "Send a message",
+      "webhookId": "74cccbd4-f05b-4319-9456-1b7576e5e192",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "9Juo6ZnB8fOZ7KMI",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c0acef5f-b3eb-441b-9e52-a13a291948b7",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "94fb78af03d4d8b0516afe9dee3e297ad378608d1afb7790fc0c4a1980a05740"
+  },
+  "id": "9uvjBMrIrLX8pI8Z",
+  "tags": [
+    {
+      "name": "Learn n8n",
+      "id": "1o11VVd4WxAsF7PP",
+      "createdAt": "2025-08-09T16:36:53.420Z",
+      "updatedAt": "2025-08-09T16:36:53.420Z"
+    }
+  ]
+}
