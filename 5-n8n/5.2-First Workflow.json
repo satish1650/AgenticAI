@@ -1,0 +1,111 @@
+{
+  "name": "First Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## n8n on form submission, Send a message by Gmail",
+        "height": 80,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -304,
+        -384
+      ],
+      "typeVersion": 1,
+      "id": "1c377070-7bd1-4778-aacb-2818418b7097",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "formTitle": "Test Workflow",
+        "formDescription": "A form to test the workflow",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "First Name",
+              "placeholder": "Enter your full name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email",
+              "placeholder": "abc@example.com",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Mobile",
+              "fieldType": "number",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -416,
+        -224
+      ],
+      "id": "daa68772-0c1d-4dfd-9bb1-af43e74f1fd2",
+      "name": "On form submission",
+      "webhookId": "ae9787ef-556a-4da2-94df-f388d4cc1ea0"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "Welcome to n8n Class",
+        "message": "=Hi  {{ $json[\"First Name\"] }},\n\nHow are you....Hope you are doing well !!!\n\nn8n Class is very good.\n\nThanks & Regards,\nSatish Kumar Tiwari",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -96,
+        -224
+      ],
+      "id": "0512952f-fa5a-46a4-89f3-f0354c51ba02",
+      "name": "Send a message",
+      "webhookId": "22111dec-5098-4975-91a5-4e6cfa3e6d3d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Joov8FwsfGjJsT0k",
+          "name": "Gmail account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8f143125-1db6-4b77-adb3-338d0cc63d04",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "94fb78af03d4d8b0516afe9dee3e297ad378608d1afb7790fc0c4a1980a05740"
+  },
+  "id": "KjJba48LzO3PGAhF",
+  "tags": [
+    {
+      "name": "Learn n8n",
+      "id": "1o11VVd4WxAsF7PP",
+      "createdAt": "2025-08-09T16:36:53.420Z",
+      "updatedAt": "2025-08-09T16:36:53.420Z"
+    }
+  ]
+}
