@@ -45,7 +45,7 @@ All Classes
 
 Resources
 ---
-[Class_Details](https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL)
-[AutoGen_Class_Notes](https://github.com/satish1650/AgenticAI/tree/main/4-AutoGen/4.0-Autogen%20Class%20Notes)
-[All_Class_Material](https://github.com/satish1650/AgenticAI/tree/main/Material)
-[My GitHub Account](https://github.com/satish1650)
+[Class_Details](https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL) <br>
+[AutoGen_Class_Notes](https://github.com/satish1650/AgenticAI/tree/main/4-AutoGen/4.0-Autogen%20Class%20Notes) <br>
+[All_Class_Material](https://github.com/satish1650/AgenticAI/tree/main/Material) <br>
+[My GitHub Account](https://github.com/satish1650) <br>
