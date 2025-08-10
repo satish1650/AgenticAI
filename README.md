@@ -43,7 +43,7 @@ All Classes
 09 Aug Day - 27 n8n Fundamentals <br>
 10 Aug Day - 28 n8n Advanced <br>
 
-Virtual Environment in VS Code
+How to create virtual environment in "VS Code"
 ---
 1. Using Conda:-<br>
    1.1 How to create `"Virtual Environment"` by using conda:
@@ -62,7 +62,7 @@ Virtual Environment in VS Code
    conda activate myvenv3.12\
    ```
 
-   1.3 How to "Deactivate Virtual Environment" which is crated by conda:
+   1.3 How to `"Deactivate Virtual Environment"` which is crated by conda:
    ```
    conda deactivate
    ```
@@ -79,12 +79,12 @@ Virtual Environment in VS Code
     python -m venv myvenv
     ```
 
-    2.2 How to `"Activate Virtual Environment"`:
+    2.2 How to `"Activate Virtual Environment"`:<br>
     <Absolute Path of activate.bat> 
-    [Note:- activate.bat will be available within newly created "Virtual Environment" for ex. myvenv] <br>
+    [**Note:-** activate.bat will be available within newly created "Virtual Environment" for ex. myvenv] <br>
     ex C:\Satish\AgenticAI\myvenv\Scripts\activate.bat
 
-    [Note:- If you are already in your current directory where you have created myvenv]
+    [**Note:-** If you are already in your current directory where you have created myvenv]
     ```
     myvenv\Scripts\activate
     ```
