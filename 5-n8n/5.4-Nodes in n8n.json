@@ -423,7 +423,7 @@
     },
     {
       "parameters": {
-        "content": "## Trigger Node\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "content": "## Trigger Nodes\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
         "height": 700,
         "width": 780,
         "color": 4
@@ -439,7 +439,7 @@
     },
     {
       "parameters": {
-        "content": "## Action Node\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "content": "## Action Nodes\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
         "height": 700,
         "width": 780,
         "color": 5
@@ -468,7 +468,7 @@
     },
     {
       "parameters": {
-        "content": "## Action Node\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "content": "## Data Manipulation Nodes\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
         "height": 700,
         "width": 780,
         "color": 6
@@ -562,7 +562,7 @@
     },
     {
       "parameters": {
-        "content": "## Action Node\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "content": "## AI Nodes\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
         "height": 700,
         "width": 780,
         "color": 2
@@ -578,6 +578,7 @@
     },
     {
       "parameters": {
+        "content": "## Core Nodes\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
         "height": 720,
         "width": 400
       },
@@ -597,7 +598,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "ca0f00f7-fe4f-44db-b4f6-118eabce2cbb",
+  "versionId": "da6ecef2-cc7b-4340-9cf5-bf31b477f307",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "94fb78af03d4d8b0516afe9dee3e297ad378608d1afb7790fc0c4a1980a05740"
