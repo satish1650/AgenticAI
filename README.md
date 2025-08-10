@@ -39,7 +39,11 @@ This course is designed for AI developers, machine learning engineers, data scie
 27 July Day - 24 RAG & MCP in Autogen <br>
 02 Aug Day - 25 Autogen RAG & MCP + n8n Foundamentals <br>
 03 Aug Day - 26 Autogen MCP Project + Ngrok + Notion + Lovable <br>
+09 Aug Day - 27 n8n Fundamentals <br>
+10 Aug Day - 28 n8n Advanced <br>
 =========================================================================== <br>
 `AutoGen Class`<br>
 https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
+=========================================================================== <br><br>
+[GitHub](https://github.com/satish1650/AgenticAI/tree/main)
 =========================================================================== <br><br>
