@@ -58,14 +58,16 @@ Virtual Environment in VS Code
    ```
    $conda activate C:\Satish\AgenticAIPoc\myvenv3.12
    ```
+OR
    ```
    $conda activate myvenv3.12\
    ```
-   
+
    1.3 How to "Deactivate Virtual Environment" which is crated by conda:
    ```
    $conda deactivate
    ```
+OR
    ```
    $deactivate
    ```
