@@ -49,5 +49,8 @@ This course is designed for AI developers, machine learning engineers, data scie
 [All_Class_Material](https://github.com/satish1650/AgenticAI/tree/main/Material) <br>
 [My GitHub Account](https://github.com/satish1650)
 
-<hr style="border: none; height: 0.5px;">
+<hr style="---">
+----
+____
+
 ========================================================================== <br>
