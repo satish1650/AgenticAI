@@ -47,10 +47,31 @@ Virtual Environment in VS Code
 ---
 1. Using Conda:-<br>
    1.1 How to create `"Virtual Environment"` by using conda:
-   
    ```
     $conda create -p myvenv3.12 python=3.12 -y
    ``` 
+
+   1.2 How to `"Activate Virtual Environment"` which is crated by conda:
+   ```
+   $conda activate "Absolute Path of Virtual Environment Folder"
+   ``` 
+   ```
+   $conda activate C:\Satish\AgenticAIPoc\myvenv3.12
+   ```
+        OR
+   ```
+   $conda activate myvenv3.12\
+   ```
+
+   1.3 How to "Deactivate Virtual Environment" which is crated by conda:
+   ```
+   $conda deactivate
+   ```
+        OR
+   ```
+   $deactivate
+   ```
+
 2. Without Using Conda:-<br>
     2.1 How to create `"Virtual Environment"`:
     ```
