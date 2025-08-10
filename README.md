@@ -80,9 +80,9 @@ How to create virtual environment in "VS Code"
     ```
 
     2.2 How to `"Activate Virtual Environment"`:<br>
-    <Absolute Path of activate.bat> 
-    [**Note:-** activate.bat will be available within newly created "Virtual Environment" for ex. myvenv] <br>
-    ex C:\Satish\AgenticAI\myvenv\Scripts\activate.bat
+        Give Absolute Path of activate.bat <br> 
+        [**Note:-** activate.bat will be available within newly created "Virtual Environment" for ex. myvenv] <br>
+        Ex C:\Satish\AgenticAI\myvenv\Scripts\activate.bat
 
     [**Note:-** If you are already in your current directory where you have created myvenv]
     ```
