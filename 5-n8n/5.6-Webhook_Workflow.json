@@ -1,0 +1,100 @@
+{
+  "name": "Webhook workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Webhook workflow\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 80,
+        "width": 384
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -208,
+        -80
+      ],
+      "typeVersion": 1,
+      "id": "294ad025-3113-4164-85d0-d3b4b0c24906",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "path": "get-cat-fact",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -304,
+        32
+      ],
+      "id": "9a339f6e-e1b7-4983-a0e7-b78c273a19f4",
+      "name": "Webhook",
+      "webhookId": "45409c59-64fb-4580-af03-ef785b58ceca"
+    },
+    {
+      "parameters": {
+        "url": "https://catfact.ninja/fact",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -96,
+        32
+      ],
+      "id": "44fd37a0-adb7-491e-b7f3-2045da474f91",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"fact\": \"{{ $json.fact }}\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        112,
+        32
+      ],
+      "id": "e92173ae-b498-474a-9203-4cca76355776",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b7a941d5-5b00-4563-b115-83bf27b126b1",
+  "meta": {
+    "instanceId": "94fb78af03d4d8b0516afe9dee3e297ad378608d1afb7790fc0c4a1980a05740"
+  },
+  "id": "aTzzYn23M4WRUy2e",
+  "tags": []
+}
