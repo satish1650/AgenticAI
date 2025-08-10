@@ -184,6 +184,14 @@ https://www.youtube.com/watch?v=DkV7ztrhLh8
 https://docs.google.com/forms/d/e/1FAIpQLScrTWJnpHDDEgYll4d5nVZpdt-O--Kl8u3WIPTmlBsl4GO3CQ/viewform
 -----------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
-10 Aug Day - 28 n8n Foundamentals
-**********************************
+10 Aug Day - 28 n8n Advanced
+****************************
+An open source load testing tool.
+https://locust.io/
+
+The most realistic voice AI platform
+https://elevenlabs.io/
+
+n8n Youtube Video
+https://www.youtube.com/watch?v=DkV7ztrhLh8
 -----------------------------------------------------------------------------------------------------------------------------------------
