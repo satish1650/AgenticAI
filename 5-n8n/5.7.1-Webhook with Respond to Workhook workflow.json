@@ -1,0 +1,81 @@
+{
+  "name": "Webhook with Respond to Workhook workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "health-check",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -224,
+        -32
+      ],
+      "id": "449d58ea-5440-4a78-aa15-0d66528597ee",
+      "name": "Webhook",
+      "webhookId": "4e1c8fd8-e9f2-42f0-ad33-7b3f6f800c64"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -16,
+        -32
+      ],
+      "id": "4c55ec23-c3be-4db6-b8f7-c3556b8fd545",
+      "name": "Wait",
+      "webhookId": "47d6396d-aeda-49ed-9ea3-c2db067c5e5a"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        192,
+        -32
+      ],
+      "id": "ecf7dd40-e181-46fd-ab4d-582177e5707f",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ad3a8ff6-6b01-4764-8e6a-0d8219cc2fe4",
+  "meta": {
+    "instanceId": "94fb78af03d4d8b0516afe9dee3e297ad378608d1afb7790fc0c4a1980a05740"
+  },
+  "id": "Ihon64uyXaVfNEPU",
+  "tags": []
+}
