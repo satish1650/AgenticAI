@@ -1,0 +1,69 @@
+{
+  "name": "API workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://catfact.ninja/fact",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        128,
+        -16
+      ],
+      "id": "f906e312-04e5-4111-886f-a532a7aad937",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        -16
+      ],
+      "id": "f2d480e9-c9d4-4ff3-ac87-cd998aeefa56",
+      "name": "Execute workflow"
+    },
+    {
+      "parameters": {
+        "content": "## API Workflow\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 80,
+        "width": 352
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -192,
+        -144
+      ],
+      "typeVersion": 1,
+      "id": "ba74c303-5768-450d-a2a2-8ffee244a07a",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Execute workflow": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3eb3c0e5-d231-4c76-a853-67bc3ff7ed65",
+  "meta": {
+    "instanceId": "94fb78af03d4d8b0516afe9dee3e297ad378608d1afb7790fc0c4a1980a05740"
+  },
+  "id": "M5uicsffzTEfqk86",
+  "tags": []
+}
