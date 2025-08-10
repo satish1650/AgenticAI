@@ -1,11 +1,9 @@
 AGENTIC AI & GEN AI WITH CLOUD 2.O <br>
 ---
 This course is designed for AI developers, machine learning engineers, data scientists, and software engineers looking to build expertise in agentic AI, multi-agent systems, and AI-powered automation. Whether you are new to AI agents or have experience in NLP and GenAI, this course will equip you with the knowledge and hands-on skills required to develop, deploy, and manage AI agents at scale. By the end of the course, you will have a strong foundation in agentic AI frameworks, multi-agent collaboration, real-world automation, and end-to-end AI deployment, along with practical experience through real-world projects. <br>
-<!-- ========================================================================== <br> -->
 
 Learning Objectives <br>
 ---
-<!-- ************************************************************************************************************************** <br> -->
 ✅ Master AI Agent Frameworks: Build intelligent agents using LangChain, LangGraph, CrewAI, Agno, AutoGen, and LangFlow. <br>
 ✅ Develop Multi-Agent Systems: Design and deploy collaborative AI agents for real-world tasks. <br>
 ✅ Implement RAG & Adaptive RAG: Build retrieval-augmented generation (RAG) systems with vector databases. <br>
@@ -13,9 +11,8 @@ Learning Objectives <br>
 ✅ Deploy AI Agents at Scale: Deploy agents using GitHub Actions, Docker, AWS, and BentoML. <br>
 ✅ Monitor & Optimize AI Agents: Track performance with LangSmith, Opik, and ClearML. <br>
 ✅ Build Real-World AI Applications: Create chatbots, financial agents, content automation, and multi-agent systems. <br>
-<!-- ************************************************************************************************************************** <br> -->
-<!-- ========================================================================== <br> -->
-All Class Details
+
+All Classes
 ---
 10 May Day - 1 Induction Session <br>
 11 May Day - 2 Anaconda and VS Code Installation <br>
@@ -45,12 +42,10 @@ All Class Details
 03 Aug Day - 26 Autogen MCP Project + Ngrok + Notion + Lovable <br>
 09 Aug Day - 27 n8n Fundamentals <br>
 10 Aug Day - 28 n8n Advanced <br>
-<!-- ========================================================================== <br> -->
 
-
- Resources
+Resources
 ---
 [Class_Details](https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL)
-[AutoGen_Class_Notes](https://github.com/satish1650/AgenticAI/tree/main/4-AutoGen/4.0-Autogen%20Class%20Notes) <br>
-[All_Class_Material](https://github.com/satish1650/AgenticAI/tree/main/Material) <br>
+[AutoGen_Class_Notes](https://github.com/satish1650/AgenticAI/tree/main/4-AutoGen/4.0-Autogen%20Class%20Notes)
+[All_Class_Material](https://github.com/satish1650/AgenticAI/tree/main/Material)
 [My GitHub Account](https://github.com/satish1650)
