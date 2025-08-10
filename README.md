@@ -48,38 +48,53 @@ Virtual Environment in VS Code
 1. Using Conda:-<br>
    1.1 How to create `"Virtual Environment"` by using conda:
    ```
-    $conda create -p myvenv3.12 python=3.12 -y
+    conda create -p myvenv3.12 python=3.12 -y
    ``` 
 
    1.2 How to `"Activate Virtual Environment"` which is crated by conda:
    ```
-   $conda activate "Absolute Path of Virtual Environment Folder"
+   conda activate "Absolute Path of Virtual Environment Folder"
    ``` 
    ```
-   $conda activate C:\Satish\AgenticAIPoc\myvenv3.12
+   conda activate C:\Satish\AgenticAIPoc\myvenv3.12
    ```
-OR
    ```
-   $conda activate myvenv3.12\
+   conda activate myvenv3.12\
    ```
 
    1.3 How to "Deactivate Virtual Environment" which is crated by conda:
    ```
-   $conda deactivate
+   conda deactivate
    ```
- OR
    ```
-   $deactivate
+   deactivate
    ```
 
 2. Without Using Conda:-<br>
     2.1 How to create `"Virtual Environment"`:
     ```
-    $python -m venv <Virtual Environment Name>
+    python -m venv <Virtual Environment Name>
+    ```
+    ```
+    python -m venv myvenv
     ```
 
+    2.2 How to `"Activate Virtual Environment"`:
+    <Absolute Path of activate.bat> 
+    [Note:- activate.bat will be available within newly created "Virtual Environment" for ex. myvenv] <br>
+    ex C:\Satish\AgenticAI\myvenv\Scripts\activate.bat
+
+    [Note:- If you are already in your current directory where you have created myvenv]
     ```
-    $python -m venv myvenv
+    myvenv\Scripts\activate
+    ```
+    ```
+    .\myvenv\Scripts\activate
+    ```
+
+    2.3 How to `"Deactivate Virtual Environment"`:
+    ```
+    deactivate
     ```
 
 Resources
