@@ -58,7 +58,7 @@ Virtual Environment in VS Code
    ```
    $conda activate C:\Satish\AgenticAIPoc\myvenv3.12
    ```
-            OR
+OR
    ```
    $conda activate myvenv3.12\
    ```
@@ -67,7 +67,7 @@ Virtual Environment in VS Code
    ```
    $conda deactivate
    ```
-            OR
+ OR
    ```
    $deactivate
    ```
