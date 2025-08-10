@@ -43,18 +43,21 @@ All Classes
 09 Aug Day - 27 n8n Fundamentals <br>
 10 Aug Day - 28 n8n Advanced <br>
 
-Virtual Environment in **VS Code**
+Virtual Environment in VS Code
 ---
-1. Using Conda:-
-   1.1 How to create "Virtual Environment" by using conda:
+1. Using Conda:-<br>
+   1.1 How to create `"Virtual Environment"` by using conda:
    
-   ```$conda create -p myvenv3.12 python=3.12 -y
+   ```
+        $conda create -p myvenv3.12 python=3.12 -y
    ``` 
-2. Without Using Conda:-
-    2.1 How to create "Virtual Environment":
+2. Without Using Conda:-<br>
+    2.1 How to create `"Virtual Environment"`:
     ```
-    $python -m venv <Virtual Environment Name>
-    
+        $python -m venv <Virtual Environment Name>
+    ```
+
+    ```
     $python -m venv myvenv
     ```
 
