@@ -45,7 +45,6 @@ All Classes
 16 Aug Day - 29 n8n Doubt Session <br>
 17 Aug Day - 30 n8n Project <br>
 
-
 How to create virtual environment in "VS Code"
 ---
 1. Using Conda:-<br>
