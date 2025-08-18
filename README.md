@@ -42,6 +42,9 @@ All Classes
 03 Aug Day - 26 Autogen MCP Project + Ngrok + Notion + Lovable <br>
 09 Aug Day - 27 n8n Fundamentals <br>
 10 Aug Day - 28 n8n Advanced <br>
+16 Aug Day - 29 n8n Doubt Session <br>
+17 Aug Day - 30 n8n Project <br>
+
 
 How to create virtual environment in "VS Code"
 ---
