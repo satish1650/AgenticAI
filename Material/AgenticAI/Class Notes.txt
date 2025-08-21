@@ -195,3 +195,19 @@ https://elevenlabs.io/
 n8n Youtube Video
 https://www.youtube.com/watch?v=DkV7ztrhLh8
 -----------------------------------------------------------------------------------------------------------------------------------------
+16 Aug Day - 29 n8n Doubt Session
+*********************************
+n8n Doubt Session
+-----------------------------------------------------------------------------------------------------------------------------------------
+17 Aug Day - 30 n8n Project (Telegram)
+**************************************
+https://hub.docker.com/r/n8nio/n8n
+
+GitHub -> https://github.com/n8n-io/n8n --> Don't use...It may give issue
+
+Existing Image -> https://hub.docker.com/r/n8nio/n8n -> Use this one...
+
+docker.n8n.io/n8nio/n8n
+
+https://telegram.me/BotFather
+-----------------------------------------------------------------------------------------------------------------------------------------
