@@ -1,0 +1,119 @@
+{
+  "name": "Telegram with AI Model",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -512,
+        -64
+      ],
+      "id": "4ab8f60d-65cc-46b1-ac8b-d0e730a60abb",
+      "name": "Telegram Trigger",
+      "webhookId": "87ff1dba-224d-4a81-bf3d-571a7e3257dc",
+      "credentials": {
+        "telegramApi": {
+          "id": "oZe6ZapEvHEazW4M",
+          "name": "Telegram account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Generate a good reply to the below message in a greeting mannger, You are a bot who helps users with the problems.\n\n{{ $json.message.text }}\n\n\nJust give me a message nothing else."
+            },
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -304,
+        -64
+      ],
+      "id": "e911119b-6296-4dae-8663-9c5f8bfa3980",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "i7mV5QuVJRHdGxGe",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.message.content }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        48,
+        -64
+      ],
+      "id": "e066f8f8-5483-4975-af5c-c31305607f1f",
+      "name": "Send a text message",
+      "webhookId": "a0ff384e-ab52-45ee-8d39-096a5dfd126e",
+      "credentials": {
+        "telegramApi": {
+          "id": "oZe6ZapEvHEazW4M",
+          "name": "Telegram account 3"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3079fefd-7c77-455a-91b0-61e8a725a958",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "94fb78af03d4d8b0516afe9dee3e297ad378608d1afb7790fc0c4a1980a05740"
+  },
+  "id": "BBreEh73boM51yge",
+  "tags": []
+}
