@@ -1,0 +1,264 @@
+{
+  "name": "Personal Assistant with Telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "responseMode": "lastNode"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        16,
+        -96
+      ],
+      "id": "c3947f16-ec01-4c8a-9779-f607444666c5",
+      "name": "When chat message received",
+      "webhookId": "f8ce128c-1039-48c1-a2a0-eb965e6fb441"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.combinedContent }}",
+        "options": {
+          "systemMessage": "You are a helpful assistant who helps in summarizing the information received in a easy to understand manner."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        32
+      ],
+      "id": "4edfd898-cf45-4bd0-9ba3-56ae084d9275",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        640,
+        288
+      ],
+      "id": "bc430562-96f2-4af3-860a-9d2d33d73473",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "RsjYP2jO2NZQOgk8",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        896,
+        304
+      ],
+      "id": "9f38670f-81d7-49d4-b3b2-b9aee153b886",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst combinedContent = items\n  .map((item) => item.json.results.map((result) => result.content))\n  .flat()\n  .join(\" \");\nreturn { combinedContent };\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        592,
+        32
+      ],
+      "id": "6420e572-66d5-46f7-b67d-20c5f3f3f6a7",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        256
+      ],
+      "id": "25ef4e8a-f4f4-43bb-8cdb-9b52227b1202",
+      "name": "Telegram Trigger",
+      "webhookId": "9c2bd95f-38bf-4417-931a-d816c1e8d1a8",
+      "credentials": {
+        "telegramApi": {
+          "id": "UuTLRZX1YYV5kbxp",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Personal Assistant with Telegram",
+        "height": 672,
+        "width": 1360,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -16,
+        -176
+      ],
+      "typeVersion": 1,
+      "id": "57ac8c8f-ef5a-45f4-b1f3-c4c740a76bb3",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "query": "={{ $json.message.text }}",
+        "options": {}
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavily",
+      "typeVersion": 1,
+      "position": [
+        320,
+        32
+      ],
+      "id": "82e4bfad-e2df-422e-a1cf-ead655d19c99",
+      "name": "Search",
+      "credentials": {
+        "tavilyApi": {
+          "id": "OXV1gtssEAUnM3va",
+          "name": "Tavily account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false,
+          "disable_notification": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1152,
+        32
+      ],
+      "id": "b1a67169-1550-4861-86bd-ae146f3e61d7",
+      "name": "Send a text message",
+      "webhookId": "ebc5ceea-3abe-4c67-bc17-cd3325460a7f",
+      "credentials": {
+        "telegramApi": {
+          "id": "UuTLRZX1YYV5kbxp",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "23967ab1-5a58-4b90-bc86-65571b6f4294",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0a187ec218ad12f2ddc4784fb439b159120ba6d8175a56cca3d9c105c810d4b8"
+  },
+  "id": "OGwJ309wZDoCK17X",
+  "tags": []
+}
