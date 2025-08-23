@@ -1,0 +1,266 @@
+{
+  "name": "Personal Assistant with Telegram - Tavily day result",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "responseMode": "lastNode"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        16,
+        -96
+      ],
+      "id": "1958381f-2473-41a0-9c9b-988f548390b2",
+      "name": "When chat message received",
+      "webhookId": "9d7f9f1a-842d-45f9-95b8-fddccda750fb"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.combinedContent }}",
+        "options": {
+          "systemMessage": "You are a helpful assistant who helps in summarizing the information received in a easy to understand manner."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        32
+      ],
+      "id": "2359d467-054e-427d-92eb-b45eef779897",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        640,
+        288
+      ],
+      "id": "30beab50-333f-470b-bfc3-fff5b82db563",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "RsjYP2jO2NZQOgk8",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        896,
+        304
+      ],
+      "id": "f2964ebe-fdab-4d04-824a-22fd1c55c929",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst combinedContent = items\n  .map((item) => item.json.results.map((result) => result.content))\n  .flat()\n  .join(\" \");\nreturn { combinedContent };\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        592,
+        32
+      ],
+      "id": "cf4bc2d4-40e8-4340-9db1-7cbfa1e8df18",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        256
+      ],
+      "id": "b0007ed4-68c4-4dd6-8dd3-15698c415744",
+      "name": "Telegram Trigger",
+      "webhookId": "e40bd751-13cd-4ab3-8f54-7675e5e74d02",
+      "credentials": {
+        "telegramApi": {
+          "id": "UuTLRZX1YYV5kbxp",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Personal Assistant with Telegram",
+        "height": 672,
+        "width": 1360,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -16,
+        -176
+      ],
+      "typeVersion": 1,
+      "id": "0eb03f18-0973-4f99-a8d1-a7c317996dd8",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "query": "={{ $json.message.text }}",
+        "options": {
+          "time_range": "day"
+        }
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavily",
+      "typeVersion": 1,
+      "position": [
+        320,
+        32
+      ],
+      "id": "e4b34926-42ac-4b12-8f68-246a919c6796",
+      "name": "Search",
+      "credentials": {
+        "tavilyApi": {
+          "id": "OXV1gtssEAUnM3va",
+          "name": "Tavily account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false,
+          "disable_notification": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1152,
+        32
+      ],
+      "id": "f87467a2-11c2-45a1-b669-c6d1ea772710",
+      "name": "Send a text message",
+      "webhookId": "10158717-30c9-4f14-ba33-c30858d0458f",
+      "credentials": {
+        "telegramApi": {
+          "id": "UuTLRZX1YYV5kbxp",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e4a0f15f-40f2-446f-8ae4-67cb6779218e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0a187ec218ad12f2ddc4784fb439b159120ba6d8175a56cca3d9c105c810d4b8"
+  },
+  "id": "elZj6UoRr7R0AKgd",
+  "tags": []
+}
