@@ -1,0 +1,224 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "responseMode": "lastNode"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -128,
+        -192
+      ],
+      "id": "4f696435-3b8a-403d-8284-d12b527053f4",
+      "name": "When chat message received",
+      "webhookId": "01c1ae67-8460-4651-ae26-12a6f4c9b201"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -144,
+        64
+      ],
+      "id": "24559308-a543-43c4-bc5d-ae2159e96952",
+      "name": "Telegram Trigger",
+      "webhookId": "34e6563e-5b82-4043-bbde-6576e9650fdc"
+    },
+    {
+      "parameters": {
+        "query": "={{ $json.chatInput }}",
+        "options": {}
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavily",
+      "typeVersion": 1,
+      "position": [
+        320,
+        -80
+      ],
+      "id": "0a05cee7-43b3-4745-bae1-23bbead8ccfd",
+      "name": "Search",
+      "credentials": {
+        "tavilyApi": {
+          "id": "GEXfLIYhPvoeKENJ",
+          "name": "Tavily account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.combined }}",
+        "options": {
+          "systemMessage": "You are a helpful assistant who helps in summarizing the information received in a easy to understand manner  strictly in English."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        944,
+        -80
+      ],
+      "id": "5c635203-8742-4a04-a193-dc29fdf85d47",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        912,
+        160
+      ],
+      "id": "0d8c2e9c-ca46-4a29-9809-7076525d950b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "KmnuAc5d1NPxHjOE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('When chat message received').item.json.sessionId }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1152,
+        160
+      ],
+      "id": "1088480b-6b49-4ec5-b60d-662b8e23ef15",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst combinedResults = items.map((item) => {\n  const results = item?.json?.results;\n  const combined = results\n    .map((result) => `${result.title} ${result.content}`)\n    .join(\" \");\n  return { combined };\n});\nreturn combinedResults;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        528,
+        -80
+      ],
+      "id": "025cb361-96b5-4847-b44d-4acfbcf91178",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        128
+      ],
+      "id": "e1761847-43ca-4fd6-939a-78a082cd010e",
+      "name": "Code1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a60cb16e-9543-4636-b4f5-685c2b9da846",
+  "meta": {
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  },
+  "id": "PiGFSmed0NmI58pw",
+  "tags": []
+}
