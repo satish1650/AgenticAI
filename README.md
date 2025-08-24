@@ -44,6 +44,8 @@ All Classes
 10 Aug Day - 28 n8n Advanced <br>
 16 Aug Day - 29 n8n Doubt Session <br>
 17 Aug Day - 30 n8n Project <br>
+23 Aug Day - 31 n8n Advanced Project <br>
+24 Aug Day - 32 n8n Advanced Project Multi-Agent <br>
 
 How to create virtual environment in "VS Code"
 ---
