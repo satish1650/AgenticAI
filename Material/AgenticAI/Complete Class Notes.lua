@@ -218,3 +218,31 @@ docker.n8n.io/n8nio/n8n
 
 https://telegram.me/BotFather
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+23 Aug Day - 31 n8n Advanced Project
+***********************************
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0/n8n
+
+We are hiring TAs for our organization. the Preferred Skills are – Data Science, LLMOps, and Agentic AI 
+(all three preferred) . Learners will need to fill out the form with their details along with their resume.
+
+Important: We will only contact candidates who have the preferred skills.
+
+Google Form: https://forms.gle/n8fGSWkNSuhbJskFA
+
+const items = $input.all();
+const combinedResults = items.map((item) => {
+  const results = item?.json?.results;
+  const combined = results
+    .map((result) => `${result.title} ${result.content}`)
+    .join(" ");
+  return { combined };
+});
+return combinedResults;
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+24 Aug Day - 32 n8n Advanced Project Multi-Agent
+************************************************
+https://www.educative.io/courses/grokking-the-system-design-interview?utm_campaign=system_design&utm_source=google&utm_medium=ppc&utm_content=search&utm_term=course&eid=5082902844932096&utm_term=grokking%20the%20system%20interview&utm_campaign=%5BNew%5D+System+Design-Search-+Exc+US+CN+IND&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=18181328148&hsa_grp=178751266987&hsa_ad=735444448508&hsa_src=g&hsa_tgt=kwd-903484928147&hsa_kw=grokking%20the%20system%20interview&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=18181328148&gbraid=0AAAAADfWLuQaIBeZ9ZPHDOQ9RFN4VqfRH&gclid=Cj0KCQjwzaXFBhDlARIsAFPv-u_nN4CgDSuhmmUCMNsQqSpFFMUFumy7swehB1qxOEZxKP-iYVWYVdcaArd0EALw_wcB
+
+Agentic 2.0 Batch
+https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
