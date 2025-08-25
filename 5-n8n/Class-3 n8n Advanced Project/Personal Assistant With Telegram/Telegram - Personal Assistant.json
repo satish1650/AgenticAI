@@ -1,0 +1,688 @@
+{
+  "name": "Telegram - Personal Assistant",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -32,
+        432
+      ],
+      "id": "0bd9de6b-bcd8-4d5d-bc01-49efe1b77724",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "RsjYP2jO2NZQOgk8",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        208,
+        432
+      ],
+      "id": "94962ec8-ded3-44b3-a492-cebe9e8ff48e",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -720,
+        -112
+      ],
+      "id": "72cd2cea-7ba2-44e4-8ce6-6cad8779714a",
+      "name": "Telegram Trigger",
+      "webhookId": "276dc7f0-a6b3-4cf8-a052-35ec67ca4453",
+      "credentials": {
+        "telegramApi": {
+          "id": "UuTLRZX1YYV5kbxp",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Telegram - Personal Assistant with Text and Vlice Message",
+        "height": 1040,
+        "width": 2416,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -768,
+        -432
+      ],
+      "typeVersion": 1,
+      "id": "a61efb68-0197-424b-9614-fb33013fba24",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false,
+          "disable_notification": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1344,
+        -256
+      ],
+      "id": "63e29bb3-c590-4f49-8d3b-62ed48a7b9b8",
+      "name": "Send a text message",
+      "webhookId": "0c89b330-0e5c-4e11-9de1-b82264aeeeb4",
+      "credentials": {
+        "telegramApi": {
+          "id": "UuTLRZX1YYV5kbxp",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "satishsjce86@gmail.com",
+          "mode": "list",
+          "cachedResultName": "satishsjce86@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        1088,
+        416
+      ],
+      "id": "70c7d96f-e1f4-41e6-954c-106e10cd47a9",
+      "name": "Create an event in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "QB97FgIC2vW3CduA",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "satishsjce86@gmail.com",
+          "mode": "list",
+          "cachedResultName": "satishsjce86@gmail.com"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        896,
+        432
+      ],
+      "id": "e2d63d97-ea43-40b1-961f-5746f16ad393",
+      "name": "Get many events in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "QB97FgIC2vW3CduA",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "task": "dXF6Y1lYbHQ5ZFpaZkxQVg",
+        "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', ``, 'string') }}",
+        "additionalFields": {
+          "dueDate": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Due_Date', ``, 'string') }}",
+          "status": "needsAction"
+        }
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        720,
+        416
+      ],
+      "id": "f2aea102-fb1d-4c9e-8a05-e8a04d70dfcd",
+      "name": "Create a task in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "PrLKB7MytyqUSrJl",
+          "name": "Google Tasks account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Tools",
+        "height": 240,
+        "width": 880
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        512,
+        352
+      ],
+      "typeVersion": 1,
+      "id": "19338da8-56a8-4a91-a135-8d5f47d04c8f",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "task": "dXF6Y1lYbHQ5ZFpaZkxQVg",
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        1264,
+        416
+      ],
+      "id": "9ae6ffcf-082d-4843-a7ee-fa632eb0aa49",
+      "name": "Get many tasks in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "PrLKB7MytyqUSrJl",
+          "name": "Google Tasks account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Query', ``, 'string') }}",
+        "options": {
+          "time_range": "week"
+        }
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavilyTool",
+      "typeVersion": 1,
+      "position": [
+        560,
+        432
+      ],
+      "id": "30b1d69e-d358-448e-b332-4f45eb924629",
+      "name": "Tavily Tool",
+      "credentials": {
+        "tavilyApi": {
+          "id": "Q2AtcRK1vXqiwgrE",
+          "name": "Tavily account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Telegram Message Trigger",
+        "height": 208,
+        "width": 432,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -752,
+        -160
+      ],
+      "typeVersion": 1,
+      "id": "56e17b0e-b63d-4fc7-b7fd-9a796f87b875",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## AI Model with Simple Memory",
+        "height": 240,
+        "width": 496,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -64,
+        352
+      ],
+      "typeVersion": 1,
+      "id": "83f69754-b02a-450d-bb3c-9b7334a0ccd7",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.voice.file_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "c9ab8b41-c6e3-4db1-baee-ebee6b3aa176"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "9e04679d-ff01-46fb-87b2-7a91f6826c7b",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -464,
+        -112
+      ],
+      "id": "1779f7e8-5663-43a2-a78a-d0ac48db79a2",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -144,
+        -304
+      ],
+      "id": "8b6c1b65-0be3-49f1-837d-d22dea93d497",
+      "name": "Get a file",
+      "webhookId": "15272565-a4dc-47b5-b340-10ec88e40774",
+      "credentials": {
+        "telegramApi": {
+          "id": "UuTLRZX1YYV5kbxp",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        96,
+        -304
+      ],
+      "id": "185a3be0-7242-411f-a02f-1ebe5b3fe711",
+      "name": "Transcribe a recording",
+      "credentials": {
+        "openAiApi": {
+          "id": "RsjYP2jO2NZQOgk8",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c6d2ea91-371d-4d39-a2ad-b030797fccd8",
+              "name": "message",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        -304
+      ],
+      "id": "9b8efe9e-4613-42dd-9750-70c4a68e859d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d3b5103c-e2c4-4ebe-a258-ec4fcd9f4ec7",
+              "name": "message",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        -96
+      ],
+      "id": "52f84599-e0a3-480d-9c2a-04fd69b41824",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "content": "## Set Fields",
+        "height": 400,
+        "width": 368,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        304,
+        -352
+      ],
+      "typeVersion": 1,
+      "id": "b0e61b8d-176c-4466-b560-653f15ac8968",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Voice Message",
+        "height": 224,
+        "width": 512,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -240,
+        -352
+      ],
+      "typeVersion": 1,
+      "id": "441f0695-4317-46ca-aab6-ac32218dc8e6",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## AI Agents",
+        "height": 400,
+        "width": 352,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        736,
+        -336
+      ],
+      "typeVersion": 1,
+      "id": "2ca9af42-54c7-4f0f-914e-ab46968c211e",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "## Send a Voice/Text Message",
+        "height": 400,
+        "width": 336
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1232,
+        -336
+      ],
+      "typeVersion": 1,
+      "id": "db617039-2ede-417c-aea5-790796b11ca1",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message }}",
+        "options": {
+          "systemMessage": "=You are a helpful assistant who can help in below things.\n\n1. Calendar - You can create or get events ( many events as well ) by using the tool provided. Make sure that you give a proper name and description to the event when creating it.\n\n2. Tasks - You can create or get tasks ( many tasks as well ) by using the tool provided. Provide the due date in timestamp/ISO format example 2025-08-23T04:57:29.425Z.  \n\n3. Research Assistant - You will have to determine which query user want to get latest results, call the tavily tool provided and summarize and return the same.\n\n\nYou always call one of the tool when given a request. If there is any other request, please say 'Request Invalid'.\n\nThe date today is {{ $now }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        784,
+        -256
+      ],
+      "id": "09be6914-9bf3-407f-8216-4dcf156b2f1e",
+      "name": "AI Agent1",
+      "retryOnFail": false
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an event in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many events in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a task in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many tasks in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "Transcribe a recording",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe a recording": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "bb750aa3-22e6-4620-91cb-a58d81f3f10d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0a187ec218ad12f2ddc4784fb439b159120ba6d8175a56cca3d9c105c810d4b8"
+  },
+  "id": "zgJd7jfU7AgXTY4C",
+  "tags": []
+}
