@@ -64,7 +64,7 @@
     },
     {
       "parameters": {
-        "content": "# Telegram - Personal Assistant with Text and Vlice Message",
+        "content": "# Telegram - Personal Assistant with Text and Voice Message",
         "height": 1040,
         "width": 2416,
         "color": 3
@@ -678,7 +678,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "bb750aa3-22e6-4620-91cb-a58d81f3f10d",
+  "versionId": "90f947e6-0e45-423b-8211-29b95829611f",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "0a187ec218ad12f2ddc4784fb439b159120ba6d8175a56cca3d9c105c810d4b8"
