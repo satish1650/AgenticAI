@@ -77,7 +77,8 @@
         2144
       ],
       "id": "675a783c-73b4-491c-aea1-af6eda95ff02",
-      "name": "Evaluater Agent"
+      "name": "Evaluater Agent",
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -118,23 +119,6 @@
           "name": "Telegram account"
         }
       }
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "={{ $('First Draft Agent').item.json.output }}",
-        "options": {
-          "systemMessage": "=You are a helpful assistant. Correct anything wrong in the output.\n"
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 2.2,
-      "position": [
-        2032,
-        2400
-      ],
-      "id": "834b40b7-d5ad-41f5-87ad-bba37b3ba44d",
-      "name": "First Draft Agent1"
     },
     {
       "parameters": {
@@ -314,6 +298,36 @@
       "typeVersion": 1,
       "id": "ff42294d-4d22-4fab-b5aa-65a294e81533",
       "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('First Draft Agent').item.json.output }}",
+        "options": {
+          "systemMessage": "=You are a helpful assistant. Correct anything wrong in the output.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2032,
+        2400
+      ],
+      "id": "834b40b7-d5ad-41f5-87ad-bba37b3ba44d",
+      "name": "Subsequent Draft Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        1904,
+        2608
+      ],
+      "id": "832f5533-3319-4fc5-9b30-94c092582324",
+      "name": "Ollama Chat Model"
     }
   ],
   "pinData": {},
@@ -339,11 +353,6 @@
           },
           {
             "node": "Evaluater Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          },
-          {
-            "node": "First Draft Agent1",
             "type": "ai_languageModel",
             "index": 0
           }
@@ -383,17 +392,6 @@
         ]
       ]
     },
-    "First Draft Agent1": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Edit Fields": {
       "main": [
         [
@@ -420,7 +418,7 @@
       "main": [
         [
           {
-            "node": "First Draft Agent1",
+            "node": "Subsequent Draft Agent",
             "type": "main",
             "index": 0
           }
@@ -428,13 +426,35 @@
         [],
         []
       ]
+    },
+    "Subsequent Draft Agent": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Subsequent Draft Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "b87167d5-dade-41e8-904e-e17aed928db4",
+  "versionId": "b5e0296d-7f56-4f8a-83e3-a482cc51618a",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
