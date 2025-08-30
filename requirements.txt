@@ -26,3 +26,4 @@ yfinance
 langchain_experimental
 matplotlib
 grandalf
+streamlit
