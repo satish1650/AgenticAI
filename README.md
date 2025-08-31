@@ -47,7 +47,7 @@ All Classes
 23 Aug Day - 31 n8n Advanced Project <br>
 24 Aug Day - 32 n8n Advanced Project Multi-Agent <br>
 30 Aug Day - 33 n8n Multi-Agents + RAG + MCP + n8n Local Setup <br>
-31 Aug Day - 34 n8n E2E Projects <br>
+31 Aug Day - 34 n8n E2E Projects + n8n Local Setup + RAG + MCP + Nano-Banana App <br>
 
 How to create virtual environment in "VS Code"
 ---
