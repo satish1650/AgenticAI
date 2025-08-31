@@ -74,7 +74,13 @@
       "position": [
         2496,
         1808
-      ]
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "YkLDlbBWJ1Wrmh33",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
     },
     {
       "parameters": {
@@ -222,7 +228,13 @@
         816
       ],
       "notesInFlow": true,
-      "webhookId": "730959e6-936a-45de-a5ef-943fa07dd1c1"
+      "webhookId": "730959e6-936a-45de-a5ef-943fa07dd1c1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "qHJYnRk6NMdwfH53",
+          "name": "Gmail account"
+        }
+      }
     },
     {
       "parameters": {
@@ -533,7 +545,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "398212b2-f6b0-42f2-962b-daa4a037bbe6",
+  "versionId": "125ad172-38e3-4bc2-b037-186bb12ff8a7",
   "meta": {
     "instanceId": "0a187ec218ad12f2ddc4784fb439b159120ba6d8175a56cca3d9c105c810d4b8"
   },
