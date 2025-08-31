@@ -1,0 +1,710 @@
+{
+  "name": "Automation to Agents",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        -256
+      ],
+      "id": "0fae1ad1-b0ca-4912-abfa-3ef70b6f1be7",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        512,
+        -256
+      ],
+      "id": "a7de2102-a28e-475c-bf9b-e76b301472dc",
+      "name": "Get a message",
+      "webhookId": "d30cd6cc-bbb5-4368-aec5-d67fe377561b"
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1072,
+        -256
+      ],
+      "id": "ceec3bd7-1581-4812-a4f9-b5f3cb9bdbc6",
+      "name": "Reply to a message",
+      "webhookId": "e1cd5fc4-4bc2-4da1-bf43-00d8a6e891c7"
+    },
+    {
+      "parameters": {
+        "content": "## Automation\n",
+        "height": 320,
+        "width": 1440
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -128,
+        -336
+      ],
+      "typeVersion": 1,
+      "id": "d97a762c-c6f4-4b23-994a-b5525d610fd4",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "messages": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        640,
+        96
+      ],
+      "id": "f006f93b-a4f6-4fd9-80f0-cfeb081a6422",
+      "name": "Message a model"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -96,
+        96
+      ],
+      "id": "5dbc51c2-2de2-429a-ba42-e6aa6212ed18",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        272,
+        96
+      ],
+      "id": "250ede05-8c4c-4319-9c54-dd26a32b55d1",
+      "name": "Get a message1",
+      "webhookId": "d30cd6cc-bbb5-4368-aec5-d67fe377561b"
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1120,
+        96
+      ],
+      "id": "56b0ed90-f2ac-4538-810b-b38732ef467f",
+      "name": "Reply to a message1",
+      "webhookId": "e1cd5fc4-4bc2-4da1-bf43-00d8a6e891c7"
+    },
+    {
+      "parameters": {
+        "content": "## AI Automation\n",
+        "height": 272,
+        "width": 1440,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -128,
+        32
+      ],
+      "typeVersion": 1,
+      "id": "94ba692b-6b26-456b-9a81-102090f72970",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        96,
+        464
+      ],
+      "id": "3d08bbb6-c125-4f71-a742-007f64cc5a7a",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "content": "## Agentic AI Automation\n",
+        "height": 672,
+        "width": 1440,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -128,
+        368
+      ],
+      "typeVersion": 1,
+      "id": "ed983d67-d354-4603-b34e-f4b3808a4527",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        496,
+        464
+      ],
+      "id": "6f8509e6-1624-496f-9b11-ede76cdd2612",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -64,
+        816
+      ],
+      "id": "7f275c7d-1380-4229-824a-355705e1e178",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        832
+      ],
+      "id": "c764eda8-ef4c-4bc7-9d62-6a610accac11",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        848,
+        832
+      ],
+      "id": "bb3946c1-929c-4c11-9fec-872f55e29fb3",
+      "name": "Send a message in Gmail",
+      "webhookId": "f44f055c-73f5-4249-8302-e333f817be36"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        640,
+        832
+      ],
+      "id": "68190006-ad00-4d8f-9ab7-4a0fed7fed51",
+      "name": "Get a message in Gmail",
+      "webhookId": "9c04f504-166b-406e-b454-85a8687f7a9f"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -48,
+        1168
+      ],
+      "id": "d0127e4f-26a2-489a-863f-e2288cdde21a",
+      "name": "Schedule Trigger2"
+    },
+    {
+      "parameters": {
+        "content": "## Multi Agent System\n",
+        "height": 672,
+        "width": 1040,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        1088
+      ],
+      "typeVersion": 1,
+      "id": "735f54c3-2537-4390-b7cf-80c4f1562f0f",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        352,
+        1168
+      ],
+      "id": "047b5ebe-2604-4b93-a0a3-9a2a126953f7",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -64,
+        1520
+      ],
+      "id": "3f9113f0-430a-42b0-8b08-4f70994ef540",
+      "name": "OpenAI Chat Model1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        144,
+        1520
+      ],
+      "id": "2ff3a887-c138-4a4f-80e2-658406a4fdf1",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        608,
+        1504
+      ],
+      "id": "8e2bfefc-b054-4756-b395-ced7c92e020a",
+      "name": "Send a message in Gmail1",
+      "webhookId": "f44f055c-73f5-4249-8302-e333f817be36"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        368,
+        1504
+      ],
+      "id": "320c4843-fc25-4476-b735-9e836e8ba933",
+      "name": "Get a message in Gmail1",
+      "webhookId": "9c04f504-166b-406e-b454-85a8687f7a9f"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1008,
+        1168
+      ],
+      "id": "66c32c21-08fc-4317-a47d-321fdb27a75a",
+      "name": "AI Agent3"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        1168,
+        1424
+      ],
+      "id": "c359d094-5a08-44a1-9913-ee01bf5a5f51",
+      "name": "Anthropic Chat Model1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        1008,
+        1584
+      ],
+      "id": "11966b29-0ee4-456a-950d-c1eee0f25408",
+      "name": "AI Agent Tool1"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 672,
+        "width": 384,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        944,
+        1088
+      ],
+      "typeVersion": 1,
+      "id": "82a8b7f4-f0a2-41bc-9790-073901dcccd5",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavilyTool",
+      "typeVersion": 1,
+      "position": [
+        432,
+        832
+      ],
+      "id": "f1f4aba0-cb30-4644-90e7-fc2f8334a98b",
+      "name": "Search in Tavily",
+      "credentials": {
+        "tavilyApi": {
+          "id": "Q2AtcRK1vXqiwgrE",
+          "name": "Tavily account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        848
+      ],
+      "id": "2d33d01d-9ad2-4481-87dd-3e13a5b24588",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleTasksTool",
+      "typeVersion": 1,
+      "position": [
+        1024,
+        832
+      ],
+      "id": "013b1dfb-ac3b-477a-85ed-7bdc0449dead",
+      "name": "Create a task in Google Tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "PrLKB7MytyqUSrJl",
+          "name": "Google Tasks account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Tools",
+        "height": 224,
+        "width": 928,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        368,
+        768
+      ],
+      "typeVersion": 1,
+      "id": "1af0fd23-6911-4b3d-ba23-1e83db002eb7",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message": {
+      "main": [
+        [
+          {
+            "node": "Reply to a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message1": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Reply to a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message in Gmail1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message in Gmail1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search in Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a task in Google Tasks": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "466442fd-df44-42d9-b394-ee94d064558e",
+  "meta": {
+    "instanceId": "0a187ec218ad12f2ddc4784fb439b159120ba6d8175a56cca3d9c105c810d4b8"
+  },
+  "id": "4DMDTbzilhIPWtG5",
+  "tags": []
+}
