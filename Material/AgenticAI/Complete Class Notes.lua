@@ -246,3 +246,29 @@ https://www.educative.io/courses/grokking-the-system-design-interview?utm_campai
 Agentic 2.0 Batch
 https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+30 Aug Day - 33 n8n Multi-Agents + RAG + MCP + n8n Local Setup
+**************************************************************
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0/n8n/29-30th%20Aug
+
+--GitHub Video Automation by using n8n
+https://www.youtube.com/watch?v=AnOETYkdQEs
+
+https://supabase.com/docs/guides/ai/langchain?database-method=sql
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+31 Aug Day - 34 n8n E2E Projects + n8n Local Setup + RAG/MCP + Nano-Banana App
+******************************************************************************
+https://github.com/n8n-io/self-hosted-ai-starter-kit
+
+Craft Link:
+https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
+
+Nano-Banana Youtube Video
+https://youtu.be/9G3E7ceoOv0
+
+https://aistudio.google.com/apikey
+
+https://kie.ai/logs
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+06 Sep Day - 35 ADK - Basics Introduction
+*****************************************
