@@ -1,0 +1,542 @@
+{
+  "name": "6. Planner → Executor",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f9245a73-5946-4a6b-92f9-7ae2a2c1170c",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        1072
+      ],
+      "notesInFlow": true,
+      "notes": "Start here for the demo run."
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "goal",
+              "value": "Help me launch a product on Product Hunt next week."
+            },
+            {
+              "name": "product_name",
+              "value": "LaunchPilot"
+            },
+            {
+              "name": "product_one_liner",
+              "value": "AI assistant that plans your launches end‑to‑end."
+            },
+            {
+              "name": "target_audience",
+              "value": "startup founders & PMs"
+            },
+            {
+              "name": "brand_voice",
+              "value": "concise, friendly, credible"
+            },
+            {
+              "name": "deadline",
+              "value": "2025-08-31"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "694f768c-8c3c-4f40-a0be-6f6182ed212f",
+      "name": "Set: Goal & Context",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        1072
+      ],
+      "notesInFlow": true,
+      "notes": "Adjust these to fit your scenario."
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "92dbb770-8e79-4712-860b-c8c0430b197a",
+      "name": "OpenAI (Chat Model)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2496,
+        1808
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Goal: {{$('Set: Goal & Context').item.json.goal}}\nDeadline: {{$('Set: Goal & Context').item.json.deadline}}\nProduct: {{$('Set: Goal & Context').item.json.product_name}} — {{$('Set: Goal & Context').item.json.product_one_liner}}\nAudience: {{$('Set: Goal & Context').item.json.target_audience}}\nVoice: {{$('Set: Goal & Context').item.json.brand_voice}}\n\nReturn ONLY JSON (no markdown, no prose) as an array of tasks.\nEach task object must be: {\"title\": string, \"type\": one of [\"description\",\"email\",\"social\",\"reminder\"], \"notes\": string}.\n4–6 tasks total, minimal but complete for a Product Hunt launch.",
+        "options": {
+          "systemMessage": "=You are a Planner agent. Think step‑by‑step, then output a compact JSON task list. No explanations."
+        }
+      },
+      "id": "5a506526-ae5d-4210-b0ed-3a8001bc0026",
+      "name": "Planner (LLM)",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1664,
+        1072
+      ],
+      "notesInFlow": true,
+      "notes": "Planner agent emits a strict JSON task array."
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst tasks = items[0]?.json?.output\n  .replace(/[\\[\\]]/g, \"\")\n  .split(\"\\n\")\n  .filter(Boolean);\nreturn { tasks };\n"
+      },
+      "id": "1d6093bb-5a73-411f-9afd-8376914ce341",
+      "name": "Parse Plan (Code)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1968,
+        1072
+      ],
+      "notesInFlow": true,
+      "notes": "Explodes the task list into one item per task."
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Task: {{$json.title}}\nNotes: {{$json.notes}}\nProduct: {{$('Set: Goal & Context').item.json.product_name}}\nOne‑liner: {{$('Set: Goal & Context').item.json.product_one_liner}}\nAudience: {{$('Set: Goal & Context').item.json.target_audience}}\nVoice: {{$('Set: Goal & Context').item.json.brand_voice}}\n\nWrite a Product Hunt‑ready description.\nSections:\n- Headline (≤80 chars)\n- 2–3 bullets (value props)\n- Short body (90–120 words)\nReturn clean Markdown.",
+        "options": {
+          "systemMessage": "=You are a Launch Copy agent. Prefer concise, compelling copy. If Docs tool is connected, you may push the result."
+        }
+      },
+      "id": "89b399c5-b068-4fc9-81b5-7ca3b15bd5c7",
+      "name": "Description Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        2560,
+        352
+      ],
+      "notesInFlow": true,
+      "notes": "Agentic executor for descriptions."
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Task: {{$json.title}}\nNotes: {{$json.notes}}\nAudience: {{$('Set: Goal & Context').item.json.target_audience}}\nVoice: {{$('Set: Goal & Context').item.json.brand_voice}}\nProduct: {{$('Set: Goal & Context').item.json.product_name}}\nDeadline: {{$('Set: Goal & Context').item.json.deadline}}\n\nDraft a concise internal launch email with a checklist and owners. End with a clear CTA.\nOutput plain text and, if the Gmail Draft tool is connected, create a draft.",
+        "options": {
+          "systemMessage": "=You are a Launch Comms agent. Keep it crisp; assign owners clearly."
+        }
+      },
+      "id": "c0c2113e-7a29-4050-9fac-60990b21b1e2",
+      "name": "Email Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        2560,
+        656
+      ],
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Task: {{$json.title}}\nNotes: {{$json.notes}}\nProduct: {{$('Set: Goal & Context').item.json.product_name}}\nOne‑liner: {{$('Set: Goal & Context').item.json.product_one_liner}}\nVoice: {{$('Set: Goal & Context').item.json.brand_voice}}\nDeadline: {{$('Set: Goal & Context').item.json.deadline}}\n\nReturn JSON {\"posts\":[{\"platform\":\"x|linkedin\",\"text\":string}...]}\n- 3 posts for X, 3 for LinkedIn\n- Mention launch date, max 2 hashtags",
+        "options": {
+          "systemMessage": "=You are a Social Copy agent. Output valid JSON."
+        }
+      },
+      "id": "88e6f0b1-ac07-4a1e-92e0-df4a7f83d02e",
+      "name": "Social Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        2944,
+        1696
+      ],
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Summarize a short reminder for the team about the launch on {{$('Set: Goal & Context').item.json.deadline}}.\nOutput a single sentence. If Telegram tool is available, send it.",
+        "options": {
+          "systemMessage": "=You are a brief escalation/reminder agent."
+        }
+      },
+      "id": "22512d7c-98fe-4eed-a0b3-237a39b6bbc1",
+      "name": "High‑Priority Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        2608,
+        1024
+      ],
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $fromAI(\"output\") }}"
+            }
+          ]
+        }
+      },
+      "id": "c5e86956-89f2-496c-a685-d32c0bcce8b8",
+      "name": "Google Docs (Push)",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        2928,
+        352
+      ],
+      "notesInFlow": true,
+      "notes": "Optional: push description markdown to a Doc."
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "=Product Hunt Launch — {{$('Set: Goal & Context').item.json.product_name}}",
+        "message": "={{ $fromAI(\"output\") }}",
+        "options": {}
+      },
+      "id": "edd2da16-bb20-45b8-8748-f22a7948b7a9",
+      "name": "Gmail Draft",
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        2720,
+        816
+      ],
+      "notesInFlow": true,
+      "webhookId": "730959e6-936a-45de-a5ef-943fa07dd1c1"
+    },
+    {
+      "parameters": {
+        "text": "=Launch reminder: {{ $fromAI(\"output\") }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "6fb74b4b-2de5-4e2b-9469-6d50d6898724",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegramTool",
+      "typeVersion": 1.2,
+      "position": [
+        2816,
+        1168
+      ],
+      "notesInFlow": true,
+      "webhookId": "60a94d57-14ca-4f53-bb2f-69f4393c0744"
+    },
+    {
+      "parameters": {
+        "language": "JavaScript"
+      },
+      "id": "7e3d43a7-1654-4afb-ac1c-1f32d5d7652b",
+      "name": "Shape Social Output (Code)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3376,
+        1712
+      ],
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "language": "JavaScript"
+      },
+      "id": "890df594-4e37-432c-99d7-c0475ba81fc2",
+      "name": "Shape Description Output (Code)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3168,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "language": "JavaScript"
+      },
+      "id": "d47ac857-8750-438e-aa8d-bfd40fb7bc4b",
+      "name": "Shape Email Output (Code)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2928,
+        672
+      ]
+    },
+    {
+      "parameters": {
+        "language": "JavaScript"
+      },
+      "id": "2bc25035-0ec2-409b-8b03-944e64297770",
+      "name": "Shape Reminder Output (Code)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3008,
+        1024
+      ]
+    },
+    {
+      "parameters": {
+        "language": "JavaScript"
+      },
+      "id": "e81e7ac5-219f-4ded-9277-311a3ef374e5",
+      "name": "Accumulate Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3328,
+        1200
+      ],
+      "notesInFlow": true,
+      "notes": "Store each agent output in loop context."
+    },
+    {
+      "parameters": {
+        "language": "JavaScript"
+      },
+      "id": "f2b570bb-4837-4492-8776-ff0e73d56104",
+      "name": "Build Report (Markdown)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2736,
+        1456
+      ],
+      "notesInFlow": true,
+      "notes": "Final combined output."
+    },
+    {
+      "parameters": {
+        "content": "## 🧠 Planner → Executor Agent Architecture\n\nThis workflow introduces a dynamic multi-agent pattern where a **Planner Agent** breaks down a high-level instruction into actionable subtasks, and **Executor Agents** handle each one individually.\n\nUnlike static workflows, this architecture **adapts to the user's request in real time**, assembling its execution path based on the planner’s output.\n\n---\n\n### 🧭 How It Works\n\n1. **Planner Agent**:\n   - Receives a user goal like “Plan a product launch campaign”\n   - Breaks it into 3 specific subtasks\n   - Outputs them in JSON format\n\n2. **Function Node (Parse Tasks)**:\n   - Converts the JSON array into individual n8n items\n\n3. **Split In Batches**:\n   - Iterates through each subtask one at a time\n\n4. **Executor Agent**:\n   - Receives one subtask\n   - Expands it into a detailed, completed action or plan\n\n---\n\n### 🧠 Intuition Behind It\n\nThink of this like a project manager (Planner) assigning jobs to team members (Executors):\n\n> \"Here's the big goal. Let me break it down into tasks — and assign each one to the right person to complete it.\"\n\nThis design simulates **real-life delegation and autonomy**, creating agents that **think before they act**.\n\n---\n\n### 🧩 Why Use This Architecture?\n\n- ✅ Ideal for **goal-based automations**\n- ✅ Dynamically adjusts to **different types of instructions**\n- ✅ Great foundation for **AutoGPT-style systems**\n- ✅ Enables **multi-task execution** without hardcoding steps\n- ✅ Can be extended with memory, retries, and sub-agent branching\n\n---\n\nAdd this pattern to your AI toolkit when you need **flexibility, adaptability, and real \nplanning intelligence** in your automations.\n\n---\n\n### 🔗 Connect with Me\n\nWant to learn how to build planner-executor workflows in n8n using LLMs and dynamic task execution?\n\n📺 **YouTube** → [@tech.mayankagg](https://www.youtube.com/@tech.mayankagg)  \n💼 **LinkedIn** → [Mayank Agarwal](https://www.linkedin.com/in/mayank953/)  \n📸 **Instagram** → [@tech.mayankagg](https://www.instagram.com/tech.mayankagg/)\n\n---\n\n*Shared by Mayank Agarwal – Teaching AI workflows that actually scale.*\n",
+        "height": 1600,
+        "width": 2160
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2384,
+        144
+      ],
+      "typeVersion": 1,
+      "id": "98da9b90-fb68-4af1-95a6-a24f9b325dbe",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set: Goal & Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set: Goal & Context": {
+      "main": [
+        [
+          {
+            "node": "Planner (LLM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI (Chat Model)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Planner (LLM)",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Description Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Email Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Social Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "High‑Priority Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Planner (LLM)": {
+      "main": [
+        [
+          {
+            "node": "Parse Plan (Code)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Description Agent": {
+      "main": [
+        [
+          {
+            "node": "Google Docs (Push)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs (Push)": {
+      "main": [
+        [
+          {
+            "node": "Shape Description Output (Code)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Agent": {
+      "main": [
+        [
+          {
+            "node": "Shape Email Output (Code)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Social Agent": {
+      "main": [
+        [
+          {
+            "node": "Shape Social Output (Code)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "High‑Priority Agent": {
+      "main": [
+        [
+          {
+            "node": "Shape Reminder Output (Code)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shape Description Output (Code)": {
+      "main": [
+        [
+          {
+            "node": "Accumulate Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shape Email Output (Code)": {
+      "main": [
+        [
+          {
+            "node": "Accumulate Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shape Social Output (Code)": {
+      "main": [
+        [
+          {
+            "node": "Accumulate Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shape Reminder Output (Code)": {
+      "main": [
+        [
+          {
+            "node": "Accumulate Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Draft": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram": {
+      "ai_tool": [
+        [
+          {
+            "node": "High‑Priority Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "398212b2-f6b0-42f2-962b-daa4a037bbe6",
+  "meta": {
+    "instanceId": "0a187ec218ad12f2ddc4784fb439b159120ba6d8175a56cca3d9c105c810d4b8"
+  },
+  "id": "ZvxuoWIAvLmBhnpo",
+  "tags": []
+}
