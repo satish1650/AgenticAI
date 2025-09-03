@@ -1,0 +1,559 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## MayankAI - AI Personal Assistant\n\n**Owner:** Mayank Aggarwal  \n**Channel:** Telegram bot  \n**Purpose:** Natural-language assistant that can email, check/create calendar events, and use a Contacts sheet.\n\n**Happy Path**\n1) User speaks/types in Telegram  \n2) (If voice) Download + Transcribe  \n3) Agent decides tools → Contacts (Sheets), Gmail, Calendar  \n4) Actions executed; summary sent to Telegram\n\n**Defaults**\n- Event length: 60 min if endTime missing  \n- Time zone: Use ISO with explicit TZ\n\n**Contact**\nYT: https://www.youtube.com/@tech.mayankagg  \nLinkedIn: https://www.linkedin.com/in/mayank953/  \nInstagram: https://www.instagram.com/tech.mayankagg/\n",
+        "height": 560,
+        "width": 992
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        -624
+      ],
+      "typeVersion": 1,
+      "id": "e4453038-7f68-4f5f-87b7-775489134425",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "53deaf9e-18bf-4be2-b226-77c9f15b6eb0",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -848,
+        288
+      ],
+      "webhookId": "8cfabe00-9a45-46e3-81c1-9d92bf033816",
+      "credentials": {
+        "telegramApi": {
+          "id": "nZKz8c2vKmLeOcas",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.voice.file_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "c5a5169b-5961-4716-ae6c-61809ad5261c"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "48c9a32b-6e35-4e28-b4f6-00babb872735"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2ab4c3be-a33b-4280-bb2d-3d00265bac7f",
+      "name": "Switch Input (Voice/Text)",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -496,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}",
+        "additionalFields": {}
+      },
+      "id": "b6a7bd3d-5191-4430-9f95-3a56b5b40bdb",
+      "name": "Download Voice File",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -176,
+        128
+      ],
+      "webhookId": "00608989-09dc-4e98-a9db-fb3d8e86d072",
+      "credentials": {
+        "telegramApi": {
+          "id": "nZKz8c2vKmLeOcas",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "2acd4c7f-a356-4bfb-888b-45d0ea2e0820",
+      "name": "Transcribe Audio",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        80,
+        128
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "hcXkQxBP047vQ4Ma",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "text",
+              "type": "string",
+              "value": "={{ $json.message.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e534748d-1d6d-4568-be62-477fc840511a",
+      "name": "Set 'text'",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -176,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {}
+      },
+      "id": "9934af86-025f-4ac5-854d-af6c31ed4767",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        128,
+        640
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "KmnuAc5d1NPxHjOE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "id": "6ffb0195-8249-4eac-9218-0bce9ce22a10",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2,
+      "position": [
+        288,
+        704
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text || $json.text_raw }}",
+        "options": {
+          "systemMessage": "=### 👤 **Role**\n\nYou are **Mayank’s personal assistant on Telegram**.\nYou can:\n\n* Send emails\n* Read incoming Gmail\n* Send Gmail replies\n* Create and check Google Calendar events\n* Look up contacts in Google Sheets\n\nAlways **use tools** (like Contacts or Gmail) instead of guessing or making assumptions.\n\nYou also have tavily tool to search the net for any such query\n\n---\n\n### 📅 **Current Date and Time**\n\nUse: `{{ $now }}` (This gets dynamically replaced with the current datetime)\n\n---\n\n### 🛠️ **Tools You Can Use**\n\n1. **Contacts (Google Sheets)**\n   → Find someone's email address by their name.\n\n2. **Gmail Send**\n   Fields required:\n\nMake sure that the body is in html format.\n\n   * `emailAddress`\n   * `subject`\n   * `emailBody`\n   * *Always sign emails as:* `Mayank Aggarwal`\n   * *No placeholders—always send complete, real content.*\n\nManager : mayank@evolvue.ai\n\n\n3. **Gmail Get**\n   Fields required:\n\n   * `limit` (number of emails to fetch)\n   * `senderEmail` (filter emails from a specific sender)\n\n4. **Calendar Create**\n   Fields required:\n\n   * `startTime` (in ISO format with timezone)\n   * `endTime` (default = 60 mins if not given)\n   * `eventTitle`\n   * `attendee` (optional)\n\n5. **Calendar Get**\n   Fields required:\n\n   * `date` or `day`\n   * Returns a **concise list** of events\n\n---\n\n### 🧠 **Behavior Guidelines**\n\n* When asked to **create a meeting**:\n\n  1. Look up the **person’s email in Contacts first**.\n  2. If email is found, add them as an attendee and **send a confirmation email**.\n\n* Use **ISO 8601 datetime** format with timezone.\n  Example: `2025-08-27T12:00:00+05:30`\n\n* For natural language inputs like “tomorrow at noon”, **resolve the actual date/time**.\n\n* Default meeting duration = **60 minutes** (unless specified otherwise).\n\n* In Telegram, always **summarize what you did**, including:\n\n  * What action you performed\n  * Key details (time, people involved, etc.)\n\n* If you're missing something important (like a person’s email), ask a **short follow-up message** in Telegram.\n\n---\n\n### 🔄 **Output to Tools**\n\nUse `$fromAI` keys for interacting with tools, such as:\n\n* `$fromAI.emailAddress`, `$fromAI.subject`, `$fromAI.emailBody`, etc.\n\n---\n\nLet me know if you want this formatted as a PDF or Markdown file for easier reference!\n"
+        }
+      },
+      "id": "4a28a6fc-0ac5-42be-82c6-d9bc8bcc1d10",
+      "name": "Personal Assistant Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        480,
+        272
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "a19f9148-1151-4d43-9367-bb1361b3a767",
+      "name": "Send Telegram Response",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1280,
+        368
+      ],
+      "webhookId": "526705a0-9f94-4861-91e1-d9dcf6ee2837",
+      "credentials": {
+        "telegramApi": {
+          "id": "nZKz8c2vKmLeOcas",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        976,
+        624
+      ],
+      "id": "a2510628-a47c-46cf-982c-38f300b71710",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "mayank@evolvue.ai",
+          "mode": "list",
+          "cachedResultName": "mayank@evolvue.ai"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "description": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Description', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        592,
+        912
+      ],
+      "id": "6dd96ba3-f793-42f7-97b8-63a4c67d4227",
+      "name": "Create an event in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "OypL3gKQZh8oqcCR",
+          "name": "Google Calendar account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Calendar', ``, 'string') }}",
+          "mode": "id",
+          "__regex": "(^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*)"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "updateFields": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        464,
+        896
+      ],
+      "id": "6f3768af-4995-470e-a9f0-43526d0b0d30",
+      "name": "Update an event in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "OypL3gKQZh8oqcCR",
+          "name": "Google Calendar account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "mayank@evolvue.ai",
+          "mode": "list",
+          "cachedResultName": "mayank@evolvue.ai"
+        },
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', ``, 'string') }}",
+        "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        720,
+        880
+      ],
+      "id": "08b4bb2e-23df-4a5d-9253-b51caad3dbba",
+      "name": "Get many events in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "OypL3gKQZh8oqcCR",
+          "name": "Google Calendar account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Query', ``, 'string') }}",
+        "options": {
+          "time_range": "day"
+        }
+      },
+      "type": "@tavily/n8n-nodes-tavily.tavilyTool",
+      "typeVersion": 1,
+      "position": [
+        928,
+        880
+      ],
+      "id": "22fcedff-41b7-49df-9394-a142efd3ea25",
+      "name": "Search in Tavily",
+      "credentials": {
+        "tavilyApi": {
+          "id": "GEXfLIYhPvoeKENJ",
+          "name": "Tavily account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "mayank@evolvue.ai",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        352,
+        864
+      ],
+      "id": "9e4d12a4-4593-4565-81c7-f250880b9be5",
+      "name": "Send a message in Gmail",
+      "webhookId": "57af7629-1bc1-4e73-b6eb-862343b6cba4",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "XqMnezEDSeRroJQz",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch Input (Voice/Text)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch Input (Voice/Text)": {
+      "main": [
+        [
+          {
+            "node": "Download Voice File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set 'text'",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Voice File": {
+      "main": [
+        [
+          {
+            "node": "Transcribe Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe Audio": {
+      "main": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set 'text'": {
+      "main": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Personal Assistant Agent": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an event in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update an event in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many events in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search in Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "Personal Assistant Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  }
+}

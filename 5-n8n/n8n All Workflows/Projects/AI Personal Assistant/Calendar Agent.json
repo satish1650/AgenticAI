@@ -1,0 +1,228 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "4de8ea41-bcac-4b0d-93c8-92430c3003dc",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        -336,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ecc825e4-9074-4327-a236-6e77a8eed2c8",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        -192,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.query }}",
+        "options": {
+          "systemMessage": "=# Role\\nYou are a calendar operations agent. Current datetime: {{ $now }}. You can create events (with or without attendees) and fetch events for a given day.\\n\\n# Tools\\n- **Create Event**: fields: startTime, endTime, eventTitle. If endTime missing, assume 60 minutes.\\n- **Create Event with Attendee**: fields: startTime, endTime?, eventTitle, attendee (email). If endTime missing, assume 60 minutes.\\n- **Get Events**: fields: day (any natural date). Use a 1-day window around the requested date to be forgiving; summarize clearly.\\n\\n# Rules\\n- Resolve relative times (e.g., 'tomorrow 3pm') to ISO with timezone.\\n- Prefer the attendee variant if an attendee email is provided.\\n- After taking action, produce a short, friendly summary.\\n\\n# Output Contract\\nReturn human-readable text in $json.output for the caller to forward. Use $fromAI keys: startTime, endTime, eventTitle, attendee, day, oneDayBefore, oneDayAfter."
+        }
+      },
+      "id": "20fb1f63-a0ef-4e28-bf40-8b76da3aad41",
+      "name": "Calendar Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -32,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "<YOUR_CALENDAR_EMAIL_OR_ID>",
+          "mode": "list",
+          "cachedResultName": "<YOUR_CALENDAR_EMAIL_OR_ID>"
+        },
+        "start": "={{ $fromAI(\"startTime\") }}",
+        "end": "={{ $fromAI(\"endTime\") }}",
+        "additionalFields": {
+          "summary": "={{ $fromAI(\"eventTitle\") }}"
+        }
+      },
+      "id": "e783737d-d69f-4ec6-9397-b0949cc44710",
+      "name": "Create Event",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.2,
+      "position": [
+        48,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "<YOUR_CALENDAR_EMAIL_OR_ID>",
+          "mode": "list",
+          "cachedResultName": "<YOUR_CALENDAR_EMAIL_OR_ID>"
+        },
+        "start": "={{ $fromAI(\"startTime\") }}",
+        "end": "={{ $fromAI(\"endTime\") }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ $fromAI(\"attendee\") }}"
+          ],
+          "summary": "={{ $fromAI(\"eventTitle\") }}"
+        }
+      },
+      "id": "fd23f8a5-7973-4c2d-b99c-adf41ef8f7e5",
+      "name": "Create Event with Attendee",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.2,
+      "position": [
+        160,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "<YOUR_CALENDAR_EMAIL_OR_ID>",
+          "mode": "list",
+          "cachedResultName": "<YOUR_CALENDAR_EMAIL_OR_ID>"
+        },
+        "returnAll": true,
+        "options": {
+          "timeMin": "={{ $fromAI(\"oneDayBefore\", \"one day before the date the user requested\") }}",
+          "timeMax": "={{ $fromAI(\"oneDayAfter\", \"one day after the date the user requested\") }}"
+        }
+      },
+      "id": "43a78775-0aa9-4c11-9b38-042f0b3e8ace",
+      "name": "Get Events",
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.2,
+      "position": [
+        336,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "r1",
+              "name": "response",
+              "type": "string",
+              "value": "={{ $json.output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ff90fed1-3934-489f-ab46-25f2eac995cb",
+      "name": "Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# 📅 Calendar Agent — Operations (Callable)\n\n**Purpose:** Dedicated calendar microservice workflow. Creates events (w/ or w/o attendees) and fetches day views, then returns a single `response` string to the calling workflow.\n\n**Inputs (from caller):**\n- `query` *(string)* — natural language request (e.g., “create a meeting with Priya tomorrow 3pm for 45 min”)\n\n**Outputs (to caller):**\n- `response` *(string)* — friendly summary of the action/result\n\n**How to call (from main assistant):**\nUse **Tool: Workflow** → select **“Calendar Agent — Operations”** and map the agent’s intent text to `query`. The tool expects the downstream field named **`response`**.\n\n**Assumptions & Defaults**\n- If `endTime` isn’t provided, duration defaults to **60 min**\n- Times resolved to **ISO with timezone**\n- If attendee email present → use **Create Event with Attendee**; otherwise **Create Event**\n- For “get my events on <day>”, uses a ±1 day window for robustness and summarizes results back to you\n\n### 🔗 Connect with Me\n\nCurious how to build AI systems that can improve themselves?\n\n📺 **YouTube** → [@tech.mayankagg](https://www.youtube.com/@tech.mayankagg)  \n💼 **LinkedIn** → [Mayank Agarwal](https://www.linkedin.com/in/mayank953/)  \n📸 **Instagram** → [@tech.mayankagg](https://www.instagram.com/tech.mayankagg/)\n\n---\n\n*Shared by Mayank Agarwal – Building self-aware automation with AI*\n\n",
+        "height": 768,
+        "width": 1296
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -400,
+        -928
+      ],
+      "typeVersion": 1,
+      "id": "be856a28-7b21-44d1-8e8e-2a731ed8733a",
+      "name": "Sticky Note"
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calendar Agent": {
+      "main": [
+        [
+          {
+            "node": "Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event with Attendee": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Events": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  }
+}
