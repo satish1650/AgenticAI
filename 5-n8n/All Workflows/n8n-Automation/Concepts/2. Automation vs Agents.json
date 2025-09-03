@@ -1,0 +1,457 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        64,
+        16
+      ],
+      "id": "af7b26f2-4532-4074-8610-e41e2b920604",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        272,
+        16
+      ],
+      "id": "284e961e-e198-47e2-af0f-c16c7ff0d187",
+      "name": "Get a message",
+      "webhookId": "d30cd6cc-bbb5-4368-aec5-d67fe377561b"
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        16
+      ],
+      "id": "521d934a-b1cb-4bba-94ce-a05d5793b931",
+      "name": "Reply to a message",
+      "webhookId": "e1cd5fc4-4bc2-4da1-bf43-00d8a6e891c7"
+    },
+    {
+      "parameters": {
+        "content": "## Automation\n",
+        "height": 256,
+        "width": 720
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -16,
+        -64
+      ],
+      "typeVersion": 1,
+      "id": "4169ad6d-195b-4766-a713-76874f6dd2df",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "messages": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        272,
+        336
+      ],
+      "id": "931b98a1-33f2-4bfe-8fde-0d29e20d1f6b",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "KmnuAc5d1NPxHjOE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        336
+      ],
+      "id": "26b695d7-9834-4453-a4d3-6277c6f12d77",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        96,
+        336
+      ],
+      "id": "89d15d44-dd33-407b-85aa-22f88cb56e2f",
+      "name": "Get a message1",
+      "webhookId": "d30cd6cc-bbb5-4368-aec5-d67fe377561b"
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        624,
+        336
+      ],
+      "id": "c74050bb-badd-4eaf-b908-9537880ab1e1",
+      "name": "Reply to a message1",
+      "webhookId": "e1cd5fc4-4bc2-4da1-bf43-00d8a6e891c7"
+    },
+    {
+      "parameters": {
+        "content": "## AI Automation\n",
+        "height": 272,
+        "width": 1040,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -192,
+        256
+      ],
+      "typeVersion": 1,
+      "id": "d2c2d006-4006-4d4a-968e-7770437a8bcd",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        752
+      ],
+      "id": "988380dc-7fb7-4794-8881-63ec6bc36879",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "content": "## AI Agent Automation\n",
+        "height": 560,
+        "width": 1072,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -192,
+        672
+      ],
+      "typeVersion": 1,
+      "id": "46db71fa-8211-4e74-84d7-d659c579d95c",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        272,
+        752
+      ],
+      "id": "ec140762-7598-4a0f-996b-b477a10255d6",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        192,
+        1008
+      ],
+      "id": "a69df465-10a4-49a8-8f78-b8aad93a2501",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "KmnuAc5d1NPxHjOE",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        320,
+        1008
+      ],
+      "id": "eb8c17bc-f0e8-4dc0-8179-77dc9658b97f",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        656,
+        1056
+      ],
+      "id": "767a091e-4eb8-47ce-b325-1a1b7d428997",
+      "name": "Send a message in Gmail",
+      "webhookId": "f44f055c-73f5-4249-8302-e333f817be36"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        1040
+      ],
+      "id": "2d14ccc6-6cb5-482f-b788-cbf652f5776a",
+      "name": "Get a message in Gmail",
+      "webhookId": "9c04f504-166b-406e-b454-85a8687f7a9f"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        928,
+        720
+      ],
+      "id": "4193141a-450f-4e9c-9538-bb41406a70f2",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        928,
+        960
+      ],
+      "id": "24ddb8ff-85db-40ef-b955-5ac319934d73",
+      "name": "Anthropic Chat Model"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        928,
+        1168
+      ],
+      "id": "54460211-a859-4fc3-88cd-c283bfea0671",
+      "name": "AI Agent Tool"
+    },
+    {
+      "parameters": {
+        "content": "## 🤖 Automation vs. AI Automation vs. Agents\n\nThe way we work with technology has evolved step by step:  \nfrom **simple automations** → to **AI-enhanced automations** → to **fully autonomous agents**.  \n\n---\n\n### ⚙️ Automation — Rule-Based & Rigid\n- Predefined instructions, always the same result.  \n- Think of it as a *recipe card* that never changes.  \n\n**Examples**  \n- Personal: A washing machine set to run every night at 10 pm, no matter how full or empty it is.  \n- Professional: CRM sends the same “Thank you for signing up” email to every new lead.  \n\n**Strengths:** Reliable, consistent.  \n**Limitations:** Cannot adapt to changing conditions.  \n\n---\n\n### 🧠 AI Automation — Rules + Intelligence\n- Traditional automation, but enhanced with AI for **smarter outputs**.  \n- The *steps stay the same*, but the *results are dynamic*.  \n\n**Examples**  \n- Personal: A smart playlist that always starts at 6 pm (automation) but uses AI to pick songs based on your mood history.  \n- Professional: An onboarding email sequence where GPT rewrites the email to match the user’s role (engineer vs. designer).  \n\n**Strengths:** More engaging, feels human, adapts in style/content.  \n**Limitations:** Still locked in the same workflow path.  \n\n---\n\n### 🤝 Agents — Adaptive & Autonomous\n- Agents go beyond automation: they **reason, choose tools, and act dynamically**.  \n- Instead of following fixed steps, they *decide the steps themselves*.  \n\n**Examples**  \n- Personal: A digital home assistant that checks weather + calendar + groceries, then decides:  \n  “It’s raining, you’ll work from home, let’s reschedule your commute reminder and order groceries online.”  \n- Professional: Instead of always sending an email, a sales agent chooses between sending an email, booking a call, or drafting a LinkedIn message depending on the client’s activity.  \n\n**Strengths:** Context-aware, flexible, proactive.  \n**Limitations:** Requires careful design, may act unpredictably if not guided well.  \n\n---\n\n### 📊 At a Glance\n\n| Category       | What it Does                     | Flexibility   | Example (Everyday)              | Example (Work)                    |\n|----------------|----------------------------------|---------------|---------------------------------|-----------------------------------|\n| Automation     | Fixed steps, no variation        | Low           | Alarm rings at 6 am daily       | Auto “Thank you” email            |\n| AI Automation  | Fixed steps + AI personalization | Medium        | Alarm rings + AI adds a wake-up tip | AI drafts personalized welcome mail |\n| Agents         | Decide steps + use tools         | High          | Assistant shifts alarm if late night detected | Agent sorts inbox, drafts responses |\n\n---\n\n### 📈 Evolution in One Line\n- **Automation:** “Do exactly what I said.”  \n- **AI Automation:** “Do what I said, but make it smarter.”  \n- **Agents:** “Understand my goal, and figure out the best way to achieve it.”  \n\n------\n### 🔗 Connect with Me\n\nWant to learn how to build controller-agent logic in n8n using LLMs and conditions?\n\n📺 **YouTube** → [@tech.mayankagg](https://www.youtube.com/@tech.mayankagg)  \n💼 **LinkedIn** → [Mayank Agarwal](https://www.linkedin.com/in/mayank953/)  \n📸 **Instagram** → [@tech.mayankagg](https://www.instagram.com/tech.mayankagg/)\n\n---\n\n*Shared by Mayank Agarwal – Teaching AI workflows that actually scale.*",
+        "height": 1632,
+        "width": 2032
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -544,
+        -1808
+      ],
+      "typeVersion": 1,
+      "id": "e52a7562-a05d-476f-9add-265b60372fbf",
+      "name": "Sticky Note3"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message": {
+      "main": [
+        [
+          {
+            "node": "Reply to a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Reply to a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message1": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  }
+}
