@@ -1,0 +1,213 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "id": "34d173b9-532e-4eeb-9d17-0b64681bdf00",
+      "name": "Manual Trigger",
+      "position": [
+        -1312,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "id": "1eced89b-0597-43ec-895c-584548df9147",
+      "name": "Build Content (Expressions)",
+      "position": [
+        -576,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.amount}}",
+              "operation": "larger",
+              "value2": 100
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "id": "fc457a03-8de0-410e-8b7c-0f95483a2374",
+      "name": "If High Value",
+      "position": [
+        -336,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "id": "8f68918c-51c8-4a11-84c2-3b75088f62fe",
+      "name": "Set HV Note",
+      "position": [
+        -96,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "id": "8b7cfa77-066c-4515-bd5f-6e78811add6b",
+      "name": "Set Standard Note",
+      "position": [
+        -96,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "passThrough",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "id": "687f6ef6-581b-4d1c-8d4a-8b8c3c127c20",
+      "name": "Merge Branches",
+      "position": [
+        144,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "id": "c53887f0-34d6-4abf-be4b-bc11ef696283",
+      "name": "Finalize Preview",
+      "position": [
+        384,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Variables & Expressions — Manual Demo (Mayank)\n\nThis workflow demonstrates **variables**, **expressions**, and **helpers** in n8n using a **Manual Trigger** and **demo data with your details**. It runs locally without credentials and produces a clean preview of an email plus a concise summary block.\n\n---\n\n## What this workflow does (in plain English)\n\n1. **Starts manually** (no webhooks required).\n2. **Seeds demo data** (your name, email, order details).\n3. **Builds dynamic content** using expressions:\n   - Subject, body (with `$now` timestamp), API URL, email domain.\n4. **Branches** on order `amount` to tag a high-value or standard customer.\n5. **Merges** both branches so downstream logic sees a consistent shape.\n6. **Creates a final preview** (ready-to-send subject/body + summary with dates).\n\n> **Intended outcome:** Teach you how to reference fields (`$json`), compose strings, use date helpers, and safely branch/merge item data in a minimal, reproducible setup.\n\n---\n\n## When to use this pattern\n\n- Demoing n8n to teammates/students.\n- Prototyping dynamic text (emails, messages, templates).\n- Testing branching logic and ensuring consistent item shape after merges.\n- Practicing date math and formatting with Luxon (`$now`, `$today`).\n\n---\n\n## Quick start\n\n1. **Import** the workflow JSON you were given.\n2. Open it and click **Execute Workflow**.\n3. Open the **Finalize Preview** node’s output:\n   - `emailPreview` → subject/body block you could send.\n   - `summary` → compact status for logs/dashboards.\n\n---\n\n## Data model (the keys we create/use)\n\n| Key           | Example Value                      | Type    | Created In                  | Used In                           |\n|---------------|------------------------------------|---------|-----------------------------|------------------------------------|\n| `name`        | \"Mayank Agarwal\"                   | string  | Set Demo Data               | Build Content, Finalize Preview    |\n| `email`       | \"tech.mayankagg@gmail.com\"         | string  | Set Demo Data               | Build Content, Finalize Preview    |\n| `orderId`     | \"ORD-982451\"                       | string  | Set Demo Data               | Build Content, Summary             |\n| `amount`      | 1499                               | number  | Set Demo Data               | If High Value (numeric compare)    |\n| `product`     | \"n8n Pro Course\"                   | string  | Set Demo Data               | Build Content                      |\n| `subject`     | \"Hello Mayank Agarwal\"             | string  | Build Content (Expressions) | Finalize Preview                   |\n| `body`        | multi-line text with `$now`        | string  | Build Content (Expressions) | Finalize Preview                   |\n| `apiUrl`      | https://api.example.com/orders/... | string  | Build Content (Expressions) | Finalize Preview (summary)         |\n| `domain`      | \"gmail.com\"                        | string  | Build Content (Expressions) | Finalize Preview (summary)         |\n| `customerTier`| \"High value\" or \"Standard\"         | string  | Set HV/Standard Note        | Finalize Preview (summary)         |\n| `priority`    | \"EXPRESS\" or \"NORMAL\"              | string  | Set HV/Standard Note        | Finalize Preview (summary)         |\n| `emailPreview`| subject + body combined            | string  | Finalize Preview            | For quick copy/paste               |\n| `summary`     | single-line digest                 | string  | Finalize Preview            | For logs/monitoring                |\n\n---\n\n## Node-by-node deep dive\n\n### 1) Manual Trigger\n- **What it does:** Lets you execute the workflow on demand with one click.\n- **Why it matters:** Removes external dependencies (webhooks, schedules) while you learn/debug.\n\n---\n\n### 2) Set Demo Data\nSeeds the working payload with realistic values:\n\n```json\n{\n  \"name\": \"Mayank Agarwal\",\n  \"email\": \"tech.mayankagg@gmail.com\",\n  \"orderId\": \"ORD-982451\",\n  \"amount\": 1499,\n  \"product\": \"n8n Pro Course\"\n}\n```\n\n**Key idea:** In n8n, each item’s data lives under `json`. You read it via:\n- `{{$json.name}}` (dot form), or\n- `{{$json[\"name\"]}}` (bracket form, safer for spaces/special chars).\n\n**Tip:** Keep `amount` as a **number**, not `\"1499\"` (string), to avoid string comparison surprises in the **If** node.\n\n---\n\n### 3) Build Content (Expressions)\nComposes dynamic fields using expressions and helpers:\n\n**Subject**\n```txt\n={{ \"Hello \" + ($json.name || \"Guest\") }}\n```\n\n**Body**\n```txt\n={{ \"Hello \" + ($json.name || \"Guest\")\n   + \",\\n\\nThanks for signing up for the \" + $json.product\n   + \".\\nYour order ID is \" + $json.orderId + \".\"\n   + \"\\nAmount: ₹\" + $json.amount + \".\"\n   + \"\\n\\nSent on: \" + $now.toISO()\n   + \"\\n\\n— Mayank Agarwal\" }}\n```\n\n**API URL**\n```txt\n={{ \"https://api.example.com/orders/\" + $json.orderId }}\n```\n\n**Email Domain**\n```txt\n={{ $json.email.split(\"@\")[1] }}\n```\n\n**Concepts shown**\n- **Fallbacks:** `($json.name || \"Guest\")`\n- **String concat:** `\"A \" + \"B\"`\n- **Date helper:** `$now.toISO()` (Luxon formatting)\n- **Simple parsing:** `.split(\"@\")[1]`\n\n---\n\n### 4) If High Value\nImplements a numeric threshold on `amount`:\n\n```txt\nCondition:  {{$json.amount}}  >  100\n```\n\n- **Yes branch:** high-value.\n- **No branch:** standard.\n\n**Pitfall to avoid:** If `amount` were a string (`\"1499\"`), `>` could behave unexpectedly. Keep it numeric in **Set Demo Data**.\n\n---\n\n### 5) Set HV Note (Yes branch)\nAdds metadata when the order is high-value:\n```json\n{\n  \"customerTier\": \"High value\",\n  \"priority\": \"EXPRESS\"\n}\n```\n**Why:** Downstream nodes can react to tier/priority without recomputing logic.\n\n---\n\n### 6) Set Standard Note (No branch)\nAdds the standard metadata:\n```json\n{\n  \"customerTier\": \"Standard\",\n  \"priority\": \"NORMAL\"\n}\n```\n\n**Best practice:** Mirror field names across branches so merges are predictable.\n\n---\n\n### 7) Merge Branches (Pass Through)\n- **Mode:** *Pass Through*.\n- **Purpose:** Rejoin both branches into a single flow so later nodes receive items with the same keys (`customerTier`, `priority`).\n\n**Gotcha:** If branches produce different item counts, choose merge mode deliberately. Here, each path returns one item → simple pass-through is fine.\n\n---\n\n### 8) Finalize Preview\nCreates two display-friendly strings:\n\n**`emailPreview`**\n```\nSUBJECT: Hello Mayank Agarwal\n\nHello Mayank Agarwal,\n\nThanks for signing up for the n8n Pro Course.\nYour order ID is ORD-982451.\nAmount: ₹1499.\n\nSent on: 2025-08-29T10:15:00.000+05:30\n\n— Mayank Agarwal\n```\n\n**Expression**\n```txt\n={{ \"SUBJECT: \" + $json.subject + \"\\n\\n\" + $json.body }}\n```\n\n**`summary`** (concise facts)\n```txt\n={{ \"To: \" + $json.email + \" (\" + $json.domain + \")\"\n  + \"\\nTier: \" + $json.customerTier\n  + \"\\nPriority: \" + $json.priority\n  + \"\\nAPI URL: \" + $json.apiUrl\n  + \"\\nToday: \" + $today.toISODate()\n  + \"\\n+5 days: \" + $now.plus({ days: 5 }).toISODate() }}\n```\n\n**Helpers highlighted**\n- `$today.toISODate()` → start of the current day.\n- `$now.plus({ days: 5 })` → Luxon date math, then `.toISODate()` for clean output.\n\n---\n\n## Expressions cheat-sheet (copy/paste)\n\n- **Current item:**  \n  - `{{$json[\"fieldName\"]}}`\n- **Another node’s output:**  \n  - `{{$node[\"NodeName\"].json[\"field\"]}}`\n- **String building:**  \n  - `={{ \"Hello \" + ($json.name || \"Guest\") }}`\n- **Math:**  \n  - `={{ $json.amount * 0.18 }}`\n- **Strings:**  \n  - `={{ $json.name.toUpperCase() }}`  \n  - `={{ $json.email.split(\"@\")[1] }}`\n- **Dates:**  \n  - `={{ $now.toISO() }}`  \n  - `={{ $today.toISODate() }}`  \n  - `={{ $now.plus({ days: 1 }).toISODate() }}`\n\n---\n\n## How to test & iterate\n\n1. **Run once** via Manual Trigger → verify `emailPreview` & `summary`.\n2. Change `amount` to `80` → run again; confirm `customerTier = Standard`, `priority = NORMAL`.\n3. Swap `product`, `orderId`, or `email` → observe updated strings and domain extraction.\n4. (Optional) Add a **Gmail/SMTP** node after **Finalize Preview**:\n   - `To` → `{{$json.email}}`\n   - `Subject` → `{{$json.subject}}`\n   - `Message` → `{{$json.body}}`\n\n---\n\n## Common mistakes & fixes\n\n- **Expression not evaluated:** Missing curly braces → ensure fields use `={{ ... }}` (in node fields) or `{{ ... }}` (in text templates).\n- **Type confusion:** `\"30\"` ≠ `30`. Keep numeric fields numeric; cast if necessary.\n- **Undefined fields:** Use fallbacks (`|| \"Guest\"`) or initialize keys in a Set node.\n- **Timezones/formatting:** Prefer Luxon helpers (`$now`, `$today`) with `.toISO()`/`.toISODate()` for predictable output.\n\n---\n\n## Variations you can try next\n\n- **Dynamic API request:** Replace `api.example.com` with a real endpoint and add an **HTTP Request** node using `{{$json.apiUrl}}`.\n- **Templated messages:** Store templates in a Set node or external store and use expressions to substitute variables.\n- **Item lists:** Feed multiple demo items into the flow; each item produces a separate preview.\n\n---\n\n### 🔗 Connect with Me\n\nWant to learn how to build controller-agent logic in n8n using LLMs and conditions?\n\n📺 **YouTube** → [@tech.mayankagg](https://www.youtube.com/@tech.mayankagg/)\n💼 **LinkedIn** → [Mayank Agarwal](https://www.linkedin.com/in/mayank953/)\n📸 **Instagram** → [@tech.mayankagg](https://www.instagram.com/tech.mayankagg/)\n\n---\n\n*Shared by Mayank Agarwal – Teaching AI workflows that actually scale.*\n",
+        "height": 5936,
+        "width": 3312
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2192,
+        -3936
+      ],
+      "typeVersion": 1,
+      "id": "58930c65-93fd-4584-8a82-bb79e5d9ea41",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"name\": \"Mayank Agarwal\",\n  \"email\": \"tech.mayankagg@gmail.com\",\n  \"orderId\": \"ORD-982451\",\n  \"amount\": 1499,\n  \"product\": \"n8n Pro Course\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -992,
+        32
+      ],
+      "id": "07a40ebf-d2af-4b38-91ab-20a497a3917e",
+      "name": "Set Demo Data"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Build Content (Expressions)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Content (Expressions)": {
+      "main": [
+        [
+          {
+            "node": "If High Value",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If High Value": {
+      "main": [
+        [
+          {
+            "node": "Set HV Note",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set Standard Note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set HV Note": {
+      "main": [
+        [
+          {
+            "node": "Merge Branches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Standard Note": {
+      "main": [
+        [
+          {
+            "node": "Merge Branches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Branches": {
+      "main": [
+        [
+          {
+            "node": "Finalize Preview",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  }
+}
