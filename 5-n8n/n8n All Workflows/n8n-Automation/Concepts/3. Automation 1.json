@@ -1,0 +1,170 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        144,
+        0
+      ],
+      "id": "4c7a5278-a0d6-40a7-936e-25de804ad2a6",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "aiwithmayank@gmail.com",
+        "subject": "New Client",
+        "message": "=hi {{ $json.Gender }}\n\n{{ $json.Profession }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        576,
+        0
+      ],
+      "id": "1919570e-1635-48ff-82f0-ec21df847f25",
+      "name": "Send a message",
+      "webhookId": "dd955a28-5d39-4966-a6bb-7c59f0e2cf65",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1f8oD_wyv9Gj5aEYyBfVPv1dAYp2UtXmChHQ4FBIBWWI",
+          "mode": "list",
+          "cachedResultName": "Potential Clients",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1f8oD_wyv9Gj5aEYyBfVPv1dAYp2UtXmChHQ4FBIBWWI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1f8oD_wyv9Gj5aEYyBfVPv1dAYp2UtXmChHQ4FBIBWWI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Gender": "={{ $json.gender }}",
+            "Name": "={{ $('Get row(s) in sheet').item.json.Name }}",
+            "Profession": "={{ $('Get row(s) in sheet').item.json.Profession }}",
+            "Age": "={{ $('Get row(s) in sheet').item.json.Age }}"
+          },
+          "matchingColumns": [
+            "Name"
+          ],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Profession",
+              "displayName": "Profession",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Age",
+              "displayName": "Age",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Gender",
+              "displayName": "Gender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        336,
+        0
+      ],
+      "id": "d87a0b82-2f8c-4a3d-b1ae-72158a62a8d5",
+      "name": "Append or update row in sheet"
+    },
+    {
+      "parameters": {
+        "content": "# Automation 1\nFirst automation to understand the working\nof nodes and inside settings or\nconfiguration",
+        "height": 176,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        272,
+        -336
+      ],
+      "typeVersion": 1,
+      "id": "cb20ea3a-f9bb-403f-95c1-f4726abe4844",
+      "name": "Sticky Note"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {
+    "Send a message": [
+      {
+        "id": "197f6687c517e061",
+        "threadId": "197f6687c517e061",
+        "labelIds": [
+          "UNREAD",
+          "SENT",
+          "INBOX"
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  }
+}
