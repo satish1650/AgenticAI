@@ -1,0 +1,329 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "7122a1b7-908e-4857-8ab6-4a11277e09ce",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        -16
+      ],
+      "notesInFlow": true,
+      "notes": "Start here for the demo run."
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "goal",
+              "value": "Help me launch a product on Product Hunt next week."
+            },
+            {
+              "name": "product_name",
+              "value": "LaunchPilot"
+            },
+            {
+              "name": "product_one_liner",
+              "value": "AI assistant that plans your launches end‑to‑end."
+            },
+            {
+              "name": "target_audience",
+              "value": "startup founders & PMs"
+            },
+            {
+              "name": "brand_voice",
+              "value": "concise, friendly, credible"
+            },
+            {
+              "name": "deadline",
+              "value": "2025-08-31"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bba7a4c8-e992-488e-a328-99ec99e728c5",
+      "name": "Set: Goal & Context",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        -928,
+        -16
+      ],
+      "notesInFlow": true,
+      "notes": "Adjust these to fit your scenario."
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "8df3dd6b-97fb-49f4-ab28-b1fbdc73fc0f",
+      "name": "OpenAI (Chat Model)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        960,
+        720
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "OrMvPdUZyJQ4oj6w",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Goal: {{$('Set: Goal & Context').item.json.goal}}\nDeadline: {{$('Set: Goal & Context').item.json.deadline}}\nProduct: {{$('Set: Goal & Context').item.json.product_name}} — {{$('Set: Goal & Context').item.json.product_one_liner}}\nAudience: {{$('Set: Goal & Context').item.json.target_audience}}\nVoice: {{$('Set: Goal & Context').item.json.brand_voice}}\n\nReturn ONLY JSON (no markdown, no prose) as an array of tasks.\nEach task object must be: {\"title\": string, \"type\": one of [\"description\",\"email\",\"social\",\"reminder\"], \"notes\": string}.\n4–6 tasks total, minimal but complete for a Product Hunt launch.",
+        "options": {}
+      },
+      "id": "5679736f-ddae-4644-b309-bc15a618bf78",
+      "name": "Planner (LLM)",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -704,
+        -16
+      ],
+      "notesInFlow": true,
+      "notes": "Planner agent emits a strict JSON task array."
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst tasks = items[0]?.json?.output\n  .replace(/[\\[\\]]/g, \"\")\n  .split(\"\\n\")\n  .filter(Boolean);\nreturn { tasks };\n"
+      },
+      "id": "0e7f6057-7cd2-4a9e-8012-0fa58a90825b",
+      "name": "Parse Plan (Code)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        -16
+      ],
+      "notesInFlow": true,
+      "notes": "Explodes the task list into one item per task."
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1056,
+        -320
+      ],
+      "id": "dbf0ef82-63f1-404e-9588-25d464c8b00a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -192,
+        -16
+      ],
+      "id": "2f27d23a-f148-429e-965a-b91dc4fbac5c",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        288,
+        16
+      ],
+      "id": "394c189d-03cd-4e0c-8326-d424dda21e48",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        752,
+        240
+      ],
+      "id": "f2ad40aa-49ce-4cac-b133-45e47e643373",
+      "name": "Get row(s) in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "AmSQikSvx0Muzm6C",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 🧠 Planner → Executor Agent Architecture\n\nThis workflow introduces a dynamic multi-agent pattern where a **Planner Agent** breaks down a high-level instruction into actionable subtasks, and **Executor Agents** handle each one individually.\n\nUnlike static workflows, this architecture **adapts to the user's request in real time**, assembling its execution path based on the planner’s output.\n\n---\n\n### 🧭 How It Works\n\n1. **Planner Agent**:\n   - Receives a user goal like “Plan a product launch campaign”\n   - Breaks it into 3 specific subtasks\n   - Outputs them in JSON format\n\n2. **Function Node (Parse Tasks)**:\n   - Converts the JSON array into individual n8n items\n\n3. **Split In Batches**:\n   - Iterates through each subtask one at a time\n\n4. **Executor Agent**:\n   - Receives one subtask\n   - Expands it into a detailed, completed action or plan\n\n---\n\n### 🧠 Intuition Behind It\n\nThink of this like a project manager (Planner) assigning jobs to team members (Executors):\n\n> \"Here's the big goal. Let me break it down into tasks — and assign each one to the right person to complete it.\"\n\nThis design simulates **real-life delegation and autonomy**, creating agents that **think before they act**.\n\n---\n\n### 🧩 Why Use This Architecture?\n\n- ✅ Ideal for **goal-based automations**\n- ✅ Dynamically adjusts to **different types of instructions**\n- ✅ Great foundation for **AutoGPT-style systems**\n- ✅ Enables **multi-task execution** without hardcoding steps\n- ✅ Can be extended with memory, retries, and sub-agent branching\n\n---\n\nAdd this pattern to your AI toolkit when you need **flexibility, adaptability, and real planning intelligence** in your automations.\n\n---\n\n### 🔗 Connect with Me\n\nWant to learn how to build planner-executor workflows in n8n using LLMs and dynamic task execution?\n\n📺 **YouTube** → [@tech.mayankagg](https://www.youtube.com/@tech.mayankagg)  \n💼 **LinkedIn** → [Mayank Agarwal](https://www.linkedin.com/in/mayank953/)  \n📸 **Instagram** → [@tech.mayankagg](https://www.instagram.com/tech.mayankagg/)\n\n---\n\n*Shared by Mayank Agarwal – Teaching AI workflows that actually scale.*\n",
+        "height": 1584,
+        "width": 2176
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1184,
+        -1840
+      ],
+      "typeVersion": 1,
+      "id": "ebc64999-27ac-41e3-972d-d9b6b4a62665",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -560,
+        384
+      ],
+      "id": "624fbedd-2c83-4308-9138-6630c7ff58a5",
+      "name": "Planner (LLM)2"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set: Goal & Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set: Goal & Context": {
+      "main": [
+        [
+          {
+            "node": "Planner (LLM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI (Chat Model)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Planner (LLM)",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Planner (LLM)": {
+      "main": [
+        [
+          {
+            "node": "Parse Plan (Code)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Planner (LLM)2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Plan (Code)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  }
+}
