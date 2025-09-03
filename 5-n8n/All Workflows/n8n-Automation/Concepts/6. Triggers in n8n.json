@@ -1,0 +1,386 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "name": "Manual Trigger",
+      "position": [
+        0,
+        0
+      ],
+      "notesInFlow": true,
+      "id": "ff41af4c-192f-42f8-8526-ac2c47c1683a",
+      "notes": "Use this for testing while building.\nClick *Execute Workflow* to fire this path.\nNo credentials needed."
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "agent-hook",
+        "responseMode": "lastNode",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "name": "Webhook (agent-hook)",
+      "position": [
+        0,
+        400
+      ],
+      "notesInFlow": true,
+      "id": "9f9c00e5-3aaa-4055-8213-e0827a8c4bec",
+      "webhookId": "af4d361d-aeb3-4754-ae10-dc9a990b3588",
+      "notes": "Ready-to-test webhook.\n- TEST URL in editor\n- PROD URL when workflow is Active\nSend JSON like: {\"name\":\"Priya\",\"email\":\"priya@acme.com\",\"message\":\"Hi\"}"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "name": "Set Context (Manual)",
+      "position": [
+        288,
+        0
+      ],
+      "notesInFlow": true,
+      "id": "1dcc573d-8276-4172-bcd7-ba27fc61306f",
+      "notes": "Normalize payload into a common shape.\nAdds `source`, `name`, `email`, `note`."
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "name": "Set Context (Webhook)",
+      "position": [
+        288,
+        400
+      ],
+      "notesInFlow": true,
+      "id": "c1daee86-6f7c-477e-ae7e-5354727f56e8",
+      "notes": "Normalizes inbound webhook payload.\nUses fallbacks if fields are missing."
+    },
+    {
+      "parameters": {
+        "mode": "passThrough",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "name": "Merge Manual + Cron",
+      "position": [
+        544,
+        112
+      ],
+      "notesInFlow": true,
+      "id": "8fbcf71f-2a7c-4841-b26d-eb323a241a01",
+      "notes": "Merges both *manual* and *cron* items.\nMode: Pass Through."
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "name": "Build Message (Expressions)",
+      "position": [
+        992,
+        208
+      ],
+      "notesInFlow": true,
+      "id": "017c7323-9fc1-4a4d-b1c4-bf2c137871ce",
+      "notes": "Demonstrates expressions + date helpers:\n- `$now.toISO()`, `$today.toISODate()`, `$now.plus({days:1})`.\n- Safe fallbacks for `name`."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [],
+          "number": [
+            {
+              "value1": "={{$json.source === 'cron' ? 1 : 0}}",
+              "operation": "larger",
+              "value2": 0
+            }
+          ],
+          "string": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "name": "If Cron Path?",
+      "position": [
+        1232,
+        208
+      ],
+      "notesInFlow": true,
+      "id": "94dadb9f-fcca-4327-806b-e85bd7303735",
+      "notes": "Route scheduled runs to a different sink if needed."
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "name": "Preview (Manual/Webhook)",
+      "position": [
+        1472,
+        304
+      ],
+      "notesInFlow": true,
+      "id": "9f1775e2-9ca0-40ea-aaa5-e49870e2d051",
+      "notes": "For Manual & Webhook runs.\nOp preview you can copy-paste into an email."
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "name": "Build Cron Report",
+      "position": [
+        1472,
+        112
+      ],
+      "notesInFlow": true,
+      "id": "0fa307fb-f1ae-4cab-a4cf-aa800bd490b8",
+      "notes": "Example of a different sink for cron.\nReplace with real steps (HTTP → Sheets → Email)."
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "name": "Respond to Webhook",
+      "position": [
+        1232,
+        400
+      ],
+      "notesInFlow": true,
+      "id": "c9364670-71ee-45b9-bdd4-2d2146fd9c64",
+      "notes": "This sends a JSON response back to the incoming webhook request.\nOnly used for the Webhook trigger path."
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "name": "Telegram Trigger (Disabled)",
+      "position": [
+        0,
+        608
+      ],
+      "notesInFlow": true,
+      "id": "37077e21-e210-4f51-8c91-4e81401e4b7e",
+      "webhookId": "aad77bfc-e3f5-48bf-bec5-b529066e178e",
+      "disabled": true,
+      "notes": "Example of an **App/Event** trigger.\nEnable + add credentials to use in production.\nE.g., auto-reply or route to an agent."
+    },
+    {
+      "parameters": {
+        "content": "## 2.5 — Scheduling & Triggers: What this workflow shows\n\n- **Manual Trigger** for fast testing (no creds).\n- **Cron** (daily at 09:30 IST) for recurring jobs.\n- **Webhook** to receive external events and respond.\n- **App/Event trigger** example (Telegram) — included but **disabled** so the workflow stays runnable without credentials.\n\n### Flow map\n\n- Manual → Set Context (Manual) → Merge → Build Message → If Cron? (No) → Preview\n- Cron → Set Context (Cron) → Merge → Build Message → If Cron? (Yes) → Build Cron Report\n- Webhook → Set Context (Webhook) → Respond to Webhook (HTTP 200) and → Merge → Build Message → If Cron? (No) → Preview\n\n### Why we “normalize” data early\nEach trigger produces different shapes. The **Set Context** nodes build a **common schema**:\n`{ source, name, email, note }` so downstream nodes don’t have to branch per trigger.\n\n### Where to extend\n- After **Build Cron Report** → add HTTP → Sheets → Email.\n- After **Preview** → add Gmail/SMTP to actually send.\n- Enable **Telegram Trigger** once creds are set to demo true app events.\n\n### Testing tips\n- Manual: press **Execute Workflow**.\n- Webhook: `curl -X POST https://<n8n>/webhook/agent-hook -H \"Content-Type: application/json\" -d '{\"name\":\"Priya\",\"email\":\"priya@acme.com\",\"message\":\"Hi\"}'`\n- Cron: temporarily change cron to every minute while testing, then set back to 09:30 IST.\n\n### Gotchas\n- Make workflow **Active** for Cron/Webhook to fire in production.\n- Webhook has **Test** and **Production** URLs; use the right one.\n- Keep numbers numeric (e.g., amount fields) to avoid comparison issues.\n- Prefer Luxon helpers: `$now`, `$today`, with `.toISO()` / `.toISODate()`.\n\n---\n\n### 🔗 Connect with Me\n\nWant to learn how to build controller-agent logic in n8n using LLMs and conditions?\n\n📺 **YouTube** → [@tech.mayankagg](https://www.youtube.com/@tech.mayankagg/)\n💼 **LinkedIn** → [Mayank Agarwal](https://www.linkedin.com/in/mayank953/)\n📸 **Instagram** → [@tech.mayankagg](https://www.instagram.com/tech.mayankagg/)\n\n---\n\n*Shared by Mayank Agarwal – Teaching AI workflows that actually scale.*\n",
+        "height": 1184,
+        "width": 1584
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -144,
+        -1440
+      ],
+      "typeVersion": 1,
+      "id": "f08cc4b0-26a6-4ab9-882d-5bb59c5c30d2",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "App Based Trigger",
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -352,
+        624
+      ],
+      "typeVersion": 1,
+      "id": "34dbf71b-eec6-4413-a240-67a91f7582e5",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -16,
+        224
+      ],
+      "id": "8aa9bd69-3da1-4c83-bff4-3140c34549b9",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "name": "Set Context (Cron)",
+      "position": [
+        288,
+        208
+      ],
+      "notesInFlow": true,
+      "id": "cfb938cb-68e8-44da-97fe-9c2aa4172c75",
+      "notes": "Normalize scheduled runs.\nAdds `source=cron` and basic identity."
+    },
+    {
+      "parameters": {
+        "content": "###  Always Use updated nodes via Updating your workflow",
+        "height": 96,
+        "width": 256,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        448,
+        -144
+      ],
+      "typeVersion": 1,
+      "id": "0770e51a-8262-4b6d-8176-7c80f458d307",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        992,
+        352
+      ],
+      "id": "6dda9568-a59c-414d-bb43-71457ef4dee0",
+      "name": "Merge"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Context (Manual)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook (agent-hook)": {
+      "main": [
+        [
+          {
+            "node": "Set Context (Webhook)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Context (Manual)": {
+      "main": [
+        [
+          {
+            "node": "Merge Manual + Cron",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Context (Webhook)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Manual + Cron": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Message (Expressions)": {
+      "main": [
+        [
+          {
+            "node": "If Cron Path?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Cron Path?": {
+      "main": [
+        [
+          {
+            "node": "Build Cron Report",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Preview (Manual/Webhook)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Context (Cron)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Context (Cron)": {
+      "main": [
+        [
+          {
+            "node": "Merge Manual + Cron",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "9ff4b997319de8b36f3ec9da7971f29ebdff0b93b4afaf4fcaed05164719d3b2"
+  }
+}
