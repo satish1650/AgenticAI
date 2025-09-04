@@ -1,0 +1,56 @@
+{
+  "name": "n8n Workflow Ngrok with Telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        -48
+      ],
+      "id": "08b4e269-2509-418c-ac79-3a5aeefca459",
+      "name": "Telegram Trigger",
+      "webhookId": "bcab3642-25a4-42cc-9b23-94b5088e78b1",
+      "credentials": {
+        "telegramApi": {
+          "id": "EETN0VxOUI4wPENL",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## n8n Workflow Ngrok with Telegram",
+        "height": 272,
+        "width": 512
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -208,
+        -128
+      ],
+      "typeVersion": 1,
+      "id": "309760f6-4e91-4d51-b9f1-b58bb737099b",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9f64bd44-ba82-4284-a29a-6ede03093c2c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "g54EOPnfSE2YbNlh",
+  "tags": []
+}
