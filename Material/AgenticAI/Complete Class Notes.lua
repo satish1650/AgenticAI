@@ -272,3 +272,30 @@ https://kie.ai/logs
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 06 Sep Day - 35 ADK - Basics Introduction
 *****************************************
+Youtube
+https://www.youtube.com/@tech.mayankagg
+
+GitHub
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0
+
+http://github.com/mayank953/Live-Class/tree/main/Agentic%202.0/ADK
+
+Craft
+https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL	
+
+mailtomayankaggarwal@gmail.com
+
+ADK Documents
+https://google.github.io/adk-docs/
+
+
+Google AI Studio
+https://aistudio.google.com/prompts/new_chat
+
+Google AI Studio -> Console
+https://console.cloud.google.com/welcome
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+07 Sep Day - 36 ADK - Advanced
+*****************************************
+https://google.github.io/adk-docs/get-started/quickstart/#agentpy
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
