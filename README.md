@@ -48,6 +48,8 @@ All Classes
 24 Aug Day - 32 n8n Advanced Project Multi-Agent <br>
 30 Aug Day - 33 n8n Multi-Agents + RAG + MCP + n8n Local Setup <br>
 31 Aug Day - 34 n8n E2E Projects + n8n Local Setup + RAG + MCP + Nano-Banana App <br>
+06 Sep Day - 35 Google ADK (Agent Development Kit) - Basics <br>
+07 Sep Day - 36 Google ADK (Agent Development Kit) - Advanced <br>
 
 How to create virtual environment in "VS Code"
 ---
