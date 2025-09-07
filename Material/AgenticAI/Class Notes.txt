@@ -289,8 +289,8 @@ Google AI Studio -> Console
 https://console.cloud.google.com/welcome
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-07 Sep Day - 36 ADK - Advanced
-*******************************
+07 Sep Day - 36 Google ADK (Agent Development Kit) - Advanced 
+*************************************************************
 https://google.github.io/adk-docs/get-started/quickstart/#agentpy
 
 
