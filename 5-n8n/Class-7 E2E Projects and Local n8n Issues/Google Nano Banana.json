@@ -1,0 +1,443 @@
+{
+  "name": "Google Nano Banana",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "AIzaSyDsj0io7wDNvCd1gHnS46SubBWn2XJs6MA"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"A serene mountain sunrise reflected in a tranquil lake, ultra-realistic\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseModalities\": [\n      \"IMAGE\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1184,
+        592
+      ],
+      "id": "07ae2732-7002-40b2-b903-76f11bff62f0",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "candidates[0].content.parts[1].inlineData.data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        592
+      ],
+      "id": "b0ba6eeb-b9c8-4b74-af8c-4a3af976238c",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "AIzaSyDF_FaXB3KVoih2lJB3LwXuGb1psI5R1a4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"inline_data\": {\n            \"mime_type\": \"image/png\",\n            \"data\": \"{{ $json.data }}\"\n          }\n        },\n        {\n          \"text\": \"Make us all sad and wear shirt\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseModalities\": [\n      \"IMAGE\"\n    ]\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1344,
+        128
+      ],
+      "id": "451e1763-5297-4a53-a56d-4b477ed1cbe5",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "binaryPropertyName": "Image",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1024,
+        128
+      ],
+      "id": "a9325a84-b51c-4887-8d5e-8314edce28ac",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "candidates[0].content.parts[0].inlineData.data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1616,
+        128
+      ],
+      "id": "1155d845-532f-46c9-9772-11a5c3cd001e",
+      "name": "Convert to File1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        752,
+        592
+      ],
+      "id": "165d7bbd-be60-4844-aba4-6dac15386f39",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "content": "#  Google Nono Banana -> Without Image\n",
+        "height": 432,
+        "width": 1152
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        672,
+        400
+      ],
+      "typeVersion": 1,
+      "id": "dba6d5f3-6bc6-42b4-b4d6-7ddc6e4a97a9",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# With Image Workflow\n\nThis n8n flow starts when a form with an image is submitted:\n1. The image is converted into Base64.\n2. Sent to Google’s **Gemini 2.5 Flash Image** (Nano-Banana) API via HTTP.\n3. The API returns the edited image, which is converted back into a usable file.\n\nWith the API, handling advanced image editing becomes simple—you just send a request and get back a ready result.\n\n---\n\n## Without Image Workflow\n\nThis lightweight version skips file handling. Trigger manually, send a text prompt directly to Nano-Banana API, and instantly receive the generated output.\n\nPerfect for quick prototyping and testing prompts.\n\n---\n\n### 🔗 Connect with Me\n\nWant to learn how to build controller-agent logic in n8n using LLMs and conditions?\n\n📺 **YouTube** → [@tech.mayankagg](https://www.youtube.com/@tech.mayankagg/)  \n💼 **LinkedIn** → [Mayank Agarwal](https://www.linkedin.com/in/mayank953/)  \n📸 **Instagram** → [@tech.mayankagg](https://www.instagram.com/tech.mayankagg/)\n\n---\n\n*Shared by Mayank Agarwal – Teaching AI workflows that actually scale.*\n",
+        "height": 944,
+        "width": 944,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -272,
+        -112
+      ],
+      "typeVersion": 1,
+      "id": "5f193066-0b81-48de-8ec0-fef9ce925b93",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "formTitle": "Nano Banana Overview",
+        "formDescription": "have fun with google flash 2.5",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Image",
+              "fieldType": "file",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "text",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        736,
+        128
+      ],
+      "id": "6ef48202-9b01-4ae0-998b-60d31826eb92",
+      "name": "On form submission",
+      "webhookId": "2b7dcfd7-5ca7-492b-9932-ed6bf9896691"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        144,
+        1216
+      ],
+      "id": "57e8912b-a249-4ce0-9646-fe3276408a0f",
+      "name": "Extract from File1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-goog-api-key",
+              "value": "AIzaSyDF_FaXB3KVoih2lJB3LwXuGb1psI5R1a4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"inline_data\": {\n            \"mime_type\": \"image/png\",\n            \"data\": \"{{ $json.data }}\"\n          }\n        },\n        {\n          \"text\": \"{{ $('Telegram Trigger').item.json.message.caption }}\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseModalities\": [\n      \"IMAGE\"\n    ]\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        544,
+        1152
+      ],
+      "id": "4cf2a955-09eb-4517-b972-5df016b80436",
+      "name": "HTTP Request3"
+    },
+    {
+      "parameters": {
+        "content": "# Google Nono Banana -> With Image",
+        "height": 528,
+        "width": 1152,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        672,
+        -112
+      ],
+      "typeVersion": 1,
+      "id": "5925d485-7c4a-4f72-9146-879a834795ec",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "#  Google Nono Banana -> Video",
+        "height": 624,
+        "width": 2096,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -272,
+        832
+      ],
+      "typeVersion": 1,
+      "id": "fac9bd69-868c-40c2-a3fe-80d0e744abe2",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "candidates[0].content.parts[0].inlineData.data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        816,
+        1120
+      ],
+      "id": "aad37a56-ef19-4ddb-a24c-df7c6313ed1c",
+      "name": "Convert to File2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "20bd214f-0ff1-4f4b-a268-8e805a8d111c",
+              "name": "TOKEN",
+              "value": "=8214577987:AAGc--vPAhaM8Rou5Teu5ZtlIl8yvr6zpqg",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        1024
+      ],
+      "id": "e892d95f-6fa3-445d-88e9-a521572f1f67",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {
+          "download": true
+        }
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        1024
+      ],
+      "id": "a1b0599e-62cc-4c0e-860c-d45e9252fcda",
+      "name": "Telegram Trigger",
+      "webhookId": "33a6835d-d0f9-48af-9ed8-bbdae2394350"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.kie.ai/api/v1/veo/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": \"Create a video with proper \",\n  \"imageUrls\": [\"{{ $('Set img').item.json.lastImgURL }}\"],\n  \"model\": \"veo3_fast\",\n  \"callbackUrl\": \"{{ $execution.resumeUrl }}\",\n  \"aspectRatio\": \"16:9\",\n  \"seeds\": 12345,\n  \"enableFallback\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1472,
+        1088
+      ],
+      "id": "fce88473-4515-4cee-b1cc-29208a8c9fe2",
+      "name": "Create Veo 3 Video Kie.AI"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "Convert to File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract from File1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "dd29bb7c-dd69-4351-a63b-29645f473317",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "I4HDTuQAL6SqtTo3",
+  "tags": []
+}
