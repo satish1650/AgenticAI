@@ -263,8 +263,8 @@ https://aistudio.google.com/apikey
 
 https://kie.ai/logs
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-06 Sep Day - 35 ADK - Basics Introduction
-*****************************************
+06 Sep Day - 35 Google ADK (Agent Development Kit) - Basics
+***********************************************************
 Youtube
 https://www.youtube.com/@tech.mayankagg
 
