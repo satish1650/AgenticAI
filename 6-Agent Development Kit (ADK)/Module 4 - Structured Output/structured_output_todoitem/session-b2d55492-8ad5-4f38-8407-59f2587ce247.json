@@ -1,0 +1,201 @@
+{
+  "id": "b2d55492-8ad5-4f38-8407-59f2587ce247",
+  "appName": "structured_output_todoitem",
+  "userId": "user",
+  "state": {
+    "todo": {
+      "task": "Pay bills",
+      "due_date": "2023-11-05",
+      "priority": "high"
+    }
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "How are you doing"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-bcf19097-949c-499b-803a-a6a328d22a46",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "5079350d-fd93-4747-b600-b86a88c4e120",
+      "timestamp": 1757531249.321909
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\n  \"task\": \"Check emails\",\n  \"due_date\": \"2024-03-15\",\n  \"priority\": \"low\"\n}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 39,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 39
+          }
+        ],
+        "promptTokenCount": 178,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 178
+          }
+        ],
+        "totalTokenCount": 217
+      },
+      "invocationId": "e-bcf19097-949c-499b-803a-a6a328d22a46",
+      "author": "todo_agent",
+      "actions": {
+        "stateDelta": {
+          "todo": {
+            "task": "Check emails",
+            "due_date": "2024-03-15",
+            "priority": "low"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "31d9845a-d42c-4b63-a8ca-2f8d72e0ba2b",
+      "timestamp": 1757531249.322388
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-62a5f721-60b3-457a-8853-27eb7c0d05d4",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "b2deb580-b84e-41e7-aaf9-b2a52bdfa48b",
+      "timestamp": 1757531253.100379
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\n  \"task\": \"Draft report\",\n  \"due_date\": \"2023-12-20\",\n  \"priority\": \"medium\"\n}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 39,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 39
+          }
+        ],
+        "promptTokenCount": 218,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 218
+          }
+        ],
+        "totalTokenCount": 257
+      },
+      "invocationId": "e-62a5f721-60b3-457a-8853-27eb7c0d05d4",
+      "author": "todo_agent",
+      "actions": {
+        "stateDelta": {
+          "todo": {
+            "task": "Draft report",
+            "due_date": "2023-12-20",
+            "priority": "medium"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "124080b6-544c-401d-abfe-741f8aa1db17",
+      "timestamp": 1757531253.106185
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "ok"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-225222b2-320b-43e7-9d09-861d4afe440c",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "382d69f2-1a41-4982-88a4-5645dd4ea570",
+      "timestamp": 1757531257.016304
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\n\"task\": \"Pay bills\",\n\"due_date\": \"2023-11-05\",\n\"priority\": \"high\"\n}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 36,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 36
+          }
+        ],
+        "promptTokenCount": 258,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 258
+          }
+        ],
+        "totalTokenCount": 294
+      },
+      "invocationId": "e-225222b2-320b-43e7-9d09-861d4afe440c",
+      "author": "todo_agent",
+      "actions": {
+        "stateDelta": {
+          "todo": {
+            "task": "Pay bills",
+            "due_date": "2023-11-05",
+            "priority": "high"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "d5942709-ab8f-4e8c-b15b-506853dd50ab",
+      "timestamp": 1757531257.018216
+    }
+  ],
+  "lastUpdateTime": 1757531257.018216
+}
