@@ -1,0 +1,343 @@
+{
+  "id": "aaad3e77-4dac-428c-b832-2fb4e5a0bd83",
+  "appName": "structure_output",
+  "userId": "user",
+  "state": {
+    "Capital": {
+      "capital": "Please provide a country"
+    }
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-1f42ea18-3784-4c97-9581-24e471e12dfe",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "90d93df6-46d2-4b12-9a61-1b745921d3da",
+      "timestamp": 1757531531.549811
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\"capital\": \"Please provide a country\"}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "promptTokenCount": 65,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 65
+          }
+        ],
+        "thoughtsTokenCount": 1530,
+        "totalTokenCount": 1604
+      },
+      "invocationId": "e-1f42ea18-3784-4c97-9581-24e471e12dfe",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {
+          "Capital": {
+            "capital": "Please provide a country"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "d5579ffd-b678-46ef-93fd-f4df6c661b81",
+      "timestamp": 1757531531.550502
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "India"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-d2e022a7-55d1-4e70-8bd2-25de3f9a1d68",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "69b2861a-68b0-4b89-921c-9bfdd89598b0",
+      "timestamp": 1757531577.889541
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\"capital\": \"New Delhi\"}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 7,
+        "promptTokenCount": 77,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 77
+          }
+        ],
+        "thoughtsTokenCount": 48,
+        "totalTokenCount": 132
+      },
+      "invocationId": "e-d2e022a7-55d1-4e70-8bd2-25de3f9a1d68",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {
+          "Capital": {
+            "capital": "New Delhi"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "2e5e2aa6-ccf8-4ca8-b697-56c7aa39ed01",
+      "timestamp": 1757531577.890501
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "USA"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-cf4ce200-d170-4016-873c-7b17724da0de",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "c713e416-fb09-4834-9cf0-6e2fa0a61e02",
+      "timestamp": 1757531587.381188
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\"capital\": \"Washington, D.C.\"}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 11,
+        "promptTokenCount": 87,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 87
+          }
+        ],
+        "thoughtsTokenCount": 78,
+        "totalTokenCount": 176
+      },
+      "invocationId": "e-cf4ce200-d170-4016-873c-7b17724da0de",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {
+          "Capital": {
+            "capital": "Washington, D.C."
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "28042677-9552-433c-b49b-c6f355a88719",
+      "timestamp": 1757531587.382286
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "France"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-b5055a6a-57bf-47d9-bb0f-7ebe059a3ed6",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "a7d554cd-d2da-4892-aaa2-8f2ea272999d",
+      "timestamp": 1757531592.987542
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\"capital\": \"Paris\"}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 6,
+        "promptTokenCount": 101,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 101
+          }
+        ],
+        "thoughtsTokenCount": 66,
+        "totalTokenCount": 173
+      },
+      "invocationId": "e-b5055a6a-57bf-47d9-bb0f-7ebe059a3ed6",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {
+          "Capital": {
+            "capital": "Paris"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "bc22250c-e2da-4758-af64-97f1854cab7c",
+      "timestamp": 1757531592.992752
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "China"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-6e1472cb-6fcb-4961-9715-ed93eb44490a",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "95b80c69-4de0-4bb5-8b14-0f494855a58f",
+      "timestamp": 1757531598.985276
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\"capital\": \"Beijing\"}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 6,
+        "promptTokenCount": 110,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 110
+          }
+        ],
+        "thoughtsTokenCount": 40,
+        "totalTokenCount": 156
+      },
+      "invocationId": "e-6e1472cb-6fcb-4961-9715-ed93eb44490a",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {
+          "Capital": {
+            "capital": "Beijing"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "b2f4b3d3-663e-44e4-a036-766825b14685",
+      "timestamp": 1757531598.985917
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Bihar"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-c89bd192-0759-41e1-a5b0-c0c0b5e02dd6",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "f0f87c3d-6c6c-4547-9f8a-066c9cc17cd0",
+      "timestamp": 1757531603.014624
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "{\"capital\": \"Please provide a country\"}"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "promptTokenCount": 119,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 119
+          }
+        ],
+        "thoughtsTokenCount": 396,
+        "totalTokenCount": 524
+      },
+      "invocationId": "e-c89bd192-0759-41e1-a5b0-c0c0b5e02dd6",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {
+          "Capital": {
+            "capital": "Please provide a country"
+          }
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "b058d8ab-8436-4ac5-96d1-21166d87401b",
+      "timestamp": 1757531603.017864
+    }
+  ],
+  "lastUpdateTime": 1757531603.017864
+}
