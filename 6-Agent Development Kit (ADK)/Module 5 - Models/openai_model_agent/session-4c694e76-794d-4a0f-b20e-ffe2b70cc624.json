@@ -1,0 +1,229 @@
+{
+  "id": "4c694e76-794d-4a0f-b20e-ffe2b70cc624",
+  "appName": "openai_model_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-c855777c-0eb2-4784-b602-9c41e3d7fc51",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "f7e81f53-5c67-4c4b-b394-cb1a049f5845",
+      "timestamp": 1757615521.14462
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hello! How can I assist you today?"
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "promptTokenCount": 48,
+        "totalTokenCount": 57
+      },
+      "invocationId": "e-c855777c-0eb2-4784-b602-9c41e3d7fc51",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "dc17486e-4794-4374-be19-fde0f68905a3",
+      "timestamp": 1757615521.145344
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the latest news in AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-d60f5fcf-0d5f-4c9a-a608-dbbc7eb7e17b",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "ebfbef8d-3037-491d-a7f4-66d3448ed748",
+      "timestamp": 1757615558.320676
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "As of the latest updates until October 2023"
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "promptTokenCount": 73,
+        "totalTokenCount": 83
+      },
+      "invocationId": "e-d60f5fcf-0d5f-4c9a-a608-dbbc7eb7e17b",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "49e5ff33-00ea-4de6-b708-8295e771fbc6",
+      "timestamp": 1757615558.321536
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is ADK?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-c25588ce-ad00-45de-afd5-7437c10d60f9",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "918dbfe1-0bf5-4366-8617-3bd3dcc6218c",
+      "timestamp": 1757615569.340755
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "ADK can refer to different things depending on the"
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "promptTokenCount": 96,
+        "totalTokenCount": 106
+      },
+      "invocationId": "e-c25588ce-ad00-45de-afd5-7437c10d60f9",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "d073ea54-cb96-46e8-a75c-16c1c7d6b619",
+      "timestamp": 1757615569.342037
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is adk in agentic AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-0293808d-28da-4b61-9a23-df960b106964",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "7a0d90ec-b8f3-4554-b11a-96089da05948",
+      "timestamp": 1757615595.304105
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "In the context of agentic AI, \"AD"
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "promptTokenCount": 123,
+        "totalTokenCount": 133
+      },
+      "invocationId": "e-0293808d-28da-4b61-9a23-df960b106964",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "0994db0b-0c9e-42a4-968b-deb7e55fa733",
+      "timestamp": 1757615595.304985
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is Agentic AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-2050a71a-4023-473c-91b0-40884085ce65",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "65741cd5-0892-4e77-a38a-b0c864ae9a16",
+      "timestamp": 1757615629.789713
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Agentic AI refers to artificial intelligence systems designed to"
+          }
+        ],
+        "role": "model"
+      },
+      "partial": false,
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "promptTokenCount": 147,
+        "totalTokenCount": 157
+      },
+      "invocationId": "e-2050a71a-4023-473c-91b0-40884085ce65",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "4fc9900e-f574-4eb4-b80c-935e3bcc5701",
+      "timestamp": 1757615629.792956
+    }
+  ],
+  "lastUpdateTime": 1757615629.792956
+}
