@@ -1,0 +1,28 @@
+{
+  "id": "559f6ced-38de-47f1-9080-965165c739c3",
+  "appName": "ollama_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-4dfd7399-4aad-47ef-8927-02d41626acab",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "d98e251d-2580-4091-9ac6-f5013f30622e",
+      "timestamp": 1757615938.362431
+    }
+  ],
+  "lastUpdateTime": 1757615938.362431
+}
