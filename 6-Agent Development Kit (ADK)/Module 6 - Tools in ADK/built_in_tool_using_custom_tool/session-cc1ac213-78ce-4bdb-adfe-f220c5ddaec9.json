@@ -1,0 +1,748 @@
+{
+  "id": "cc1ac213-78ce-4bdb-adfe-f220c5ddaec9",
+  "appName": "built_in_tool_using_custom_tool",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-14318aaf-86a5-47eb-b04e-758172d0cb4c",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "8c165e14-d674-4982-b5a3-9a572aa7f7a9",
+      "timestamp": 1757704327.142861
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi there! How can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 11,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 11
+          }
+        ],
+        "promptTokenCount": 160,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 160
+          }
+        ],
+        "totalTokenCount": 171
+      },
+      "invocationId": "e-14318aaf-86a5-47eb-b04e-758172d0cb4c",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "c0fe3b22-baf0-4bf2-abf9-c85d688247fa",
+      "timestamp": 1757704327.144895
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the area of Circle which having radius is 5?\n\n"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-82e6eb12-d135-41ea-b5d6-9e5fb6dc888d",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "7d93762c-fd55-4310-ae10-2dd5becdb84e",
+      "timestamp": 1757704343.15167
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-429fac19-d320-4959-9424-856f763eb2c3",
+              "args": {
+                "shape": "circle",
+                "value": 5
+              },
+              "name": "calculate_area"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 7,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 7
+          }
+        ],
+        "promptTokenCount": 185,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 185
+          }
+        ],
+        "totalTokenCount": 192
+      },
+      "invocationId": "e-82e6eb12-d135-41ea-b5d6-9e5fb6dc888d",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "f8f17ebf-1788-48d9-9e33-8977a206aa03",
+      "timestamp": 1757704343.153108
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-429fac19-d320-4959-9424-856f763eb2c3",
+              "name": "calculate_area",
+              "response": {
+                "status": "success",
+                "report": "The area of the circle is 78.54"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-82e6eb12-d135-41ea-b5d6-9e5fb6dc888d",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "009b1e44-d08c-49e5-bc6f-b41bff8aee46",
+      "timestamp": 1757704345.484727
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The area of a circle with radius 5 is 78.54.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 18,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 18
+          }
+        ],
+        "promptTokenCount": 210,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 210
+          }
+        ],
+        "totalTokenCount": 228
+      },
+      "invocationId": "e-82e6eb12-d135-41ea-b5d6-9e5fb6dc888d",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "db6b3dc8-54c6-4cf7-a6db-70adffeec653",
+      "timestamp": 1757704345.490396
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Who won IPL 2025?\n\n"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8988c0d1-87ce-4fb4-80c7-7a58d93603b8",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "4d9fbca9-1480-4e78-bff5-170fbc134e82",
+      "timestamp": 1757704354.650579
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-89a4a4d7-f2d8-46a4-9164-144a11e64287",
+              "args": {
+                "request": "Who won IPL 2025?"
+              },
+              "name": "search_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 238,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 238
+          }
+        ],
+        "totalTokenCount": 251
+      },
+      "invocationId": "e-8988c0d1-87ce-4fb4-80c7-7a58d93603b8",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "5b1b2eb2-9cdf-476e-8249-9412cafb2b48",
+      "timestamp": 1757704354.653844
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-89a4a4d7-f2d8-46a4-9164-144a11e64287",
+              "name": "search_agent",
+              "response": {
+                "result": "Royal Challengers Bengaluru (RCB) defeated Punjab Kings (PBKS) by 6 runs to win IPL 2025. The final was held at the Narendra Modi Stadium in Ahmedabad on June 3, 2025. This was RCB's first IPL title in 18 years.\n"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8988c0d1-87ce-4fb4-80c7-7a58d93603b8",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "3670e495-4b17-41be-8e1e-53ee941d13c0",
+      "timestamp": 1757704361.440207
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Royal Challengers Bengaluru (RCB) won IPL 2025, defeating Punjab Kings (PBKS).\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 24,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 24
+          }
+        ],
+        "promptTokenCount": 321,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 321
+          }
+        ],
+        "totalTokenCount": 345
+      },
+      "invocationId": "e-8988c0d1-87ce-4fb4-80c7-7a58d93603b8",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "7fef8dc3-f8db-44ca-8895-dee16a308166",
+      "timestamp": 1757704361.445945
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "which "
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-d49c94d6-9e11-42e5-a014-09e8ba895542",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "82e6a1f5-8018-493e-a1ea-cef241c517aa",
+      "timestamp": 1757704367.613083
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Which what? Please provide more information so I can assist you.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 14,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 14
+          }
+        ],
+        "promptTokenCount": 347,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 347
+          }
+        ],
+        "totalTokenCount": 361
+      },
+      "invocationId": "e-d49c94d6-9e11-42e5-a014-09e8ba895542",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "8642b4ee-f43f-4e9a-a7b0-2f243a3e4ae6",
+      "timestamp": 1757704367.615562
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "India has won match in cricket against which country recently?\n\n"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-292a7ce2-fc05-4110-b5cb-df01c2d0d961",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "967b1f28-1178-4712-8344-191b7afbe19e",
+      "timestamp": 1757704383.69478
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-71281d45-0c9c-49c6-ace3-9d6a013db5bc",
+              "args": {
+                "request": "India recent cricket match win against which country?"
+              },
+              "name": "search_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 373,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 373
+          }
+        ],
+        "totalTokenCount": 386
+      },
+      "invocationId": "e-292a7ce2-fc05-4110-b5cb-df01c2d0d961",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "78376935-4aa1-43d3-b118-d959977f7e2e",
+      "timestamp": 1757704383.706854
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-71281d45-0c9c-49c6-ace3-9d6a013db5bc",
+              "name": "search_agent",
+              "response": {
+                "result": "India has recently won cricket matches against the following countries:\n\n*   **New Zealand:** India won the Champions Trophy final against New Zealand on March 9, 2025.\n*   **United Arab Emirates (UAE):** India defeated UAE in the Asia Cup on September 10, 2025.\n*   **England:** India won the 5th Test against England on August 4, 2025.\n*   **Pakistan:** In the group stage of the ICC Champions Trophy, India won against Pakistan on February 23.\n*   **Australia:** India won the semi-final match of the ICC Champions Trophy against Australia."
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-292a7ce2-fc05-4110-b5cb-df01c2d0d961",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "7b6500f9-a9c9-4098-b0b4-6a71cb999998",
+      "timestamp": 1757704391.222802
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "India has recently won cricket matches against New Zealand, United Arab Emirates (UAE), England, Pakistan and Australia.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 23,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 23
+          }
+        ],
+        "promptTokenCount": 531,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 531
+          }
+        ],
+        "totalTokenCount": 554
+      },
+      "invocationId": "e-292a7ce2-fc05-4110-b5cb-df01c2d0d961",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "ecbe286a-5c1e-4cd7-bf50-41088ff23cae",
+      "timestamp": 1757704391.227597
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the latest stock price of Tesla?\n\n"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-7a7c1051-43ce-4927-ab87-1cf2bf3e3afd",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "6e0429a6-952d-4c00-843f-47619f5f8c10",
+      "timestamp": 1757704397.747086
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-3beb6dbd-8cb6-4a34-a1f2-b6d19935f1e7",
+              "args": {
+                "request": "latest stock price of Tesla"
+              },
+              "name": "search_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 9
+          }
+        ],
+        "promptTokenCount": 564,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 564
+          }
+        ],
+        "totalTokenCount": 573
+      },
+      "invocationId": "e-7a7c1051-43ce-4927-ab87-1cf2bf3e3afd",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "b6215f30-0186-4422-822b-4c389d4dde88",
+      "timestamp": 1757704397.748385
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-3beb6dbd-8cb6-4a34-a1f2-b6d19935f1e7",
+              "name": "search_agent",
+              "response": {
+                "result": "As of September 12, 2025, Tesla (TSLA) is trading at $389.84, which is up $21.03 or 5.70% from the previous trading session.\n\nHere's a quick snapshot of today's key figures:\n*   **High:** $395.99\n*   **Low:** $367.80\n*   **Open Price:** $370.92\n"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-7a7c1051-43ce-4927-ab87-1cf2bf3e3afd",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "d1ce7246-edce-4e77-99e6-850b36eb2c52",
+      "timestamp": 1757704405.811789
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "As of September 12, 2025, Tesla (TSLA) is trading at $389.84.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 30,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 30
+          }
+        ],
+        "promptTokenCount": 683,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 683
+          }
+        ],
+        "totalTokenCount": 713
+      },
+      "invocationId": "e-7a7c1051-43ce-4927-ab87-1cf2bf3e3afd",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "670acb3c-3713-4965-a753-41d8a39f3ede",
+      "timestamp": 1757704405.818734
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the latest news on AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8a3f3dfd-7730-402b-b8bb-4a8a9a8324c0",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "11df6dd6-32f1-4201-82f2-f4a2c486adf5",
+      "timestamp": 1757704424.700683
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-867a9bb1-4dc9-4b47-9c2d-a460bbb8ea2f",
+              "args": {
+                "request": "latest news on AI"
+              },
+              "name": "search_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 8,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 8
+          }
+        ],
+        "promptTokenCount": 721,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 721
+          }
+        ],
+        "totalTokenCount": 729
+      },
+      "invocationId": "e-8a3f3dfd-7730-402b-b8bb-4a8a9a8324c0",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "ecc00952-e942-4629-a949-84280d504de0",
+      "timestamp": 1757704424.705209
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-867a9bb1-4dc9-4b47-9c2d-a460bbb8ea2f",
+              "name": "search_agent",
+              "response": {
+                "result": "Here's a summary of the latest news on AI:\n\n*   **Investment in UK AI Companies:** British AI companies have seen record levels of investment, contributing £11.8 billion to the economy and employing over 86,000 people.\n*   **EU AI Act:** The ACHILLES project aims to simplify compliance with the EU AI Act for greener and trustworthy machine learning.\n*   **AI in Banking:** Malaysia has launched Ryt Bank, its first AI-powered bank.\n*   **AI Video Creation:** Google's Veo 3 AI video creation tools are now widely available.\n*   **AI for Transcription:** Alibaba's new Qwen model is set to enhance AI transcription tools.\n*   **AI for Fraud Prevention:** Booking.com is utilizing AI to combat online fraud.\n*   **AI Voice Models:** Xiaomi has unveiled a new AI voice model for automotive and smart home applications.\n*   **AI Chips:** Broadcom has begun shipping a new AI chip designed to accelerate data center connectivity. Nvidia has also unveiled AI chips for video and software generation.\n*   **AI Safety:** Meta has introduced new AI rules to prevent chatbots from engaging in inappropriate interactions with minors.\n*   **AI in Healthcare:** A new AI-powered stethoscope developed by UK doctors can detect heart problems rapidly.\n*   **AI for Energy:** China is aiming for global leadership in the AI-driven energy sector by 2030.\n"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8a3f3dfd-7730-402b-b8bb-4a8a9a8324c0",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "fbdb51bb-c9f2-4bf9-af4f-075ece40203f",
+      "timestamp": 1757704432.548229
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Here's a summary of the latest news on AI: Investment in UK AI Companies, EU AI Act, AI in Banking, AI Video Creation, AI for Transcription, AI for Fraud Prevention, AI Voice Models, AI Chips, AI Safety, AI in Healthcare and AI for Energy.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 58,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 58
+          }
+        ],
+        "promptTokenCount": 1040,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1040
+          }
+        ],
+        "totalTokenCount": 1098
+      },
+      "invocationId": "e-8a3f3dfd-7730-402b-b8bb-4a8a9a8324c0",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "0510d0b3-b35b-46dc-acaa-8dbc501600fe",
+      "timestamp": 1757704432.557482
+    }
+  ],
+  "lastUpdateTime": 1757704432.557482
+}
