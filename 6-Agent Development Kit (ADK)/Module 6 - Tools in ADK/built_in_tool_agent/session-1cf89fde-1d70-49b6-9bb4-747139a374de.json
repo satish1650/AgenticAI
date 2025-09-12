@@ -1,0 +1,263 @@
+{
+  "id": "1cf89fde-1d70-49b6-9bb4-747139a374de",
+  "appName": "built_in_tool_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the area of the Circle having radius is 5?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-f3d769df-0fd1-4302-a015-5bf1284caa6f",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "e94a2213-db1a-4ca0-bc88-6c1cb222c272",
+      "timestamp": 1757702739.554828
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-e590b95a-401b-4f42-99af-dde529dd0f8f",
+              "args": {
+                "shape": "circle",
+                "value": 5
+              },
+              "name": "calculate_area"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 7,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 7
+          }
+        ],
+        "promptTokenCount": 153,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 153
+          }
+        ],
+        "totalTokenCount": 160
+      },
+      "invocationId": "e-f3d769df-0fd1-4302-a015-5bf1284caa6f",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "f774cf25-0684-4e61-86d4-deff12a89785",
+      "timestamp": 1757702739.591088
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-e590b95a-401b-4f42-99af-dde529dd0f8f",
+              "name": "calculate_area",
+              "response": {
+                "status": "success",
+                "report": "The area of the circle is 78.54"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-f3d769df-0fd1-4302-a015-5bf1284caa6f",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "5ea290af-53de-44e4-8f55-b62605630d83",
+      "timestamp": 1757702741.990513
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The area of the circle is 78.54.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 14,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 14
+          }
+        ],
+        "promptTokenCount": 178,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 178
+          }
+        ],
+        "totalTokenCount": 192
+      },
+      "invocationId": "e-f3d769df-0fd1-4302-a015-5bf1284caa6f",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "354283dc-f053-4803-b86c-c7b733398468",
+      "timestamp": 1757702741.994304
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the area of the Square having one side is 5"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-931c9fc3-81d5-42bd-85c9-222e36f355a9",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "35cd2342-4a63-4165-9875-d8ee351af0ef",
+      "timestamp": 1757702767.724654
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-684f46e0-87c7-422c-b845-f820a7829d29",
+              "args": {
+                "value": 5,
+                "shape": "square"
+              },
+              "name": "calculate_area"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 7,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 7
+          }
+        ],
+        "promptTokenCount": 205,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 205
+          }
+        ],
+        "totalTokenCount": 212
+      },
+      "invocationId": "e-931c9fc3-81d5-42bd-85c9-222e36f355a9",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "a8537ede-5634-44b7-a21d-9dc75e4ebef6",
+      "timestamp": 1757702767.72616
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-684f46e0-87c7-422c-b845-f820a7829d29",
+              "name": "calculate_area",
+              "response": {
+                "status": "success",
+                "report": "The area of the square is 25.00"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-931c9fc3-81d5-42bd-85c9-222e36f355a9",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "32afd038-4e0d-4c64-aadb-9514cdd3adde",
+      "timestamp": 1757702770.034101
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The area of the square is 25.00."
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 230,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 230
+          }
+        ],
+        "totalTokenCount": 243
+      },
+      "invocationId": "e-931c9fc3-81d5-42bd-85c9-222e36f355a9",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "412fba02-bdfa-4f22-8e7e-4aaa36115a5e",
+      "timestamp": 1757702770.039236
+    }
+  ],
+  "lastUpdateTime": 1757702770.039236
+}
