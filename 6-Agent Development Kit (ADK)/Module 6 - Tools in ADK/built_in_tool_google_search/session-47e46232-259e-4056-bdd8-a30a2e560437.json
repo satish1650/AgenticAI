@@ -1,0 +1,543 @@
+{
+  "id": "47e46232-259e-4056-bdd8-a30a2e560437",
+  "appName": "built_in_tool_google_search",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8d166f34-564e-4627-9259-1edef2b1117a",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "321bcf60-9b82-4e64-a7ad-e52679d48303",
+      "timestamp": 1757701868.144999
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi there! How can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "groundingMetadata": {},
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 11,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 11
+          }
+        ],
+        "promptTokenCount": 76,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 76
+          }
+        ],
+        "totalTokenCount": 87
+      },
+      "invocationId": "e-8d166f34-564e-4627-9259-1edef2b1117a",
+      "author": "search_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "e5c5ca9f-b0f2-46ca-a829-d23941c30e20",
+      "timestamp": 1757701868.149676
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Who WON IPL 2025?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-0048f283-2834-4bc6-821a-5b1e9fac9a18",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "31da5e25-4d16-4f35-b19b-6f0a9ad8dff3",
+      "timestamp": 1757701903.929671
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Royal Challengers Bengaluru (RCB) won IPL 2025, defeating Punjab Kings (PBKS) by 6 runs in the final. This was RCB's first IPL title in 18 years. The final match was held on June 3, 2025, at the Narendra Modi Stadium in Ahmedabad.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "groundingMetadata": {
+        "groundingChunks": [
+          {
+            "web": {
+              "title": "jagranjosh.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp5D17qH6XMFV-t9umwB-8iJ1DyANXOAoo9_93vzKYI9x9lREN6XIMH-SzZ_auQcjwlhuBTx9Dc2EjILtE4F1bp6k1GTfieep5eJMkL60yyEWmZp9LPYWcROjHlHyBjVZ6Txio2gb-Ilppk_ST725aiK2gwmNZZE8coQAi3Zvc5dzEZLP8OVrguCu0RZ-1nywLe9SPz5LFzVYEC3hVYkhVCnClYJLFxUwic-BobkcvrQjlD5mv0NnkgjFfvRL-Z38rSbroFuTWm2tgsw=="
+            }
+          },
+          {
+            "web": {
+              "title": "jagranjosh.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuHysFw1pwDN0E2IT9WisWhV8Tf3XQUqnRyq2OaLzWHqxk949GZjgaU0iLXQWUjV3DmVLDX5MiRCOu9HCRGFVoOAQr500HZEMZa9mKGadhLabn3LEmNwalhVKPtg2pl5-qXQK8M7R4dCs3aVbgJ70BqFDyGagiiJE6ehNknNsFfB8MNwBg1D5S-Aa4PnR2DoYI"
+            }
+          },
+          {
+            "web": {
+              "title": "royalchallengers.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNmOk1ibgDKComhTAkEueN8Nc0Zrcg5rHs1wqf5oqz1MeJTILT-GgQFetxwyVhr1daG3SsTUeJ2zInAiuV6lWVf1_Cn4jJj7UHHYtkBT1XlNVX5tjKyjAG6MTWlvrrzL4XvWQba1mLjbdQN9DA9COvZ8uTJJfDh3eq5Yw1q50ELpSwsK6ZnVdDSz0jki8L7WITQY8="
+            }
+          },
+          {
+            "web": {
+              "title": "wikipedia.org",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKDRuAaaVqasjQUWdH89LgJsYHL7qVSAz3B1QRB_3XPgRq8unvoH1lxKQwoJ25fsnZzAW1GxhOtDV8FOPkHakV-JwOqbG4NAljF-h7hNGBAXnY9W_TdtCOknnnq73a4CAIlfNYtZMZLT1E3FofVTTibWfGD2hu0OdG"
+            }
+          },
+          {
+            "web": {
+              "title": "olympics.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYmj5EU_4lUMl7oGeA6E6BPsXD4FtDHxMfm3LCJSIHoKVGIl7mD7JO5EpUWRI6GXM7DLP7k_iFkLkjIlZceo9PMpoKGCYDjSuh6ZCcTCq1cSiJ_CoT1o0IwXcUnakkGvmRfNV1cOrnpa5QGnwBqEhtsWs1RRUe8ATpmHzbksrM3byENTeRitvuHzrMlfnJbynlYQxUM6lHLGBXpbBcYzM="
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "confidenceScores": [
+              0.94092774,
+              0.8716933,
+              0.6124098
+            ],
+            "groundingChunkIndices": [
+              0,
+              1,
+              2
+            ],
+            "segment": {
+              "endIndex": 100,
+              "text": "Royal Challengers Bengaluru (RCB) won IPL 2025, defeating Punjab Kings (PBKS) by 6 runs in the final"
+            }
+          },
+          {
+            "confidenceScores": [
+              0.9551228,
+              0.47845075,
+              0.8477712
+            ],
+            "groundingChunkIndices": [
+              1,
+              3,
+              2
+            ],
+            "segment": {
+              "endIndex": 144,
+              "startIndex": 102,
+              "text": "This was RCB's first IPL title in 18 years"
+            }
+          },
+          {
+            "confidenceScores": [
+              0.009572397,
+              0.8883694,
+              0.08015132
+            ],
+            "groundingChunkIndices": [
+              4,
+              3,
+              0
+            ],
+            "segment": {
+              "endIndex": 229,
+              "startIndex": 146,
+              "text": "The final match was held on June 3, 2025, at the Narendra Modi Stadium in Ahmedabad"
+            }
+          }
+        ],
+        "retrievalMetadata": {},
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeprGtO1P3nMalZexkf7bU4V5EQle5LsR7e9tT-J8e8lqnozzC3wqSYSi9IWbfSy6bhzkoQFqSYZzZkj96_7uSBASA1-shFYWIu0oU3mNUfEv8qqYv0MOtNFSP3js0r_O8kmIJ_cAJ6STawYImH5rKGmDitybGyUWo8cEW4Co7ePH8KQ4eLKA13QK6QMw8WMmFyw==\">IPL 2025 winner</a>\n  </div>\n</div>\n"
+        },
+        "webSearchQueries": [
+          "IPL 2025 winner"
+        ]
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 71,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 71
+          }
+        ],
+        "promptTokenCount": 96,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 96
+          }
+        ],
+        "totalTokenCount": 167
+      },
+      "invocationId": "e-0048f283-2834-4bc6-821a-5b1e9fac9a18",
+      "author": "search_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "55a1059a-357b-401f-86de-a29b9feb8791",
+      "timestamp": 1757701903.930342
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the latest price of Sliverbess on NSE?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-f270c6a3-3b0a-481e-ba09-28ef1a4c09c5",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "71b713af-5a82-4922-8af3-bbde71c770ce",
+      "timestamp": 1757701964.128258
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The latest price of Nippon India Silver ETF (SILVERBEES) on NSE is ₹122.95 as of September 12, 2025. It has risen 2.88% in the past 24 hours.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "groundingMetadata": {
+        "groundingChunks": [
+          {
+            "web": {
+              "title": "tickertape.in",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQaiKnG6nW8Y6DuH77bWJKhPPRFvWnOcvulFbaHmnSIgTGFRsD0yWa-8dBOgFR3Vaqq1nJL6tWA_0oltNDlZ_Pz-Xl5CuMS3CT_-eb_dHtrYT6QPxXQcp33P5NPRs5wnNoFHAjEyOTNUlyxtmvw-vZiEhzl8oNuw=="
+            }
+          },
+          {
+            "web": {
+              "title": "tradingview.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMNADGTyJVGucq4sCtCBQXAqXGZb2nlKeGXoisIZCvVrdPUWpENZMP-5M-_cCP5lu4hmyxFeWrtaNOOyAMfLEUmH83AX1u58Jf4p9DfYqWCrxxgNLwY2KWznsmDV3-cFPTr15zKu3buTVGx8od"
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "confidenceScores": [
+              0.5506377
+            ],
+            "groundingChunkIndices": [
+              0
+            ],
+            "segment": {
+              "endIndex": 101,
+              "text": "The latest price of Nippon India Silver ETF (SILVERBEES) on NSE is ₹122.95 as of September 12, 2025"
+            }
+          },
+          {
+            "confidenceScores": [
+              0.9596654
+            ],
+            "groundingChunkIndices": [
+              1
+            ],
+            "segment": {
+              "endIndex": 142,
+              "startIndex": 103,
+              "text": "It has risen 2.88% in the past 24 hours"
+            }
+          }
+        ],
+        "retrievalMetadata": {},
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAj6Po3N9kwbOSyl4poxFxSEI8yL4R8le2tbVYH81V8BUAPVAY1HYCJt1TqeqBeeK7do11_dY3XHqXo2rNK6-xggD42Zv7aop9tHzG7Qni4splQevARYKSCwYHah-3XYy_Bc1qmn4Cvgh8QXQ16wylujJOKlTyKKsc_aEEsDPlm_mf36NC0K_zmGMD-DXSO_usFjfFj1jm\">Sliverbess NSE price</a>\n  </div>\n</div>\n"
+        },
+        "webSearchQueries": [
+          "Sliverbess NSE price"
+        ]
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 54,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 54
+          }
+        ],
+        "promptTokenCount": 180,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 180
+          }
+        ],
+        "totalTokenCount": 234
+      },
+      "invocationId": "e-f270c6a3-3b0a-481e-ba09-28ef1a4c09c5",
+      "author": "search_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "1bddb375-43a5-4e09-9e78-2dee85a3ef5f",
+      "timestamp": 1757701964.135407
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the latest price of Goldbees?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-0dc06e1e-edd1-4011-891b-6f612cc365e1",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "08367b1b-5fac-403f-baa6-b2ac6e9b110d",
+      "timestamp": 1757702173.595477
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The latest price of Nippon India ETF Gold BeES (GOLDBEES) on NSE is ₹91.29 as of September 12, 2025. It was last updated at 15:55 IST and had a rise of ₹0.64 (0.71%).\n"
+          }
+        ],
+        "role": "model"
+      },
+      "groundingMetadata": {
+        "groundingChunks": [
+          {
+            "web": {
+              "title": "indmoney.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkql2zWX2kNt8OpDCRYUzwwMgDaT_00luJA7BEVskOYUnpYZ0yEe8oJkckr3x_qKpmQ7xVqZ48TKA4daOH1i2aUWxER6l-FkVyAI2njAF6oXqlMXP0Oli1nD1ey2ZuF576cdh0NWGtl3CHT7tTjBgw4ZT7otRfTEj5Q3y7WDK8esQ="
+            }
+          },
+          {
+            "web": {
+              "title": "upstox.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZfvQXgujBKekX049RghFqGXhQdWrbksseNWn1RmEo-bd-gbptlUURh0hfBNFqGxDBjpl5E0tyv84AJnubPsBn12Ppe141s2pmqLgS19svchuUDi_wXD-Iof2HyptRLNVF84-qHMfbiu4FJN8KhMy0xQVYSOgC9VLMetYX0S-TiN1I"
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "confidenceScores": [
+              0.017037505
+            ],
+            "groundingChunkIndices": [
+              0
+            ],
+            "segment": {
+              "endIndex": 101,
+              "text": "The latest price of Nippon India ETF Gold BeES (GOLDBEES) on NSE is ₹91.29 as of September 12, 2025"
+            }
+          },
+          {
+            "confidenceScores": [
+              0.9484087
+            ],
+            "groundingChunkIndices": [
+              1
+            ],
+            "segment": {
+              "endIndex": 169,
+              "startIndex": 103,
+              "text": "It was last updated at 15:55 IST and had a rise of ₹0.64 (0.71%)"
+            }
+          }
+        ],
+        "retrievalMetadata": {},
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHhmb7jmEcX6qE4SnByW_vMbisPlz15PCcoS-4DS-3iEGvShYCBMQSeJJ3r6HpURz-fUUvBhbrrt1e05qmS8bKuBh2s81TSBv56t6GJVaWt0AWAjxS7uCN_-ZWT2boZMaL6tqN7QxVbW-T9UVJDzcaPz2TWuiL3KAUCLxA5e7VRmKHxIbeH8QpwBDHAatmUzg6nWCuF3rd5PnhAw==\">latest price of GoldBees</a>\n  </div>\n</div>\n"
+        },
+        "webSearchQueries": [
+          "latest price of GoldBees"
+        ]
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 66,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 66
+          }
+        ],
+        "promptTokenCount": 243,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 243
+          }
+        ],
+        "totalTokenCount": 309
+      },
+      "invocationId": "e-0dc06e1e-edd1-4011-891b-6f612cc365e1",
+      "author": "search_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "5887e7ba-fb75-4586-a3be-7fc7c75fe54a",
+      "timestamp": 1757702173.596139
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "what is latest price of silverbees"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-6acb5e08-2156-49ae-a9ef-58c406f64538",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "c115fde5-19e7-4718-bd0d-3925617dac03",
+      "timestamp": 1757702210.273948
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "As of September 12, 2025, the latest price of Nippon India Silver ETF (SILVERBEES) on NSE is between ₹119.30 and ₹122.95. The price has risen 2.88% in the past 24 hours.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "groundingMetadata": {
+        "groundingChunks": [
+          {
+            "web": {
+              "title": "tradingview.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7Agwo7TJbLNSaqGLfBW8oZjlt8YJ432cMMvfIofEZfmtD0ANYknzIgyPhVR1bxKqI5xgOp_lYuT7w2tVSp8JXw-Yg9l4sqwMAvWRm3cUslrMWU_p3XjJDmhGoCrmbjhZRcNxjKB-uVL_77srL"
+            }
+          },
+          {
+            "web": {
+              "title": "tradingview.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUj0nEZAQ7KRrPVrS7WeoRSafdv103UqgNjzETY5e9x2SCb3qZ-JB1ahwhsYm6CLMpReMO0KoDOLqmEVJwy60GF7mKwvShydVNWAE1iIsbiuM8wO03XF3PKIkNjYRQ1ub9ezLwW3QNeO8kuQ6C1w=="
+            }
+          },
+          {
+            "web": {
+              "title": "trendlyne.com",
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM2huUmb3bUJ0sFwVSIpVfsPVRstag1QgU1DkoMwwemW_WEKNCpkxu0JnaVbtFWsx76s_jpHAX8L52byULuaLLm2IYVpW2J9J_WFDx7Sgx-vNhR4f2KYP1fRKUpOxohV2PK0iYCR1peRlPf-gzpvHHQ6oMCyNt-LfCtNVYAzqZiVj4"
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "confidenceScores": [
+              0.0069410964,
+              0.006068197,
+              0.02625785
+            ],
+            "groundingChunkIndices": [
+              0,
+              1,
+              2
+            ],
+            "segment": {
+              "endIndex": 124,
+              "text": "As of September 12, 2025, the latest price of Nippon India Silver ETF (SILVERBEES) on NSE is between ₹119.30 and ₹122.95"
+            }
+          },
+          {
+            "confidenceScores": [
+              0.9700402
+            ],
+            "groundingChunkIndices": [
+              0
+            ],
+            "segment": {
+              "endIndex": 172,
+              "startIndex": 126,
+              "text": "The price has risen 2.88% in the past 24 hours"
+            }
+          }
+        ],
+        "retrievalMetadata": {},
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn4MZXu3lH2O0Nb7a3Nk_CaGFt4IfaSiztLTTup17TZoD3lSGQkfIJUO6PQvW7eSbl3hngtTULlJcNZNKBe22WFuUYpjsxXGkfIonRgzK6X8lMd5QizVXmz0KqSV2GZ9F2FwM_eJ_hgIJn5UIAvsVOg3jXvN1yje6ZrrOuqvDznUO3M-8fASnYxu-ypUcBFQSLP_e_TzLWwp9NkQAn\">latest price of silverbees</a>\n  </div>\n</div>\n"
+        },
+        "webSearchQueries": [
+          "latest price of silverbees"
+        ]
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 65,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 65
+          }
+        ],
+        "promptTokenCount": 316,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 316
+          }
+        ],
+        "totalTokenCount": 381
+      },
+      "invocationId": "e-6acb5e08-2156-49ae-a9ef-58c406f64538",
+      "author": "search_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "f6a54f82-5cf9-4c54-af61-08ff59bf095a",
+      "timestamp": 1757702210.275124
+    }
+  ],
+  "lastUpdateTime": 1757702210.275124
+}
