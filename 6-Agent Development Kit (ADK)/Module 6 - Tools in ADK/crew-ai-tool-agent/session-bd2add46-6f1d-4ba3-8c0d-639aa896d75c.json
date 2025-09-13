@@ -1,0 +1,247 @@
+{
+  "id": "bd2add46-6f1d-4ba3-8c0d-639aa896d75c",
+  "appName": "crew-ai-tool-agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-6bc1698a-5fd6-4939-b2d7-90cf34eceb0a",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "b89f4600-e956-45fa-986e-3d59c8c37abc",
+      "timestamp": 1757774563.304477
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi, how can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 10
+          }
+        ],
+        "promptTokenCount": 77,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 77
+          }
+        ],
+        "totalTokenCount": 87
+      },
+      "invocationId": "e-6bc1698a-5fd6-4939-b2d7-90cf34eceb0a",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "61ef2848-2509-4f96-ab3c-e3e98e9e336a",
+      "timestamp": 1757774563.350836
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the latest stock price of tesla?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-7da01073-c84b-4fdf-8558-f43ac56e6ab5",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "5d5c88fd-3906-40a1-bd00-b97739fc2d1d",
+      "timestamp": 1757774683.08644
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I am sorry, I cannot get the stock price of Tesla directly. However, I can search the internet for news articles about Tesla, which might contain the stock price. Would you like me to do that?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 43,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 43
+          }
+        ],
+        "promptTokenCount": 96,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 96
+          }
+        ],
+        "totalTokenCount": 139
+      },
+      "invocationId": "e-7da01073-c84b-4fdf-8558-f43ac56e6ab5",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "9dca74d0-6335-446d-8bae-1de67276c1e5",
+      "timestamp": 1757774683.097479
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "yes"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-fa0e53eb-5924-4fa1-99a5-c967ce229507",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "46eb19a7-a653-4896-b92f-a1ae941473fb",
+      "timestamp": 1757774700.252302
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-39ce9cfd-0c42-4109-8d2b-ec09fc357291",
+              "args": {
+                "search_query": "Tesla stock price"
+              },
+              "name": "InternetNewsSearch"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 9
+          }
+        ],
+        "promptTokenCount": 140,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 140
+          }
+        ],
+        "totalTokenCount": 149
+      },
+      "invocationId": "e-fa0e53eb-5924-4fa1-99a5-c967ce229507",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "c4489704-4e29-4633-a161-c59dbb3ecd5b",
+      "timestamp": 1757774700.258986
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the latest news on AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-5c28fb79-af47-4420-88a8-24b2beb732f8",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "b680f2e2-d526-4e79-84ec-0eaa5f5e2aa7",
+      "timestamp": 1757774770.985979
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-fbf1fc36-1c78-490f-ad97-81083f7e83b7",
+              "args": {
+                "search_query": "latest news on AI"
+              },
+              "name": "InternetNewsSearch"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 10
+          }
+        ],
+        "promptTokenCount": 157,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 157
+          }
+        ],
+        "totalTokenCount": 167
+      },
+      "invocationId": "e-5c28fb79-af47-4420-88a8-24b2beb732f8",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "a6631ac4-9d96-44a0-985a-93c892a60646",
+      "timestamp": 1757774770.987295
+    }
+  ],
+  "lastUpdateTime": 1757774770.987295
+}
