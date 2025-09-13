@@ -1,0 +1,139 @@
+{
+  "id": "e4bff69f-bab5-43b9-947f-b92fcd8d11f7",
+  "appName": "session_using_output_key",
+  "userId": "user",
+  "state": {
+    "msg": "I am sorry, weather information for New Delhi is not available."
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the Weather of New Delhi?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-4b362da7-d78f-4993-9993-f9af0e133c5f",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "38a5d9cc-4aa6-4a60-9dfa-49c7e87182f5",
+      "timestamp": 1757789745.380882
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-a00fc525-9afa-4a64-bf11-7d6985e2f219",
+              "args": {
+                "city": "New Delhi"
+              },
+              "name": "get_weather"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 6,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 6
+          }
+        ],
+        "promptTokenCount": 174,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 174
+          }
+        ],
+        "totalTokenCount": 180
+      },
+      "invocationId": "e-4b362da7-d78f-4993-9993-f9af0e133c5f",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "056adbee-0ca3-4363-b038-348f694eb42c",
+      "timestamp": 1757789745.384343
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-a00fc525-9afa-4a64-bf11-7d6985e2f219",
+              "name": "get_weather",
+              "response": {
+                "status": "error",
+                "error_message": "Weather information for 'New Delhi' is not available."
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-4b362da7-d78f-4993-9993-f9af0e133c5f",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "506a6d7d-765b-40a2-a7d0-7d28b0203787",
+      "timestamp": 1757789747.831834
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I am sorry, weather information for New Delhi is not available."
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 199,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 199
+          }
+        ],
+        "totalTokenCount": 212
+      },
+      "invocationId": "e-4b362da7-d78f-4993-9993-f9af0e133c5f",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {
+          "msg": "I am sorry, weather information for New Delhi is not available."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "9b3aab79-6dff-4d23-93f8-ead4ab0cb8f0",
+      "timestamp": 1757789747.835902
+    }
+  ],
+  "lastUpdateTime": 1757789747.835902
+}
