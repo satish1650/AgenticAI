@@ -2,3 +2,4 @@ google-adk
 pydantic
 litellm
 openai
+crewai-tools
