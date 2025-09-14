@@ -300,6 +300,14 @@ https://console.cloud.google.com/welcome
 https://google.github.io/adk-docs/get-started/quickstart/#agentpy
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+13 Sep Day - 37 Google ADK - Mini Project
+*****************************************
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0
+
+Show Graph in jupyter
+https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 14 Sep Day - 38 Google ADK - Project-Enhance + Advance Concepts
 ***************************************************************
 ADK Accuracy
