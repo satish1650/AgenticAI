@@ -293,6 +293,7 @@ https://console.cloud.google.com/welcome
 *************************************************************
 https://google.github.io/adk-docs/get-started/quickstart/#agentpy
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 13 Sep Day - 37 Google ADK - Mini Project
 *****************************************
 https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0
