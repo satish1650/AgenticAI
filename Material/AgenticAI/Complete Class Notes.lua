@@ -298,4 +298,18 @@ https://console.cloud.google.com/welcome
 07 Sep Day - 36 Google ADK (Agent Development Kit) - Advanced 
 *************************************************************
 https://google.github.io/adk-docs/get-started/quickstart/#agentpy
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+14 Sep Day - 38 Google ADK - Project-Enhance + Advance Concepts
+***************************************************************
+ADK Accuracy
+
+https://google.github.io/adk-docs/evaluate/#preparing-for-agent-evaluations
+
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0
+
+https://cloud.google.com/blog/products/ai-machine-learning/multimodal-generative-ai-search
+
+https://google.github.io/adk-docs/observability/logging/#debugging-with-logs-a-practical-example
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
