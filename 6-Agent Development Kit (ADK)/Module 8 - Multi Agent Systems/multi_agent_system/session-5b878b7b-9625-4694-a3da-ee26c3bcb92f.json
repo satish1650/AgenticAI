@@ -1,0 +1,598 @@
+{
+  "id": "5b878b7b-9625-4694-a3da-ee26c3bcb92f",
+  "appName": "multi_agent_system",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-6ffed29b-668a-4070-8560-ddc994a0e81e",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "7381df96-16a0-42c2-b1bb-f843c08f93fd",
+      "timestamp": 1757876902.808455
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi there! How can I help you with your travel needs today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 15,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 15
+          }
+        ],
+        "promptTokenCount": 494,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 494
+          }
+        ],
+        "totalTokenCount": 509
+      },
+      "invocationId": "e-6ffed29b-668a-4070-8560-ddc994a0e81e",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "d52f465b-7f39-4c59-87bb-d6cdcf117aee",
+      "timestamp": 1757876902.810602
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "can you tell me order status of NYC123?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-61e33d77-5fc2-4778-b4bd-a523ef2ca008",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "bee5cb95-97f2-4a5d-90d5-c4c410e0806d",
+      "timestamp": 1757876954.825141
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-6a276c7e-9160-4b00-806b-ff5777028891",
+              "args": {
+                "order_id": "NYC123"
+              },
+              "name": "check_order_status"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 12,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 12
+          }
+        ],
+        "promptTokenCount": 521,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 521
+          }
+        ],
+        "totalTokenCount": 533
+      },
+      "invocationId": "e-61e33d77-5fc2-4778-b4bd-a523ef2ca008",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "8e8100ab-6831-4bc0-9856-686e717a7f73",
+      "timestamp": 1757876954.827016
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-6a276c7e-9160-4b00-806b-ff5777028891",
+              "name": "check_order_status",
+              "response": {
+                "order_id": "NYC123",
+                "status": "Ticketed",
+                "pnr": "PNR789",
+                "departure": "2025-09-15",
+                "from": "JFK",
+                "to": "LHR"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-61e33d77-5fc2-4778-b4bd-a523ef2ca008",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "72f30bf3-1457-4929-b6ff-1cad7e717235",
+      "timestamp": 1757876957.186619
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "OK. The order status for NYC123 is Ticketed. The PNR is PNR789. The flight is from JFK to LHR on 2025-09-15.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 47,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 47
+          }
+        ],
+        "promptTokenCount": 572,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 572
+          }
+        ],
+        "totalTokenCount": 619
+      },
+      "invocationId": "e-61e33d77-5fc2-4778-b4bd-a523ef2ca008",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "6e587623-a79e-4c83-a88d-ac5008d170cb",
+      "timestamp": 1757876957.192137
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "can you tell me product info of Bali?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-993afa81-6b63-4338-9174-962adf39cd6f",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "83c56fb4-9664-491c-a185-21fd6775fdd5",
+      "timestamp": 1757877225.245591
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-af149232-07c3-4b7d-816e-207c2a5f4912",
+              "args": {
+                "agent_name": "product_agent"
+              },
+              "name": "transfer_to_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 11,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 11
+          }
+        ],
+        "promptTokenCount": 628,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 628
+          }
+        ],
+        "totalTokenCount": 639
+      },
+      "invocationId": "e-993afa81-6b63-4338-9174-962adf39cd6f",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "ee76c767-35e5-4627-9b0c-523b624300f4",
+      "timestamp": 1757877225.246734
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-af149232-07c3-4b7d-816e-207c2a5f4912",
+              "name": "transfer_to_agent",
+              "response": {
+                "result": null
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-993afa81-6b63-4338-9174-962adf39cd6f",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "transferToAgent": "product_agent",
+        "requestedAuthConfigs": {}
+      },
+      "id": "09ae16a2-0395-46fc-9086-5475c1cd7d3e",
+      "timestamp": 1757877227.681035
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-a24db3cc-056b-4317-ac07-99c50591b964",
+              "args": {
+                "product_name": "Bali"
+              },
+              "name": "lookup_product_info"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 9
+          }
+        ],
+        "promptTokenCount": 797,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 797
+          }
+        ],
+        "totalTokenCount": 806
+      },
+      "invocationId": "e-993afa81-6b63-4338-9174-962adf39cd6f",
+      "author": "product_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "4feb2fc9-de08-4463-823c-26a5aa72a16a",
+      "timestamp": 1757877227.683837
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-a24db3cc-056b-4317-ac07-99c50591b964",
+              "name": "lookup_product_info",
+              "response": {
+                "name": "Bali",
+                "avg_price": "$1,299",
+                "availability": "Open",
+                "best_season": "Apr–Oct",
+                "highlights": [
+                  "Beaches",
+                  "Ubud rice terraces",
+                  "Waterfalls"
+                ]
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-993afa81-6b63-4338-9174-962adf39cd6f",
+      "author": "product_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "dab3a120-4b81-4c90-91be-a09ded0f5638",
+      "timestamp": 1757877230.206513
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Bali is about $1,299 and is generally open for travel. The best seasons to visit are April to October. Highlights include beautiful beaches, the rice terraces in Ubud, and stunning waterfalls.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 43,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 43
+          }
+        ],
+        "promptTokenCount": 839,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 839
+          }
+        ],
+        "totalTokenCount": 882
+      },
+      "invocationId": "e-993afa81-6b63-4338-9174-962adf39cd6f",
+      "author": "product_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "427dca61-883a-48bd-9ed4-4a2d2c122862",
+      "timestamp": 1757877230.211961
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "can you tell me the order status of DXB456?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-cd93ecc0-bb07-42a7-a695-6700b5b7a4c1",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "380f0d71-871b-4610-97ba-e7b24ad0d108",
+      "timestamp": 1757877569.731223
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-a3f483b1-cf99-424f-8375-ffca7a6db9f3",
+              "args": {
+                "agent_name": "customer_service_manager"
+              },
+              "name": "transfer_to_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 896,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 896
+          }
+        ],
+        "totalTokenCount": 909
+      },
+      "invocationId": "e-cd93ecc0-bb07-42a7-a695-6700b5b7a4c1",
+      "author": "product_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "a5abf28b-9271-43da-8b3d-20b489cc2c11",
+      "timestamp": 1757877569.732998
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-a3f483b1-cf99-424f-8375-ffca7a6db9f3",
+              "name": "transfer_to_agent",
+              "response": {
+                "result": null
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-cd93ecc0-bb07-42a7-a695-6700b5b7a4c1",
+      "author": "product_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "transferToAgent": "customer_service_manager",
+        "requestedAuthConfigs": {}
+      },
+      "id": "9ffbac9b-7ed8-400c-ad59-4b36baa0525e",
+      "timestamp": 1757877572.251136
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-9b97e6f8-0a43-482e-bee1-09c2454f37dd",
+              "args": {
+                "order_id": "DXB456"
+              },
+              "name": "check_order_status"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 867,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 867
+          }
+        ],
+        "totalTokenCount": 880
+      },
+      "invocationId": "e-cd93ecc0-bb07-42a7-a695-6700b5b7a4c1",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "7aac15d8-e41a-4d62-b27e-6389299648cf",
+      "timestamp": 1757877572.254137
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-9b97e6f8-0a43-482e-bee1-09c2454f37dd",
+              "name": "check_order_status",
+              "response": {
+                "order_id": "DXB456",
+                "status": "Awaiting Payment",
+                "pnr": null,
+                "departure": "TBD",
+                "from": "DXB",
+                "to": "CDG"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-cd93ecc0-bb07-42a7-a695-6700b5b7a4c1",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "88706415-21ec-4fed-856a-c882e1f05531",
+      "timestamp": 1757877574.637326
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The order status for DXB456 is Awaiting Payment. The flight is from DXB to CDG and the departure date is still To Be Determined.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 34,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 34
+          }
+        ],
+        "promptTokenCount": 908,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 908
+          }
+        ],
+        "totalTokenCount": 942
+      },
+      "invocationId": "e-cd93ecc0-bb07-42a7-a695-6700b5b7a4c1",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "f49a1e79-772a-4632-929e-4a977b08e4cc",
+      "timestamp": 1757877574.641724
+    }
+  ],
+  "lastUpdateTime": 1757877574.641724
+}
