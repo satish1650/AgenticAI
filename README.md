@@ -51,7 +51,7 @@ All Classes
 06 Sep Day - 35 Google ADK (Agent Development Kit) - Basics <br>
 07 Sep Day - 36 Google ADK (Agent Development Kit) - Advanced <br>
 13 Sep Day - 37 Google ADK - Mini Project <br>
-14 Sep Day - 38 Google ADK - Advanced Project <br>
+14 Sep Day - 38 Google ADK - Project-Enhance + Advance Concepts <br>
 
 How to create virtual environment in "VS Code"
 ---
