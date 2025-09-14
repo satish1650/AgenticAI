@@ -1,0 +1,154 @@
+{
+  "id": "4bb73849-7d55-44c5-9b41-b7b4677707d3",
+  "appName": "multi_agent_system",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-1f7951dc-2e4d-4d6a-9c87-50084f233f8e",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "c1d84675-b2af-43f2-b545-f4b480a2ba91",
+      "timestamp": 1757875956.388661
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi, how can I help you with your travel needs today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 14,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 14
+          }
+        ],
+        "promptTokenCount": 476,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 476
+          }
+        ],
+        "totalTokenCount": 490
+      },
+      "invocationId": "e-1f7951dc-2e4d-4d6a-9c87-50084f233f8e",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "5416a1d0-6f47-4cf8-bce1-b668ba02a964",
+      "timestamp": 1757875956.390501
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Who Won IPL 2025?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8f07261b-c199-470c-a8d9-329cc62db024",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "8f65cd35-d5d6-4cb3-b3d9-23a0eaf024ee",
+      "timestamp": 1757876024.454385
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-14b63c5d-0821-4742-a44e-4a1aa1fbd9ef",
+              "args": {
+                "agent_name": "search_agent"
+              },
+              "name": "transfer_to_agent"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 11,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 11
+          }
+        ],
+        "promptTokenCount": 499,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 499
+          }
+        ],
+        "totalTokenCount": 510
+      },
+      "invocationId": "e-8f07261b-c199-470c-a8d9-329cc62db024",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "2f3b4367-17cd-4999-8be7-91828f45f8c4",
+      "timestamp": 1757876024.479935
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-14b63c5d-0821-4742-a44e-4a1aa1fbd9ef",
+              "name": "transfer_to_agent",
+              "response": {
+                "result": null
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8f07261b-c199-470c-a8d9-329cc62db024",
+      "author": "customer_service_manager",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "transferToAgent": "search_agent",
+        "requestedAuthConfigs": {}
+      },
+      "id": "d2bc5a78-06de-40bb-a897-9545241d965e",
+      "timestamp": 1757876026.932109
+    }
+  ],
+  "lastUpdateTime": 1757876026.932109
+}
