@@ -301,7 +301,16 @@ Show Graph in jupyter
 https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-14 Sep Day - 38 Google ADK - Advanced Project
-*********************************************
+14 Sep Day - 38 Google ADK - Project-Enhance + Advance Concepts
+***************************************************************
+ADK Accuracy
+
+https://google.github.io/adk-docs/evaluate/#preparing-for-agent-evaluations
+
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0
+
+https://cloud.google.com/blog/products/ai-machine-learning/multimodal-generative-ai-search
+
+https://google.github.io/adk-docs/observability/logging/#debugging-with-logs-a-practical-example
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
