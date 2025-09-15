@@ -1,0 +1,149 @@
+{
+  "id": "bc845c6d-5438-4c02-8700-10d1133ab391",
+  "appName": "sequential-workflow-practical",
+  "userId": "user",
+  "state": {
+    "es": "Hola, ¿cómo estás?\n",
+    "fr": "Comment allez-vous?\n",
+    "de": "Hallo, wie geht es dir?\n"
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi How are you?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-a8a522cf-3c58-458f-b9ab-c72e586c2b46",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "e1dc880b-4151-43b1-8516-c456824a097d",
+      "timestamp": 1757958234.8232
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hola, ¿cómo estás?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 7,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 7
+          }
+        ],
+        "promptTokenCount": 33,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 33
+          }
+        ],
+        "totalTokenCount": 40
+      },
+      "invocationId": "e-a8a522cf-3c58-458f-b9ab-c72e586c2b46",
+      "author": "Translator_Spanish",
+      "actions": {
+        "stateDelta": {
+          "es": "Hola, ¿cómo estás?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "9e5692c0-1966-49fb-89c1-079b1c4f33d0",
+      "timestamp": 1757958234.824629
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Comment allez-vous?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 6,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 6
+          }
+        ],
+        "promptTokenCount": 50,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 50
+          }
+        ],
+        "totalTokenCount": 56
+      },
+      "invocationId": "e-a8a522cf-3c58-458f-b9ab-c72e586c2b46",
+      "author": "Translator_French",
+      "actions": {
+        "stateDelta": {
+          "fr": "Comment allez-vous?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "7d1eaf30-976d-4da1-9aa2-64b78ad614d2",
+      "timestamp": 1757958237.172429
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hallo, wie geht es dir?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 8,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 8
+          }
+        ],
+        "promptTokenCount": 66,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 66
+          }
+        ],
+        "totalTokenCount": 74
+      },
+      "invocationId": "e-a8a522cf-3c58-458f-b9ab-c72e586c2b46",
+      "author": "Translator_German",
+      "actions": {
+        "stateDelta": {
+          "de": "Hallo, wie geht es dir?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "e38e12ca-b3f6-4a8f-b233-df282bfd01e1",
+      "timestamp": 1757958239.389022
+    }
+  ],
+  "lastUpdateTime": 1757958239.389022
+}
