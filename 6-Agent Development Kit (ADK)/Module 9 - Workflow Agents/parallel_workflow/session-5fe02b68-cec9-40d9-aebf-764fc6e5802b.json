@@ -1,0 +1,548 @@
+{
+  "id": "5fe02b68-cec9-40d9-aebf-764fc6e5802b",
+  "appName": "parallel_workflow",
+  "userId": "user",
+  "state": {
+    "French_key": "Je suis en train de vous aider à trouver le slogan parfait en français. De quoi s'agit-il ?\n",
+    "spanish_key": "Actualmente, estoy esperando tu solicitud para crear un eslogan de marketing localizado en español. ¡Dime cuál es tu producto o idea!\n",
+    "German_key": "Ich helfe Ihnen gerade bei Ihren Anliegen.\n",
+    "merged_translation": "```json\n{\n  \"es\": \"Actualmente, estoy esperando tu solicitud para crear un eslogan de marketing localizado en español. ¡Dime cuál es tu producto o idea!\",\n  \"fr\": \"Je suis en train de vous aider à trouver le slogan parfait en français. De quoi s'agit-il ?\",\n  \"de\": \"Ich helfe Ihnen gerade bei Ihren Anliegen.\"\n}\n```"
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi How are you?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-92638309-60eb-4981-90d6-6aa9a230af61",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "4ef5b1e0-8744-4f66-bb26-0bdc43e4507f",
+      "timestamp": 1757961445.545185
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Bonjour ! Comment puis-je vous aider aujourd'hui ?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 46,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 46
+          }
+        ],
+        "totalTokenCount": 59
+      },
+      "invocationId": "e-92638309-60eb-4981-90d6-6aa9a230af61",
+      "author": "Transalor_Agent_French",
+      "actions": {
+        "stateDelta": {
+          "French_key": "Bonjour ! Comment puis-je vous aider aujourd'hui ?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_French",
+      "id": "8039cb4d-74cb-4506-a81f-8d4f00f6e711",
+      "timestamp": 1757961447.138859
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I am doing well, thank you for asking! How can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 18,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 18
+          }
+        ],
+        "promptTokenCount": 46,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 46
+          }
+        ],
+        "totalTokenCount": 64
+      },
+      "invocationId": "e-92638309-60eb-4981-90d6-6aa9a230af61",
+      "author": "Transalor_Agent_Spanish",
+      "actions": {
+        "stateDelta": {
+          "spanish_key": "I am doing well, thank you for asking! How can I help you today?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_Spanish",
+      "id": "e267b6d1-2a1f-4d4f-b3bf-1de2084cd8d0",
+      "timestamp": 1757961445.55038
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I am doing well, thank you for asking. How can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 18,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 18
+          }
+        ],
+        "promptTokenCount": 46,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 46
+          }
+        ],
+        "totalTokenCount": 64
+      },
+      "invocationId": "e-92638309-60eb-4981-90d6-6aa9a230af61",
+      "author": "Transalor_Agent_German",
+      "actions": {
+        "stateDelta": {
+          "German_key": "I am doing well, thank you for asking. How can I help you today?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_German",
+      "id": "47f2d012-39a6-4059-ae64-d97fec0848ba",
+      "timestamp": 1757961449.459675
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n  \"es\": \"I am doing well, thank you for asking! How can I help you today?\",\n  \"fr\": \"Bonjour ! Comment puis-je vous aider aujourd'hui ?\",\n  \"de\": \"I am doing well, thank you for asking. How can I help you today?\"\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 72,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 72
+          }
+        ],
+        "promptTokenCount": 237,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 237
+          }
+        ],
+        "totalTokenCount": 309
+      },
+      "invocationId": "e-92638309-60eb-4981-90d6-6aa9a230af61",
+      "author": "Merger_Agent",
+      "actions": {
+        "stateDelta": {
+          "merged_translation": "```json\n{\n  \"es\": \"I am doing well, thank you for asking! How can I help you today?\",\n  \"fr\": \"Bonjour ! Comment puis-je vous aider aujourd'hui ?\",\n  \"de\": \"I am doing well, thank you for asking. How can I help you today?\"\n}\n```"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "68156516-e465-409f-aeef-db9f4f4de40d",
+      "timestamp": 1757961452.496434
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hope you are doing well..."
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-16387cbe-9d91-482b-8db8-73bcbde93117",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "9e47b67e-b036-435a-ae7d-fc224ee346a3",
+      "timestamp": 1757962606.966544
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Mir geht es gut, danke. Und Ihnen?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 11,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 11
+          }
+        ],
+        "promptTokenCount": 153,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 153
+          }
+        ],
+        "totalTokenCount": 164
+      },
+      "invocationId": "e-16387cbe-9d91-482b-8db8-73bcbde93117",
+      "author": "Transalor_Agent_German",
+      "actions": {
+        "stateDelta": {
+          "German_key": "Mir geht es gut, danke. Und Ihnen?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_German",
+      "id": "2f9dde10-8a36-4d44-b558-2fb640bbc109",
+      "timestamp": 1757962610.607354
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Très bien, merci. Comment puis-je vous aider ?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 148,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 148
+          }
+        ],
+        "totalTokenCount": 161
+      },
+      "invocationId": "e-16387cbe-9d91-482b-8db8-73bcbde93117",
+      "author": "Transalor_Agent_French",
+      "actions": {
+        "stateDelta": {
+          "French_key": "Très bien, merci. Comment puis-je vous aider ?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_French",
+      "id": "79bd6068-94a6-4fc5-8315-1ac8055823c1",
+      "timestamp": 1757962608.799138
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "¡Gracias! Estoy bien, ¿en qué puedo ayudarte?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 13,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 13
+          }
+        ],
+        "promptTokenCount": 153,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 153
+          }
+        ],
+        "totalTokenCount": 166
+      },
+      "invocationId": "e-16387cbe-9d91-482b-8db8-73bcbde93117",
+      "author": "Transalor_Agent_Spanish",
+      "actions": {
+        "stateDelta": {
+          "spanish_key": "¡Gracias! Estoy bien, ¿en qué puedo ayudarte?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_Spanish",
+      "id": "b5021a4f-25b0-4b8d-932b-1e4c8f958ea0",
+      "timestamp": 1757962606.972971
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n  \"es\": \"¡Gracias! Estoy bien, ¿en qué puedo ayudarte?\",\n  \"fr\": \"Très bien, merci. Comment puis-je vous aider ?\",\n  \"de\": \"Mir geht es gut, danke. Und Ihnen?\"\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 59,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 59
+          }
+        ],
+        "promptTokenCount": 382,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 382
+          }
+        ],
+        "totalTokenCount": 441
+      },
+      "invocationId": "e-16387cbe-9d91-482b-8db8-73bcbde93117",
+      "author": "Merger_Agent",
+      "actions": {
+        "stateDelta": {
+          "merged_translation": "```json\n{\n  \"es\": \"¡Gracias! Estoy bien, ¿en qué puedo ayudarte?\",\n  \"fr\": \"Très bien, merci. Comment puis-je vous aider ?\",\n  \"de\": \"Mir geht es gut, danke. Und Ihnen?\"\n}\n```"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "f0919f00-bbc7-4eff-bcde-ab95714828ca",
+      "timestamp": 1757962613.141181
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What are you doing now"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-9b356968-3824-4656-b135-f89c0c606660",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "a5fe46b1-f884-4315-98bd-0e463e32eb43",
+      "timestamp": 1757962624.551603
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Ich helfe Ihnen gerade bei Ihren Anliegen.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 10
+          }
+        ],
+        "promptTokenCount": 239,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 239
+          }
+        ],
+        "totalTokenCount": 249
+      },
+      "invocationId": "e-9b356968-3824-4656-b135-f89c0c606660",
+      "author": "Transalor_Agent_German",
+      "actions": {
+        "stateDelta": {
+          "German_key": "Ich helfe Ihnen gerade bei Ihren Anliegen.\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_German",
+      "id": "f25b2e55-f6f0-49de-b2c5-38d670a193b0",
+      "timestamp": 1757962628.101522
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Je suis en train de vous aider à trouver le slogan parfait en français. De quoi s'agit-il ?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 24,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 24
+          }
+        ],
+        "promptTokenCount": 236,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 236
+          }
+        ],
+        "totalTokenCount": 260
+      },
+      "invocationId": "e-9b356968-3824-4656-b135-f89c0c606660",
+      "author": "Transalor_Agent_French",
+      "actions": {
+        "stateDelta": {
+          "French_key": "Je suis en train de vous aider à trouver le slogan parfait en français. De quoi s'agit-il ?\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_French",
+      "id": "ed61b61d-79f1-4cbc-bf68-1527555895dc",
+      "timestamp": 1757962626.142132
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Actualmente, estoy esperando tu solicitud para crear un eslogan de marketing localizado en español. ¡Dime cuál es tu producto o idea!\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 27,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 27
+          }
+        ],
+        "promptTokenCount": 241,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 241
+          }
+        ],
+        "totalTokenCount": 268
+      },
+      "invocationId": "e-9b356968-3824-4656-b135-f89c0c606660",
+      "author": "Transalor_Agent_Spanish",
+      "actions": {
+        "stateDelta": {
+          "spanish_key": "Actualmente, estoy esperando tu solicitud para crear un eslogan de marketing localizado en español. ¡Dime cuál es tu producto o idea!\n"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "branch": "Parallel_Translator.Transalor_Agent_Spanish",
+      "id": "e47de580-0c8f-486f-a006-26118b20129a",
+      "timestamp": 1757962624.577014
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```json\n{\n  \"es\": \"Actualmente, estoy esperando tu solicitud para crear un eslogan de marketing localizado en español. ¡Dime cuál es tu producto o idea!\",\n  \"fr\": \"Je suis en train de vous aider à trouver le slogan parfait en français. De quoi s'agit-il ?\",\n  \"de\": \"Ich helfe Ihnen gerade bei Ihren Anliegen.\"\n}\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 84,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 84
+          }
+        ],
+        "promptTokenCount": 573,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 573
+          }
+        ],
+        "totalTokenCount": 657
+      },
+      "invocationId": "e-9b356968-3824-4656-b135-f89c0c606660",
+      "author": "Merger_Agent",
+      "actions": {
+        "stateDelta": {
+          "merged_translation": "```json\n{\n  \"es\": \"Actualmente, estoy esperando tu solicitud para crear un eslogan de marketing localizado en español. ¡Dime cuál es tu producto o idea!\",\n  \"fr\": \"Je suis en train de vous aider à trouver le slogan parfait en français. De quoi s'agit-il ?\",\n  \"de\": \"Ich helfe Ihnen gerade bei Ihren Anliegen.\"\n}\n```"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "f53bd8e1-3cb3-4091-8cd0-c5d7119e3476",
+      "timestamp": 1757962631.006952
+    }
+  ],
+  "lastUpdateTime": 1757962631.006952
+}
