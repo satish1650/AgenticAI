@@ -1,0 +1,224 @@
+{
+  "id": "9c3445b5-6dfb-4328-bba1-8ac95ceb0fa6",
+  "appName": "before_after_agent",
+  "userId": "user",
+  "state": {
+    "agent_name": "SimpleChatBot",
+    "request_counter": 3,
+    "request_start_time": "2025-09-17T17:09:31.309060"
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi, How are you?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-4284aa57-9074-4cb6-a1e8-8b3051880ced",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "56f3bc8b-3276-494a-9fe0-43c66d0d1cec",
+      "timestamp": 1758128948.219641
+    },
+    {
+      "invocationId": "e-4284aa57-9074-4cb6-a1e8-8b3051880ced",
+      "author": "before_after_agent",
+      "actions": {
+        "stateDelta": {
+          "agent_name": "SimpleChatBot",
+          "request_counter": 1,
+          "request_start_time": "2025-09-17T17:09:08.220505"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "47a2061f-2b59-4751-9143-6e360b079839",
+      "timestamp": 1758128948.221799
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hello! I'm doing well, thank you for asking. How can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 21,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 21
+          }
+        ],
+        "promptTokenCount": 90,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 90
+          }
+        ],
+        "totalTokenCount": 111
+      },
+      "invocationId": "e-4284aa57-9074-4cb6-a1e8-8b3051880ced",
+      "author": "before_after_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "23991633-57d5-486a-9bcd-2c8430108415",
+      "timestamp": 1758128948.224406
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Great...can you help me?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-e2e96887-7f98-4bf6-947c-44a536878520",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "4a4facf1-3d75-410e-84d2-46dde86f4cdc",
+      "timestamp": 1758128960.392265
+    },
+    {
+      "invocationId": "e-e2e96887-7f98-4bf6-947c-44a536878520",
+      "author": "before_after_agent",
+      "actions": {
+        "stateDelta": {
+          "request_counter": 2,
+          "request_start_time": "2025-09-17T17:09:20.392612"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "40de8aae-b78a-42b1-8e3c-0c2e2fd7a9c3",
+      "timestamp": 1758128960.393913
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Yes, I can definitely help you! What do you need assistance with? Just let me know what you have in mind.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 26,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 26
+          }
+        ],
+        "promptTokenCount": 118,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 118
+          }
+        ],
+        "totalTokenCount": 144
+      },
+      "invocationId": "e-e2e96887-7f98-4bf6-947c-44a536878520",
+      "author": "before_after_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "e8da0919-b628-42b7-87e2-e26f554ae292",
+      "timestamp": 1758128960.395166
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is agentic AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-0465d4e1-723f-444e-ae7e-960ff003bf3d",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "6958f504-9954-4b0f-8165-e6bf904370dc",
+      "timestamp": 1758128971.308568
+    },
+    {
+      "invocationId": "e-0465d4e1-723f-444e-ae7e-960ff003bf3d",
+      "author": "before_after_agent",
+      "actions": {
+        "stateDelta": {
+          "request_counter": 3,
+          "request_start_time": "2025-09-17T17:09:31.309060"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "651d5f56-ba61-461a-bf4d-b4214a99465f",
+      "timestamp": 1758128971.317277
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Agentic AI refers to AI systems that can act autonomously to achieve specific goals. They can perceive their environment, make decisions, and take actions to reach a desired outcome, often without direct human intervention.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 42,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 42
+          }
+        ],
+        "promptTokenCount": 150,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 150
+          }
+        ],
+        "totalTokenCount": 192
+      },
+      "invocationId": "e-0465d4e1-723f-444e-ae7e-960ff003bf3d",
+      "author": "before_after_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "3b67bacf-3851-404c-b953-68e3107bbecd",
+      "timestamp": 1758128971.320847
+    }
+  ],
+  "lastUpdateTime": 1758128971.320847
+}
