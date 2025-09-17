@@ -1,0 +1,135 @@
+{
+  "id": "828d5fc4-657d-4632-9f0f-e89dcab8fdee",
+  "appName": "before_after_tool",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is the capital of America?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8f777f0e-8015-40f2-bc03-8a6e0b699377",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "b212eed7-11d6-4198-bd98-04dfb2c8547e",
+      "timestamp": 1758129891.65428
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-c86332cd-cabd-453d-b183-e5b220cc4cfa",
+              "args": {
+                "country": "America"
+              },
+              "name": "get_capital_city"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 7,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 7
+          }
+        ],
+        "promptTokenCount": 218,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 218
+          }
+        ],
+        "totalTokenCount": 225
+      },
+      "invocationId": "e-8f777f0e-8015-40f2-bc03-8a6e0b699377",
+      "author": "tool_callback_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "longRunningToolIds": [],
+      "id": "81e82562-faf3-4536-a162-1cb5684e33ce",
+      "timestamp": 1758129891.656702
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-c86332cd-cabd-453d-b183-e5b220cc4cfa",
+              "name": "get_capital_city",
+              "response": {
+                "result": "Washington, D.C. (Note: This is the capital of the USA. 🇺🇸)",
+                "note_added_by_callback": true
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8f777f0e-8015-40f2-bc03-8a6e0b699377",
+      "author": "tool_callback_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "cb3e0b20-8ae9-46f1-b292-d94c7f77cf21",
+      "timestamp": 1758129894.213562
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Washington, D.C. (Note: This is the capital of the USA. 🇺🇸)"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 20,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 20
+          }
+        ],
+        "promptTokenCount": 259,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 259
+          }
+        ],
+        "totalTokenCount": 279
+      },
+      "invocationId": "e-8f777f0e-8015-40f2-bc03-8a6e0b699377",
+      "author": "tool_callback_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {}
+      },
+      "id": "7ddd9091-dd59-4cf7-b885-3024e82f9ed4",
+      "timestamp": 1758129894.219164
+    }
+  ],
+  "lastUpdateTime": 1758129894.219164
+}
