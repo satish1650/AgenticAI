@@ -1,0 +1,8 @@
+2025-09-19 18:33:58,123 - DEBUG - [server.py:153] - Initializing server 'multi-tool-calculator'
+2025-09-19 18:33:58,123 - DEBUG - [server.py:385] - Registering handler for ListToolsRequest
+2025-09-19 18:33:58,124 - DEBUG - [server.py:446] - Registering handler for CallToolRequest
+2025-09-19 18:33:58,124 - INFO - [server.py:148] - MCP Calculator Server launching...
+2025-09-19 18:33:58,124 - DEBUG - [proactor_events.py:631] - Using proactor: IocpProactor
+2025-09-19 18:33:58,134 - INFO - [server.py:133] - Starting MCP server via stdio
+2025-09-19 18:37:26,022 - INFO - [server.py:152] - Server stopped manually.
+2025-09-19 18:37:26,023 - INFO - [server.py:156] - MCP Server terminated.
