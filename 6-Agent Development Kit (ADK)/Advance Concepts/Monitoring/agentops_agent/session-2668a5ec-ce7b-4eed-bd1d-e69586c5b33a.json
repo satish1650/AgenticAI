@@ -1,0 +1,515 @@
+{
+  "id": "2668a5ec-ce7b-4eed-bd1d-e69586c5b33a",
+  "appName": "agentops_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi how are you?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-ffb9e1b9-5881-400c-8ce1-6dc0cf960caa",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "18339dfb-d7fa-4e54-a98b-d4f7def70895",
+      "timestamp": 1758391573.001002
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I am doing well, thank you for asking! How can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 18,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 18
+          }
+        ],
+        "promptTokenCount": 97,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 97
+          }
+        ],
+        "totalTokenCount": 115
+      },
+      "invocationId": "e-ffb9e1b9-5881-400c-8ce1-6dc0cf960caa",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "d77c5cc0-05ab-47a6-9df3-b34da697473a",
+      "timestamp": 1758391573.002395
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "can you tell me the time?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-b5ac6741-9cc1-4f0f-9b8a-43535ca9e2b7",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "2028c270-de36-4ce1-9c61-e350d0e9f062",
+      "timestamp": 1758391634.188343
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Could you please tell me which city you're interested in?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 14,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 14
+          }
+        ],
+        "promptTokenCount": 122,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 122
+          }
+        ],
+        "totalTokenCount": 136
+      },
+      "invocationId": "e-b5ac6741-9cc1-4f0f-9b8a-43535ca9e2b7",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "b13e1386-4bb0-4688-a6a1-70cb04094802",
+      "timestamp": 1758391634.19074
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "tell me the time of New York City?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-de3209d3-9db1-4505-b9f4-ba7c684371a1",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "5dbbaec2-476d-4906-a638-6f57af68196d",
+      "timestamp": 1758391684.609539
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-f9d71f60-83be-4596-a4a4-ddc420c08c4c",
+              "args": {
+                "city": "New York City"
+              },
+              "name": "get_current_time"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 9
+          }
+        ],
+        "promptTokenCount": 145,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 145
+          }
+        ],
+        "totalTokenCount": 154
+      },
+      "invocationId": "e-de3209d3-9db1-4505-b9f4-ba7c684371a1",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "93600d93-deb5-4253-8e2a-861e8158c0b3",
+      "timestamp": 1758391684.610965
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-f9d71f60-83be-4596-a4a4-ddc420c08c4c",
+              "name": "get_current_time",
+              "response": {
+                "status": "error",
+                "error_message": "Sorry, I don't have timezone information for New York City."
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-de3209d3-9db1-4505-b9f4-ba7c684371a1",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "429e42cc-4f1e-4ffc-875a-7fa9ed79b54e",
+      "timestamp": 1758391686.874615
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Sorry, I don't have timezone information for New York City. I can not fulfill this request.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 22,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 22
+          }
+        ],
+        "promptTokenCount": 178,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 178
+          }
+        ],
+        "totalTokenCount": 200
+      },
+      "invocationId": "e-de3209d3-9db1-4505-b9f4-ba7c684371a1",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "d7f4a8e2-8c74-4f47-bdf5-207ee0bcb655",
+      "timestamp": 1758391686.882002
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "tell me the time of new york city?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-174840f3-adf3-4516-b849-99194c4fb813",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "c176cc4f-e94c-41d3-a1b5-6cd19258d979",
+      "timestamp": 1758391821.641114
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-b06c82c5-bb10-46b2-9923-1953b5625531",
+              "args": {
+                "city": "new york city"
+              },
+              "name": "get_current_time"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 9,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 9
+          }
+        ],
+        "promptTokenCount": 209,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 209
+          }
+        ],
+        "totalTokenCount": 218
+      },
+      "invocationId": "e-174840f3-adf3-4516-b849-99194c4fb813",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "13add10c-f184-4382-acc4-95a1b70544fc",
+      "timestamp": 1758391821.642293
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-b06c82c5-bb10-46b2-9923-1953b5625531",
+              "name": "get_current_time",
+              "response": {
+                "status": "error",
+                "error_message": "Sorry, I don't have timezone information for new york city."
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-174840f3-adf3-4516-b849-99194c4fb813",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "93be2a66-63d6-4033-8bbb-a4e8e82663fa",
+      "timestamp": 1758391824.048235
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Sorry, I am unable to find the time for new york city. I don't have timezone information for it.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 25,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 25
+          }
+        ],
+        "promptTokenCount": 242,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 242
+          }
+        ],
+        "totalTokenCount": 267
+      },
+      "invocationId": "e-174840f3-adf3-4516-b849-99194c4fb813",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "e3207cd2-4891-4a92-8d5b-239d63990a12",
+      "timestamp": 1758391824.051947
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "tell me the time of new york"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-e8c8a598-2537-4150-8530-7f43bf7f0f48",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "120c9d2e-a1cf-4eee-b79b-1d745826fe9e",
+      "timestamp": 1758391852.28151
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-3d16cf9f-d414-4512-9d85-6d51feed1641",
+              "args": {
+                "city": "new york"
+              },
+              "name": "get_current_time"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 8,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 8
+          }
+        ],
+        "promptTokenCount": 274,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 274
+          }
+        ],
+        "totalTokenCount": 282
+      },
+      "invocationId": "e-e8c8a598-2537-4150-8530-7f43bf7f0f48",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "d5662371-1aeb-402a-b4a0-d374baec3da2",
+      "timestamp": 1758391852.282826
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-3d16cf9f-d414-4512-9d85-6d51feed1641",
+              "name": "get_current_time",
+              "response": {
+                "status": "success",
+                "report": "The current time in new york is 2025-09-20 14:10:54 EDT-0400"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-e8c8a598-2537-4150-8530-7f43bf7f0f48",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "9a068263-c4e3-46c9-9398-a7d38485ca30",
+      "timestamp": 1758391854.862623
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The current time in new york is 2025-09-20 14:10:54 EDT-0400\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 34,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 34
+          }
+        ],
+        "promptTokenCount": 323,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 323
+          }
+        ],
+        "totalTokenCount": 357
+      },
+      "invocationId": "e-e8c8a598-2537-4150-8530-7f43bf7f0f48",
+      "author": "weather_time_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "6f534eeb-983b-468e-8588-3e02d55ef17d",
+      "timestamp": 1758391854.868741
+    }
+  ],
+  "lastUpdateTime": 1758391854.868741
+}
