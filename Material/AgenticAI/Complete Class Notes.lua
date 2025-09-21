@@ -321,3 +321,30 @@ https://cloud.google.com/blog/products/ai-machine-learning/multimodal-generative
 https://google.github.io/adk-docs/observability/logging/#debugging-with-logs-a-practical-example
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20 Sep Day - 39 Google ADK - Project-Part-1 + Local Development Using FastAPI + Postman
+***************************************************************************************
+https://bugs-sleep-6uj.craft.me/WPCzMdQXXN51kL
+
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0
+
+https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/preview?pli=1&tab=t.0#heading=h.pxcur8v2qagu
+
+https://docs.google.com/document/d/1rsaK53T3Lg5KoGwvf8ukOUvbELRtH-V0LnOIFDxBryE/preview?pli=1&tab=t.0#heading=h.pxcur8v2qagu
+
+mailtomayankaggarwal@gmail.com
+aiwithmayank@gmail.com
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+21 Sep Day - 40 Google ADK - Project-Part-2 + Stremlit Development + Deploying Your Agent in ADK using Colud Run
+****************************************************************************************************************
+Google Cloud Account Creation
+https://cloud.google.com/kubernetes-engine/kubernetes-comic
+
+Google Cloud CLI
+https://cloud.google.com/sdk/docs/install#mac
+
+https://capital-service-479047999858.us-central1.run.app
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
