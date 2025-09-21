@@ -52,8 +52,8 @@ All Classes
 07 Sep Day - 36 Google ADK (Agent Development Kit) - Advanced <br>
 13 Sep Day - 37 Google ADK - Mini Project <br>
 14 Sep Day - 38 Google ADK - Project-Enhance + Advance Concepts <br>
-20 Sep Day - 39 Google ADK - Project-Part-1 + Local Run <br>
-21 Sep Day - 40 Google ADK - Project-Part-2 + Using Stremlit <br>
+20 Sep Day - 39 Google ADK - Project-Part-1 + Local Development Using FastAPI + Postman <br>
+21 Sep Day - 40 Google ADK - Project-Part-2 + Stremlit Development + Deploying Your Agent in ADK using Colud Run <br>
 
 How to create virtual environment in "VS Code"
 ---
