@@ -3,3 +3,4 @@ pydantic
 litellm
 openai
 crewai-tools
+agentops
