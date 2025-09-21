@@ -329,8 +329,8 @@ mailtomayankaggarwal@gmail.com
 aiwithmayank@gmail.com
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-21 Sep Day - 40 Google ADK - Project-Part-2 + Stremlit Development + Deploying Your Agent in ADK using Colud Run
-****************************************************************************************************************
+21 Sep Day - 40 Google ADK - Project-Part-2 + Stremlit Development + Deploying Agent in ADK using Colud Run
+***********************************************************************************************************
 Google Cloud Account Creation
 https://cloud.google.com/kubernetes-engine/kubernetes-comic
 
