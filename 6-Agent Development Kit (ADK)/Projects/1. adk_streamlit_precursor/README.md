@@ -48,13 +48,3 @@ flowchart LR
   AGENT -. when needed .-> MCP[Tavily MCP (npx)]
   MCP --> AGENT --> API --> UI
 ```
-
-```mermaid
-flowchart LR
-  UI[Streamlit ask_app.py] -- HTTP --> API[ADK API Server]
-  API --> AGENT[Simple Q&A Agent]
-  AGENT -.->|when needed| MCP[Tavily MCP (npx)]
-  MCP --> AGENT
-  AGENT --> API
-  API --> UI
-```
