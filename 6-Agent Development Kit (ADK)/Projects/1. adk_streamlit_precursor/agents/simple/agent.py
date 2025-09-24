@@ -1,12 +1,15 @@
 import os
 from google.adk.agents.llm_agent import Agent
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
-
+from dotenv import load_dotenv
 
 # This agent can answer general questions and will use Tavily MCP to search when needed.
 # It is intentionally simple for teaching: one agent, one toolset.
 
+load_dotenv()
+
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+
 if TAVILY_API_KEY is None:
     raise ValueError("TAVILY_API_KEY is not set")
 
