@@ -1,0 +1,6 @@
+streamlit>=1.32
+requests>=2.31
+python-dotenv>=1.0
+# ADK + Google GenAI libs are expected to be installed in your env:
+# google-adk
+# google-genai
