@@ -4,3 +4,6 @@ litellm
 openai
 crewai-tools
 agentops
+streamlit>=1.32
+requests>=2.31
+python-dotenv>=1.0
