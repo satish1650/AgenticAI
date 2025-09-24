@@ -1,0 +1,539 @@
+{
+  "id": "dc553210-ac0c-488f-a679-fab42ab7161b",
+  "appName": "simple",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-4415df4d-d7c9-4a32-a7b0-cd1ec3079873",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "2af4fe2c-88e2-4ded-bc3b-e60942ef44ff",
+      "timestamp": 1758736749.245971
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi there! How can I help you today?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 11,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 11
+          }
+        ],
+        "promptTokenCount": 1550,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1550
+          }
+        ],
+        "totalTokenCount": 1561
+      },
+      "invocationId": "e-4415df4d-d7c9-4a32-a7b0-cd1ec3079873",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "9c3bf4cc-501e-427f-891e-2a868fb8e42d",
+      "timestamp": 1758736751.538681
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What's are tool do you have?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-97ebe899-c55a-4898-b0c1-e61f181d9ab8",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "6202bdc5-c03f-4fa3-84a8-feff793eae93",
+      "timestamp": 1758736808.725473
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I have several tools available:\n\n*   **tavily\\_search:** A web search tool for comprehensive, real-time results.\n*   **tavily\\_extract:** A web content extraction tool that retrieves and processes raw content from specified URLs.\n*   **tavily\\_crawl:** A web crawler that initiates a structured web crawl from a base URL.\n*   **tavily\\_map:** A web mapping tool that creates a structured map of website URLs.\n\nHow can I assist you in using these tools?\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 108,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 108
+          }
+        ],
+        "promptTokenCount": 1570,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1570
+          }
+        ],
+        "totalTokenCount": 1678
+      },
+      "invocationId": "e-97ebe899-c55a-4898-b0c1-e61f181d9ab8",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "5bffec86-268b-436c-951f-566b9f1e039f",
+      "timestamp": 1758736811.21602
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Who WON IPL 2025?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-9d9bc7be-352f-435a-9fa6-9c82d248a15c",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "515e4115-902b-47e3-86cd-f30d054f5459",
+      "timestamp": 1758736847.633308
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-6689fc96-fb12-4b4b-805b-7d4663be378c",
+              "args": {
+                "query": "IPL 2025 winner",
+                "time_range": "1y"
+              },
+              "name": "tavily-search"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 17,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 17
+          }
+        ],
+        "promptTokenCount": 1687,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1687
+          }
+        ],
+        "totalTokenCount": 1704
+      },
+      "invocationId": "e-9d9bc7be-352f-435a-9fa6-9c82d248a15c",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "3e78ecc9-ec2a-4017-aa39-1e91b8621481",
+      "timestamp": 1758736850.066961
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-6689fc96-fb12-4b4b-805b-7d4663be378c",
+              "name": "tavily-search",
+              "response": {
+                "result": {
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Tavily API error: Request failed with status code 400"
+                    }
+                  ],
+                  "isError": true
+                }
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-9d9bc7be-352f-435a-9fa6-9c82d248a15c",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "52a15183-3daa-4781-a768-c8b16d70fdf2",
+      "timestamp": 1758736854.850539
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Unfortunately, I encountered an error when searching for the winner of the IPL 2025. It's likely that the information is not yet available since the tournament is in the future. I am unable to provide an answer at this time.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 51,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 51
+          }
+        ],
+        "promptTokenCount": 1729,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1729
+          }
+        ],
+        "totalTokenCount": 1780
+      },
+      "invocationId": "e-9d9bc7be-352f-435a-9fa6-9c82d248a15c",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "b959ae4c-4b73-45ff-9dff-f1a9d4b27c1f",
+      "timestamp": 1758736854.863166
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Who WON IPL in 2025 Cricket Match?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-cfd4c93e-0cc6-4fec-8993-78220cefc3f0",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "a3561193-aeb2-49c5-b0c6-f880981d1e98",
+      "timestamp": 1758736895.160095
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-29691422-b29b-4bd6-84f9-3a24fde5fe57",
+              "args": {
+                "query": "Who won IPL 2025?",
+                "time_range": "1y"
+              },
+              "name": "tavily-search"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 19,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 19
+          }
+        ],
+        "promptTokenCount": 1792,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1792
+          }
+        ],
+        "totalTokenCount": 1811
+      },
+      "invocationId": "e-cfd4c93e-0cc6-4fec-8993-78220cefc3f0",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "f5331fb3-8485-4b44-8bf4-d0d933af0094",
+      "timestamp": 1758736897.672301
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-29691422-b29b-4bd6-84f9-3a24fde5fe57",
+              "name": "tavily-search",
+              "response": {
+                "result": {
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Tavily API error: Request failed with status code 400"
+                    }
+                  ],
+                  "isError": true
+                }
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-cfd4c93e-0cc6-4fec-8993-78220cefc3f0",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "7a88d1dd-9de4-436d-86df-a2db0c384166",
+      "timestamp": 1758736902.931123
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "I am still unable to retrieve information about the winner of IPL 2025. This is likely because the tournament is in the future, and the results are not yet available.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 38,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 38
+          }
+        ],
+        "promptTokenCount": 1836,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1836
+          }
+        ],
+        "totalTokenCount": 1874
+      },
+      "invocationId": "e-cfd4c93e-0cc6-4fec-8993-78220cefc3f0",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "42407176-82b4-46de-a3ce-c27569c4ed3a",
+      "timestamp": 1758736902.945057
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is Agentic AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-876dbc49-ba57-4dbe-ab22-30100930dd57",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "6ea201c8-8edf-4523-9a33-e2b603d4b71c",
+      "timestamp": 1758736921.563289
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-0c2e0520-4244-42c6-a096-09b178fbe8a5",
+              "args": {
+                "query": "Agentic AI",
+                "max_results": 5
+              },
+              "name": "tavily-search"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 12,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 12
+          }
+        ],
+        "promptTokenCount": 1880,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1880
+          }
+        ],
+        "totalTokenCount": 1892
+      },
+      "invocationId": "e-876dbc49-ba57-4dbe-ab22-30100930dd57",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "fcfb2c4f-12c0-4339-a96d-7647dce8f7d8",
+      "timestamp": 1758736924.589895
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-0c2e0520-4244-42c6-a096-09b178fbe8a5",
+              "name": "tavily-search",
+              "response": {
+                "result": {
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Detailed Results:\n\nTitle: Agentic AI - Wikipedia\nURL: https://en.wikipedia.org/wiki/Agentic_AI\nContent: # Agentic AI **Agentic AI** is a class of artificial intelligence that focuses on autonomous systems that can make decisions and perform tasks with or without human intervention. The core concept of agentic AI is the use of *AI agents* to perform automated tasks with or without human intervention. While robotic process automation (RPA) systems automate rule-based, repetitive tasks with fixed logic, agentic AI adapts and learns from data inputs. Agentic AI refers to autonomous systems capable of pursuing complex goals with minimal human intervention, often making decisions based on continuous learning and external data. As a result, agentic AI systems are capable of making independent decisions, interacting with their environment and optimising processes without a human directly intervening. Agentic AI\n\nTitle: What is Agentic AI? - Aisera\nURL: https://aisera.com/blog/agentic-ai/\nContent: Agentic AI is an AI system that acts autonomously, adapts in real time, and solves multi-step problems based on context and objectives.\n\nTitle: What is Agentic AI? - AWS\nURL: https://aws.amazon.com/what-is/agentic-ai/\nContent: What is Agentic AI? [Skip to main content](https://aws.amazon.com/what-is/agentic-ai/#aws-page-content-main) *   [Agentic AI](https://aws.amazon.com/ai/agentic-ai/?nc2=h_l1_f) What Is Agentic AI? [What is Agentic AI?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc1#pattern-data)[What are the characteristics of agentic AI systems?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc2#pattern-data)[What are the use cases of agentic AI?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc3#pattern-data)[What are the benefits of agentic AI?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc4#pattern-data)[What are the types of agentic AI systems?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc5#pattern-data)[How does agentic AI work?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc6#pattern-data)[What are the challenges with agentic AI systems?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc7#pattern-data)[How can AWS support your agentic AI requirements?](https://aws.amazon.com/what-is/agentic-ai/#ams#what-isc8#pattern-data) What is Agentic AI? [Agentic AI](https://aws.amazon.com/ai/agentic-ai/) is an autonomous AI system that can act independently to achieve pre-determined goals. However, agentic AI is proactive and can perform complex tasks without constant human oversight. For example, while a generic customer service platform might respond with predefined answers, an agentic AI system supporting a healthcare provider understands medical terminology and complies with healthcare regulations. Over time, agentic AI improves customer relationships and builds trust between customers and your business.\n\nTitle: What is Agentic AI? | Salesforce\nURL: https://www.salesforce.com/agentforce/what-is-agentic-ai/\nContent: This platform has a suite of tools and services to help AI agents learn, adapt, and collaborate so they can quickly handle complex and dynamic tasks. With this framework, businesses can customize AI agents to meet their specific needs, whether those needs involve automating repetitive tasks, enhancing customer service, or driving strategic decision-making. Agentic AI operates through a complex network of autonomous software components known as \"agents\" that draw from massive amounts of data and learn from user behavior to improve over time. Agentic AI uses self-contained agents — AI models that autonomously complete tasks and manage workflows using machine learning, algorithms, and predictive analytics to make real-time decisions. Agentic AI software is a type of artificial intelligence (AI) that can operate independently, making decisions and performing tasks without human intervention.\n\nTitle: What is Agentic AI? | UiPath\nURL: https://www.uipath.com/ai/agentic-ai\nContent: Agentic AI # Agentic AI Learn about the future of work, where state-of-the-art AI and automation combine to create powerful autonomous agents able to understand, build, and perform complex business processes. * What is agentic AI? ## What is agentic AI? Agentic AI systems can: Agentic AI is brainpower that allows AI agents to act independently within unstructured environments—enabling enterprises to expand automation beyond specific, defined tasks and tackle complex, end-to-end processes. Agentic AI combines multiple types of artificial intelligence to enable thinking, acting, and adapting: large language models (LLMs) for reasoning and communication; planning AI for task sequencing; reinforcement learning for optimizing actions; and memory systems for context retention. Moreover, LLMs have enabled agentic AI to reason and make decisions based on the information they process."
+                    }
+                  ],
+                  "isError": false
+                }
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-876dbc49-ba57-4dbe-ab22-30100930dd57",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "824c2832-758a-4ed5-a452-8d26f5bf1acf",
+      "timestamp": 1758736930.229166
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Agentic AI refers to autonomous AI systems that can make decisions and perform tasks with minimal or no human intervention. These systems use AI agents to automate tasks, adapting and learning from data inputs, unlike robotic process automation (RPA) which handles rule-based, repetitive tasks. Agentic AI systems can pursue complex goals, interact with their environment, and optimize processes independently by employing various AI technologies, including large language models (LLMs), planning AI, reinforcement learning, and memory systems (Wikipedia, Aisera, UiPath). This allows them to handle complex and dynamic tasks, automate repetitive processes, enhance customer service, and drive strategic decision-making (Salesforce).\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 134,
+        "candidatesTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 134
+          }
+        ],
+        "promptTokenCount": 3070,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3070
+          }
+        ],
+        "totalTokenCount": 3204
+      },
+      "invocationId": "e-876dbc49-ba57-4dbe-ab22-30100930dd57",
+      "author": "simple",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "e0d82c34-969c-470c-9879-cba881e11c9f",
+      "timestamp": 1758736930.244971
+    }
+  ],
+  "lastUpdateTime": 1758736930.244971
+}
