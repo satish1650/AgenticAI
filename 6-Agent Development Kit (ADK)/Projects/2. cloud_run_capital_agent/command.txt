@@ -1,0 +1,7 @@
+adk deploy cloud_run \
+--project=$GOOGLE_CLOUD_PROJECT \
+--region=$GOOGLE_CLOUD_LOCATION \
+--service_name=capital-service \
+--app_name=capital-agent-app \
+--with_ui \
+capital_agent 
