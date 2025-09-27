@@ -4,4 +4,4 @@ adk deploy cloud_run \
 --service_name=capital-service \
 --app_name=capital-agent-app \
 --with_ui \
-capital_agent 
+capital_agent
