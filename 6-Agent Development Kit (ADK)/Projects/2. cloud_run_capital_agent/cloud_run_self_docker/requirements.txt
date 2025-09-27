@@ -1,0 +1,5 @@
+# Add agent-specific dependencies here (if any). ADK server is bundled by the deployer.
+google-adk 
+python-dotenv
+pandas
+openai
