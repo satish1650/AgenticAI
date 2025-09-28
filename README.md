@@ -54,6 +54,8 @@ All Classes
 14 Sep Day - 38 Google ADK - Project-Enhance + Advance Concepts <br>
 20 Sep Day - 39 Google ADK - Project-Part-1 + Local Development Using FastAPI + Postman <br>
 21 Sep Day - 40 Google ADK - Project-Part-2 + Stremlit Development + Deploying Agent in ADK using Colud Run <br>
+27 Sep Day - 41 Google ADK - Vertex AI deployment <br>
+28 Sep Day - 42 Google ADK - Vertex AI deployment + E2E Project + Vertex AI RAG Engine <br>
 
 How to create virtual environment in "VS Code"
 ---
