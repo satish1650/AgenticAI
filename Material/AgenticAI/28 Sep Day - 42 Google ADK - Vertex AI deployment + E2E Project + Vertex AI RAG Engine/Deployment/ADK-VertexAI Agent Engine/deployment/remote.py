@@ -13,6 +13,7 @@ from multi_tool_bot.agent import root_agent
 
 
 def create_remote_agent() -> None:
+    
     app = reasoning_engines.AdkApp(
         agent=root_agent,
         enable_tracing=True
@@ -28,6 +29,35 @@ def create_remote_agent() -> None:
 
     print(f'Created remote agent with ID: {remote_app.resource_name}')
 
+# https://us-central1-aiplatform.googleapis.com/v1/projects/geminikeyn8n/locations/us-central1/reasoningEngines/566771855839461376:query
+
+def create_remote_session(resource_id:str,user_id:str):
+    remote_app = agent_engines.get(resource_name='projects/479047999858/locations/us-central1/reasoningEngines/566771855839461376')
+
+    remote_sessions=remote_app.create_session(user_id=user_id)
+    print(f'Created remote session with ID: {remote_sessions}')
+
+
+def list_deployments():
+    deployments = agent_engines.list()
+    for deployment in deployments:
+        print(f'Deployment ID: {deployment.resource_name}')
+    
+
+
+def send_message(resource_id:str,session_id:str,message:str):
+    remote_app = agent_engines.get(resource_name='projects/479047999858/locations/us-central1/reasoningEngines/566771855839461376')
+
+    for event in remote_app.stream_query(
+        user_id="test_user_123",
+        session_id="3732740271473950720",
+        message="What is the weather in New York?",
+    ):
+        print(event)
+
+
+def delete_agent(resource_id:str):
+    remote_app = agent_engines.
 
 def main(argv=None):
    
@@ -63,9 +93,15 @@ def main(argv=None):
         staging_bucket=bucket_name,
     )
 
-    print("Creating remote agent...")
-    create_remote_agent()
-    print("Remote agent created successfully.")
+    # print("Creating remote agent...")
+    # create_remote_agent()
+    # print("Remote agent created successfully.")
+
+    # list_deployments()
+    # create_remote_session("566771855839461376","test_user_123")
+
+
+    send_message("566771855839461376","3732740271473950720","Hi how are you, what all can you do for me?")
 
 if __name__ == "__main__":
     main(sys.argv)
