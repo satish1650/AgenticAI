@@ -1,0 +1,162 @@
+{
+  "id": "a321496a-4354-41bd-bb4d-fb515d9bddb0",
+  "appName": "multi_tool_agent",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8032712a-53db-449a-b4e2-072649155e2d",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "8d74e488-8243-44fc-8ce4-88f565b130cd",
+      "timestamp": 1759236721.365392
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi there! How can I help you today?"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 10,
+        "promptTokenCount": 41,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 41
+          }
+        ],
+        "thoughtsTokenCount": 23,
+        "totalTokenCount": 74
+      },
+      "invocationId": "e-8032712a-53db-449a-b4e2-072649155e2d",
+      "author": "root_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "9a0b2176-ecbb-4234-89b3-bb0318fa9eb0",
+      "timestamp": 1759236721.365392
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "What is Agentic AI?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-1e231c22-21e4-4e2e-90a1-c03535339521",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "8cab1ce2-ef03-4848-a5f8-68b066602538",
+      "timestamp": 1759236864.067992
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Who is the president of India?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-b1f6cd0e-f530-442d-9c4b-bb83de988bb3",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "4ead3b26-532c-41c9-a7b6-6fcd2259fefd",
+      "timestamp": 1759236937.191838
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hello"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-7722533f-e569-4e3e-93f1-9a9b961acf06",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "10d6deb8-9463-430c-9b9b-15519bb20aca",
+      "timestamp": 1759236947.192759
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Capital of india?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-e3b3c1bf-4620-421a-9f6f-671baff9a70d",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "0d3ec59f-faca-4c78-868e-12e4fc5c457a",
+      "timestamp": 1759236961.319157
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Who is prime minister of india?"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-ce1e1c29-c4ac-4050-a137-55d715ac09e9",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "2b56ed53-58a5-41da-ae5a-dcb3ac8999b7",
+      "timestamp": 1759237067.664433
+    }
+  ],
+  "lastUpdateTime": 1759237067.664433
+}
