@@ -1,0 +1,6 @@
+GOOGLE_GENAI_USE_VERTEXAI=TRUE
+
+# Vertex Backend config
+GOOGLE_CLOUD_PROJECT=gen-lang-client-0634579487
+GOOGLE_CLOUD_LOCATION = "us-central1"
+GOOGLE_CLOUD_STAGING_BUCKET = "gs://your-gcs-bucket-name"
