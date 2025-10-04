@@ -1,0 +1,49 @@
+{
+  "id": "d6c90ef9-4acb-4ef6-93da-ab4e6dc35f04",
+  "appName": "multi_tool_bot",
+  "userId": "user",
+  "state": {},
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-bad38492-a3e6-43e3-9d42-62326d11c333",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "82c782e5-31f2-4d5b-b73e-67e648c20fb8",
+      "timestamp": 1759576802.074113
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Hi, Can you List all the corpus for me by using get_all_corpora tool"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-0a72cf1d-1261-431f-8fcc-85453b02cf89",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "3d9692ea-7224-4413-b3fe-369031276ba5",
+      "timestamp": 1759576820.924443
+    }
+  ],
+  "lastUpdateTime": 1759576820.924443
+}
