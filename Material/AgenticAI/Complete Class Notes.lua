@@ -357,3 +357,25 @@ https://google.github.io/adk-docs/deploy/agent-engine/#deploy-to-agent-engine
 https://drive.google.com/file/d/102Fe_6ExPSc5xEvKJaYenlUWAhlrPvcM/view?usp=sharing
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+04 Oct Day - 43 CrewAI - Crewai Part-1
+**************************************
+https://docs.crewai.com/en/introduction
+
+https://docs.crewai.com/en/installation
+
+Basics.ipynb
+https://colab.research.google.com/drive/1hL1XiWgHklCQBWpfz_fFcjqBcXgvJPDg?usp=
+
+LiteLLM
+https://docs.litellm.ai/docs/providers
+
+https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
+
+GitHub -> Sourangshu Pal
+https://gist.github.com/sourangshupal/406e7380ac4bfbd38df6eb7cd27f38c5
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+05 Oct Day - 44 CrewAI - Crewai Part-2
+**************************************
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
