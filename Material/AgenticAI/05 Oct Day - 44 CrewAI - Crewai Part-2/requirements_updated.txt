@@ -1,0 +1,7 @@
+crewai
+crewai-tools
+mem0ai
+langchain-google-genai
+jupyter
+google-generativeai
+docling
