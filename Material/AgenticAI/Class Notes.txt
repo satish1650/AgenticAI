@@ -373,3 +373,16 @@ https://gist.github.com/sourangshupal/406e7380ac4bfbd38df6eb7cd27f38c5
 05 Oct Day - 44 CrewAI - Crewai Part-2
 **************************************
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://github.com/sourangshupal/crewai-advanced
+
+Streamlit_app.py
+https://gist.github.com/sourangshupal/406e7380ac4bfbd38df6eb7cd27f38c5
+
+https://gist.github.com/sourangshupal/bd9d1d232a7dde1d492cfd9c71aaca7a
+
+
+Crewai with OPIK Integration.ipynb
+https://colab.research.google.com/drive/1fx_JOzNB95mf91BMVQgQdSuShHD6L4Bz?usp=sharing
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
