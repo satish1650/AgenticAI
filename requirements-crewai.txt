@@ -1,0 +1,10 @@
+crewai
+crewai_tools
+# ipywidgets
+streamlit
+mem0ai
+langchain-google-genai
+jupyter
+google-generativeai
+docling
+opik # Tracability/Observability
