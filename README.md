@@ -58,6 +58,8 @@ All Classes
 28 Sep Day - 42 Google ADK - Vertex AI deployment + E2E Project + Vertex AI RAG Engine <br>
 04 Oct Day - 43 CrewAI - Crewai Part-1 <br>
 05 Oct Day - 44 CrewAI - Crewai Part-2 <br>
+11 Oct Day - 45 CrewAI - Crewai Part-3 <br>
+12 Oct Day - 46 CrewAI - Crewai Part-4 <br>
 
 How to create virtual environment in "VS Code"
 ---
