@@ -390,3 +390,27 @@ https://gist.github.com/sourangshupal/bd9d1d232a7dde1d492cfd9c71aaca7a
 Crewai with OPIK Integration.ipynb
 https://colab.research.google.com/drive/1fx_JOzNB95mf91BMVQgQdSuShHD6L4Bz?usp=sharing
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11 Oct Day - 46 CrewAI - Crewai Part-3
+**************************************
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://github.com/sourangshupal/crewai-advanced
+
+Memory Docs
+https://docs.crewai.com/en/concepts/memory#finding-your-storage-location
+
+Mem0 Colab Note
+https://app.mem0.ai/dashboard/get-started
+
+Trip-Planner-using-CrewAI
+https://github.com/sourangshupal/Trip-Planner-using-CrewAI
+
+Browserless
+https://account.browserless.io/signup/email/?plan=free
+
+GitHub
+https://github.com/sourangshupal/Trip-Planner-using-CrewAI
+
+12 Oct Day - 47 CrewAI - Crewai Part-4
+**************************************
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
