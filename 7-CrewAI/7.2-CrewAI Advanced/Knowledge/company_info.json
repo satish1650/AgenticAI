@@ -1,0 +1,24 @@
+{
+    "company_name": "TechNova Inc.",
+    "departments": [
+      {
+        "name": "Product",
+        "head": "Alice",
+        "teams": [
+          {"name": "UX Team", "members": 5},
+          {"name": "Analytics Team", "members": 3}
+        ]
+      },
+      {
+        "name": "Engineering",
+        "head": "Bob",
+        "teams": [
+          {"name": "Backend", "members": 6},
+          {"name": "DevOps", "members": 4},
+          {"name": "ML Engineering", "members": 5}
+        ]
+      }
+    ],
+    "employee_count": 62
+  }
+  
