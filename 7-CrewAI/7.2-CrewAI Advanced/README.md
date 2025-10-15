@@ -111,5 +111,5 @@ Give a ⭐️ if this project helped you!
 ---
 
 <div align="center">
-Made with ❤️ by Paul
+Made with ❤️ by Satish Tiwari
 </div>
