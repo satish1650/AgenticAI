@@ -61,9 +61,9 @@ All Classes
 11 Oct Day - 45 CrewAI - Crewai Part-3 (Memory + Mem(0) + Mini Project 👉 Trip-Planner-using-CrewAI) <br>
 12 Oct Day - 46 CrewAI - Crewai Part-4 (CrewAI 👉 Agentic_RAG_CrewAI) <br>
 18th & 19th October 2025 <br>
-************************ <br>
+**************************** <br>
 Holiday's for Diwali <br>
-************************ <br>
+**************************** <br>
 
 How to create virtual environment in "VS Code"
 ---
