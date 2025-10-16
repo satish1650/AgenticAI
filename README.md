@@ -56,10 +56,14 @@ All Classes
 21 Sep Day - 40 Google ADK - Project-Part-2 + Stremlit Development + Deploying Agent in ADK using Colud Run <br>
 27 Sep Day - 41 Google ADK - Vertex AI deployment <br>
 28 Sep Day - 42 Google ADK - Vertex AI deployment + E2E Project + Vertex AI RAG Engine <br>
-04 Oct Day - 43 CrewAI - Crewai Part-1 <br>
-05 Oct Day - 44 CrewAI - Crewai Part-2 <br>
-11 Oct Day - 45 CrewAI - Crewai Part-3 <br>
-12 Oct Day - 46 CrewAI - Crewai Part-4 <br>
+04 Oct Day - 43 CrewAI - Crewai Part-1 (CrewAI 👉 Basics) <br>
+05 Oct Day - 44 CrewAI - Crewai Part-2 (CrewAI 👉 Advanced 👉 Knowledge) <br>
+11 Oct Day - 45 CrewAI - Crewai Part-3 (Memory + Mem(0) + Mini Project 👉 Trip-Planner-using-CrewAI) <br>
+12 Oct Day - 46 CrewAI - Crewai Part-4 (CrewAI 👉 Agentic_RAG_CrewAI) <br>
+18th & 19th October 2025 <br>
+************************ <br>
+Holiday's for Diwali <br>
+************************ <br>
 
 How to create virtual environment in "VS Code"
 ---
