@@ -36,10 +36,10 @@ class TripRequest(BaseModel):
         example="Krabi, Thailand",
         description="Destination city and country")
     start_date: date = Field(..., 
-        example="2025-06-01",
+        example="2025-10-20",
         description="Start date of your trip")
     end_date: date = Field(..., 
-        example="2025-06-10",
+        example="2025-10-22",
         description="End date of your trip")
     interests: str = Field(..., 
         example="2 adults who love swimming, dancing, hiking, shopping, local food, water sports adventures and rock climbing",
@@ -191,4 +191,5 @@ async def health_check():
 
 if __name__ == "__main__":
     import uvicorn
+    load_dotenv()
     uvicorn.run(app, host="0.0.0.0", port=8000)
