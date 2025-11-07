@@ -64,6 +64,10 @@ All Classes
 **************************** <br>
 Holiday's for Diwali <br>
 **************************** <br>
+25 Oct Day - 47 - Agno Part-1 (Agno 👉 Basics) <br>
+26 Oct Day - 48 - Agno Part-1 (Agno 👉 Advanced) <br>
+01 Nov Day - 49 - Agno Part-1 (Agno 👉 Continued) <br>
+02 Nov - Holiday <br>
 
 How to create virtual environment in "VS Code"
 ---
