@@ -1,0 +1,5 @@
+agno
+google-genai
+fastapi[standard]
+uvicorn 
+openai
