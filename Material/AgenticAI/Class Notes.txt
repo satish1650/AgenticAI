@@ -456,8 +456,8 @@ https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0/Agno
 **************************
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-15 Nov Day - 51 Agent with AWS
-******************************
+15 Nov Day - 51 Agent with AWS - Part-1
+***************************************
 AWS Free Tier
 https://signin.aws.amazon.com/signup?request_type=register
 
@@ -469,7 +469,29 @@ https://32ft3s24qy6lfyewk676shfqs40umnpn.lambda-url.ap-south-1.on.aws
 https://www.youtube.com/watch?v=VC5RCZRjod8
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-16 Nov Day - 52 Agent with AWS - Part2
-**************************************
+16 Nov Day - 52 Agent with AWS - Part-2
+***************************************
+https://github.com/mayank953/Live-Class/tree/main/Agentic%202.0/AWS
 
+aws configure
+aws sts get-caller-identity
+
+Installing, Updating, and Uninstalling the AWS CLI version 1 on Windows
+https://docs.aws.amazon.com/cli/v1/userguide/install-windows.html
+
+For the latest version of the AWS CLI: https://awscli.amazonaws.com/AWSCLIV2.msi
+
+GitHub -> awsdocs / aws-doc-sdk-examples
+https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code
+
+Compare AWS and Azure services to Google Cloud
+https://docs.cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison
+
+https://sv23umkew73n5mr3ljieey5yoq0piqso.lambda-url.us-east-1.on.aws
+
+API Output -> "Hello from Lambda!"
+
+https://aws.plainenglish.io/aws-lambda-how-to-use-custom-python-modules-739510b50f91
+
+mailtomayankaggarwal@gmail.com
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
