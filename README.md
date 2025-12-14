@@ -72,8 +72,6 @@ Holiday's for Diwali <br>
 26 Oct Day - 48 Agno Part-2 (Agno 👉 Advanced) <br>
 01 Nov Day - 49 Agno Part-3 (Agno 👉 Continued) <br>
 02 Nov - Holiday <br>
-15 Nov Day - 50 Agent with AWS Part-1 <br>
-16 Nov Day - 51 Agent with AWS Part-2 <br>
 
 How to create virtual environment in "VS Code"
 ---
