@@ -2,8 +2,10 @@ from agno.agent import Agent
 from agno.models.google import Gemini
 from agno.os import AgentOS
 from agno.db.sqlite import SqliteDb
+from dotenv import load_dotenv
 
 import os
+load_dotenv()
 
 # Set your API key (replace YOUR_API_KEY with your actual key)
 Google_Api_Key = os.getenv("GOOGLE_API_KEY")
